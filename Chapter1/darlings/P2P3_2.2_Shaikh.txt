@@ -1,0 +1,57 @@
+
+% ---------------------------------------------------------------
+% P2 — Shaikh's advance (unbalanced growth) + architectural limit
+%       (single-equation assumes away distributive channel)
+%       §3 owns the ARDL/ECM exposition — one sentence only here
+% ---------------------------------------------------------------
+
+Shaikh's proposed solution --- recovering productive capacity as the
+long-run component of the output--capital cointegrating relation under a
+maintained normal-utilization closure --- represents an advance over both
+survey-based measures and proxy comparisons; the method and its econometric
+implementation are examined in \S\ref{sec:ch3}. The substantive empirical
+finding that advance produces is unbalanced growth: the growth rate of
+productive capacity persistently diverges from the growth rate of capital
+accumulation, which breaks the balanced-growth assumption shared by both the
+Kaleckian and Sraffian positions, where the transformation elasticity
+$\theta$ linking capacity expansion to capital accumulation is implicitly
+treated as unity. Shaikh showed it is not. The limit of the approach,
+however, is architectural. The single-equation specification captures
+unbalanced growth through a fixed transformation elasticity, when recent
+theoretical work re-interpreting \citet{Kaldor1957} suggests that the
+elasticity is distributionally conditioned: following \citet{Cajas2024},
+distribution drives mechanization intensity, which drives the rate at which
+capital accumulation translates into capacity expansion, making the
+transformation elasticity $\theta(e;\,\bar{\Lambda})$ regime-specific rather
+than structurally constant. A bivariate specification cannot recover the
+transformation elasticity as a system property because it assumes away the
+distributive channel through which mechanization operates --- and the
+discretionary dummy structures it requires to sustain any long-run
+relationship signal precisely that distribution matters, without providing a
+variable through which it can act.
+
+
+% ---------------------------------------------------------------
+% P3 — Forward link to critical replication
+%       Trimmed: dropped "What does adequate identification require?"
+%       rhetorical opener; kept three-stage architecture statement
+% ---------------------------------------------------------------
+
+This reframing defines the methodological requirement: a multi-equation
+cointegration framework that endogenizes the transformation elasticity,
+captures the joint dynamics of accumulation, distribution, and capacity
+transformation, and recovers utilization as bounded movement within an
+institutionally determined space rather than as gravitation toward a fixed
+benchmark. The empirical question is whether Shaikh's measurement pipeline,
+when subjected to critical replication and extended to a system framework,
+bears out this confined structure. The critical replication that follows
+tests this in three stages: first reconstructing Shaikh's benchmark
+faithfully, then stress-testing its robustness within the admissible ARDL
+specification space, and finally embedding it within a system that admits the
+distributive channel his single-equation specification assumes away.
+
+
+
+% --- BLOCK 3: FEASIBLE CEILING AND PROMISSORY NOTE ---
+
+The feasible ceiling at $k = 1$ is where the abstraction breaks down. As the accumulation rate approaches unity, productive capacity outruns realized output, the labor supply is exhausted, the consumption share collapses, and $\mu$ falls below 1. The three channels that re-enter simultaneously---labor market tightening, demand shortfall, and falling utilization---are the terrain of the class struggle over distribution, utilization, and the institutional forms that govern whether accumulation can proceed. That terrain is developed in Chapter~2. Here, the Say's law benchmark is maintained through \S\ref{sec:accounting_laws} in order to derive the accounting laws that define the object the empirical strategy must recover.

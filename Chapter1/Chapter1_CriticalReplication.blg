@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Chapter1_CriticalReplication.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You're missing a field name---line 241 of file references.bib
+ :   howpublished = {\url{https://www.federalreserve.gov/releases/g17/Hist/HistIP.htm}},
+ :                                                                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 429 of file references.bib
+ : @article{Johnson2024
+ :                     ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 721 of file references.bib
+ : 
+ : % booktitle = {Economic Cycles and Social Movements},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 1903 of file references.bib
+ : @article{Heimberger2020
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2663 of file references.bib
+ : @article{Johansen1991
+ :                      ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Kavrik2026"
+Warning--I didn't find a database entry for "Census1975"
+You've used 103 entries,
+            1935 wiz_defined-function locations,
+            1147 strings with 20687 characters,
+and the built_in function-call counts, 37515 in all, are:
+= -- 3803
+> -- 1106
+< -- 111
++ -- 386
+- -- 340
+* -- 3006
+:= -- 6502
+add.period$ -- 316
+call.type$ -- 103
+change.case$ -- 668
+chr.to.int$ -- 103
+cite$ -- 103
+duplicate$ -- 1523
+empty$ -- 2828
+format.name$ -- 501
+if$ -- 7386
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 107
+newline$ -- 519
+num.names$ -- 314
+pop$ -- 518
+preamble$ -- 1
+purify$ -- 682
+quote$ -- 0
+skip$ -- 1192
+stack$ -- 0
+substring$ -- 2906
+swap$ -- 191
+text.length$ -- 21
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 582
+warning$ -- 0
+while$ -- 353
+width$ -- 0
+write$ -- 1343
+(There were 5 error messages)

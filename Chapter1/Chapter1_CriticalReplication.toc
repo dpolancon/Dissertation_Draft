@@ -1,0 +1,41 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Historical Trace of Capacity Utilization Measurement throughout Fordist to Post-Fordist era}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}From Survey Measures to an Inflation Sentinel: Capacity Utilization Measurements during the Fordist Era}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Rise of Econometrics and its Global Sedimentation on Institutions: From Capacity Utilization to Output-Gap Measurement through Post-Fordist Times}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}The Capacity Utilization Controversies in Political Economy Debates}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Shaikh's Critique and the Requirement for Structural Identification}{15}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Conceptual Framework}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Reproduction, Smooth Reproduction, and the Say's Law Benchmark}{16}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The Accounting Laws of Capital Accumulation under Unbalanced Growth}{18}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}The Rate of Capital Accumulation and the Three Channels of Distribution}{18}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}The Unbalanced Growth Closure and the Classical Investment Condition}{19}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}The Bernoulli ODE and Regime Classification}{19}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}The Mapping of Capital Productivity}{20}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}The Extended Closure: Autonomous Technical Progress and the Quadratic Law}{21}{subsubsection.3.2.5}%
+\contentsline {paragraph}{The extended ODE.}{22}{equation.12}%
+\contentsline {paragraph}{Vieta's formulas.}{22}{equation.15}%
+\contentsline {paragraph}{The degeneracy locus.}{22}{equation.17}%
+\contentsline {paragraph}{The pure closure as limiting case.}{22}{equation.18}%
+\contentsline {subsubsection}{\numberline {3.2.6}Summary: What the Accounting Laws Establish}{23}{subsubsection.3.2.6}%
+\contentsline {section}{\numberline {4}Shaikh's Framework for Measuring Capacity Utilization}{23}{section.4}%
+\contentsline {subsection}{\numberline {4.1}What the Critical Replication Tests}{24}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Data and Construction}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Stage S0: Faithful Replication of the Capacity Benchmark}{25}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Stage S1: ARDL Specification Geometry}{27}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Stage S2: System-Level VECM Replication}{28}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}A System Co-Integration Strategy for Estimating Capacity Utilization in the United States}{30}{subsection.4.6}%
+\contentsline {section}{\numberline {5}References}{31}{section.5}%
+\contentsline {section}{References}{31}{section.5}%
+\contentsline {section}{\numberline {A}Data Glossary and Construction Ledger}{37}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Series Glossary}{37}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Imputed-Interest Correction}{37}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Corrected Corporate Output: $\text {GVAcorp}_t$}{37}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Reconstructed Corporate Capital Stock: $\text {KGCcorp}_t$}{37}{subsection.A.4}%
+\contentsline {paragraph}{GPIM accumulation rule.}{37}{subsection.A.4}%
+\contentsline {paragraph}{Three adjustments (applied before the recursion).}{38}{equation.40}%
+\contentsline {paragraph}{Inventories.}{38}{Item.3}%
+\contentsline {paragraph}{Accuracy.}{38}{Item.3}%
+\contentsline {subsection}{\numberline {A.5}Common Deflator: $p_t$}{38}{subsection.A.5}%
+\contentsline {subsection}{\numberline {A.6}Corrected Corporate Profit Share: $\text {Profshcorp}_t$}{38}{subsection.A.6}%
+\contentsline {section}{\numberline {B}Electric Motor Utilization: Physical Measures Lineage}{39}{appendix.B}%
