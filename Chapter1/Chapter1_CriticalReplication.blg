@@ -27,46 +27,47 @@ Repeated entry---line 2663 of file references.bib
  :                      ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Kavrik2026"
+Warning--I didn't find a database entry for "Patomaki2019"
 Warning--I didn't find a database entry for "Census1975"
-You've used 103 entries,
+You've used 105 entries,
             1935 wiz_defined-function locations,
-            1147 strings with 20687 characters,
-and the built_in function-call counts, 37515 in all, are:
-= -- 3803
-> -- 1106
-< -- 111
-+ -- 386
-- -- 340
-* -- 3006
-:= -- 6502
-add.period$ -- 316
-call.type$ -- 103
-change.case$ -- 668
-chr.to.int$ -- 103
-cite$ -- 103
-duplicate$ -- 1523
-empty$ -- 2828
-format.name$ -- 501
-if$ -- 7386
+            1159 strings with 20979 characters,
+and the built_in function-call counts, 38307 in all, are:
+= -- 3884
+> -- 1131
+< -- 112
++ -- 394
+- -- 348
+* -- 3078
+:= -- 6638
+add.period$ -- 322
+call.type$ -- 105
+change.case$ -- 682
+chr.to.int$ -- 105
+cite$ -- 105
+duplicate$ -- 1551
+empty$ -- 2888
+format.name$ -- 511
+if$ -- 7539
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 107
-newline$ -- 519
-num.names$ -- 314
-pop$ -- 518
+missing$ -- 109
+newline$ -- 529
+num.names$ -- 320
+pop$ -- 527
 preamble$ -- 1
-purify$ -- 682
+purify$ -- 696
 quote$ -- 0
-skip$ -- 1192
+skip$ -- 1213
 stack$ -- 0
-substring$ -- 2906
-swap$ -- 191
+substring$ -- 2980
+swap$ -- 193
 text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 582
+type$ -- 594
 warning$ -- 0
-while$ -- 353
+while$ -- 361
 width$ -- 0
-write$ -- 1343
+write$ -- 1369
 (There were 5 error messages)
