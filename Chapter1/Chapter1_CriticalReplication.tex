@@ -650,22 +650,25 @@ Smooth reproduction is not a description of reality but a benchmark of its strin
 
 % =============================================================================
 % §1.3.2 — The Accounting Laws of Capital Accumulation under Unbalanced Growth
-% LaTeX draft v2 — 2026-03-16
-% Source authority: Ch1_S3_2_Revised_Draft_v2.md (corrected derivation)
+% Consolidated v3 — 2026-03-16
+% All fixes from LOCKED fix list applied.
+% Derivation appendix material marked but not included here.
 % =============================================================================
 
-\subsection{The Accounting Laws of Capital Accumulation under Unbalanced Growth}
+\subsection{Laws of Capital Accumulation under Unbalanced Growth}
 \label{sec:accounting_laws}
 
-% --- BRIDGE: FEASIBLE CEILING (from §1.3.1) ---
+% --- BRIDGE: FEASIBLE CEILING (from §1.3.1) --- [D3 applied]
 
-The cost of the Say's law abstraction imposed in the previous section is not merely conceptual. It produces degenerate results at the boundary of the feasible interval. As the rate of capital accumulation approaches unity, productive capacity outruns realized output, the labor supply is exhausted, the consumption share collapses, and $\mu$ falls below~1. The three channels that re-enter simultaneously---labor market tightening, demand shortfall, and falling utilization---are the terrain of the class struggle over distribution, utilization, and the institutional forms that govern whether accumulation can proceed. That terrain is developed in Chapter~2. Here, the Say's law benchmark is maintained in order to derive the accounting laws that define the object the empirical strategy must recover. The degeneracy is not a defect of the accounting structure but a signal of its scope: it marks the point where pre-behavioral laws exhaust themselves and demand conditions must be imposed.
+The cost of the smooth reproduction abstraction imposed in the previous section is not merely conceptual. It produces degenerate results at the boundary of the feasible interval. As the rate of capital accumulation approaches unity, productive capacity outruns realized output, the labor supply is exhausted, the consumption share collapses, and $\mu$ falls below~1. The three channels that re-enter simultaneously---labor market tightening, demand shortfall, and falling utilization---are the terrain of the class struggle over distribution, utilization, and the institutional forms that govern whether accumulation can proceed. That terrain is developed in Chapter~2. Here, the smooth reproduction benchmark ($\mu = 1$) is maintained in order to derive the accounting laws that define the object the empirical strategy must recover. The degeneracy is not a defect of the accounting structure but a signal of its scope: it marks the point where pre-behavioral laws exhaust themselves and demand conditions must be imposed.
 
 % =========================================================================
 % §3.2.1 — Rate of Accumulation and Three Channels
+% [NO CHANGES from current version]
 % =========================================================================
 
 \subsubsection{The Rate of Capital Accumulation and the Three Channels of Distribution}
+\label{sec:rate_of_accumulation}
 
 The gross rate of capital accumulation decomposes as:
 %
@@ -678,10 +681,12 @@ where $\phi^p \equiv I/Y^p$ is the investment share at normal capacity---the deg
 Distribution does not appear as an explicit argument, but it is not absent. It enters through three channels of unequal visibility: $\mu$ carries demand conditions shaped by the distributive conflict over utilization; $B$ carries the indirect distributional mapping through $\theta(\Lambda)$, connecting capital productivity to the mechanization choice endogenous to the wage-profit relation; and $\phi^p$ carries the structural power of capital over the surplus---the capacity of capitalists to direct a share of normal-capacity output toward accumulation rather than consumption. The algebraic cancellation of $\mu$---which drops out of $\phi^p B$ under $\mu = 1$---is real; the social cancellation is not.
 
 % =========================================================================
-% §3.2.2 — Unbalanced Growth Closure and Classical Investment Condition
+% §3.2.2 — The Unbalanced Growth Closure
+% [A1: split — title shortened, closure material moved to §3.2.3]
 % =========================================================================
 
-\subsubsection{The Unbalanced Growth Closure and the Classical Investment Condition}
+\subsubsection{The Unbalanced Growth Closure}
+\label{sec:unbalanced_growth_closure}
 
 The transformation elasticity of capital stock into productive capacity is defined as:
 %
@@ -717,35 +722,52 @@ The growth rate of the investment share is the gap between investment growth and
 	\frac{d\hat{k}}{dt} = (\hat{k} + \delta)(\hat{\imath} - \hat{k})
 \end{equation}
 %
-an identity in which $\theta$ cancels completely. The closure enters through $\hat{b}$ and through $\hat{\phi}^p$ with opposite signs and zeros out. The three equations---the accounting identity, the closure, and the productivity consequence---are underdetermined for the dynamics of $\hat{k}$: the system has three unknowns ($\hat{k}$, $\hat{y}^p$, $\hat{\imath}$) and two independent relations.
+an identity in which $\theta$ nets to zero. The closure enters through $\hat{b}$ and through $\hat{\phi}^p$ with opposite signs and cancels. The three equations---the accounting identity, the closure, and the productivity consequence---are underdetermined for the dynamics of $\hat{k}$: the system has three unknowns ($\hat{k}$, $\hat{y}^p$, $\hat{\imath}$) and two independent relations.
 
-The missing ingredient is a closure on investment. Under the Say's law abstraction ($\mu = 1$), the minimal classical closure is:
+% =========================================================================
+% §3.2.3 — Investment-Savings Closure
+% [NEW subsection: A1 split + B3 + C1 + C2 + C6]
+% =========================================================================
+
+\subsubsection{Investment-Savings Closure}
+\label{sec:IS_closure}
+
+The missing ingredient is a closure on investment. Under smooth reproduction ($\mu = 1$), the goods market clears: investment equals savings. Expressed in capacity shares, this equilibrium condition is:
 %
-\begin{equation}\label{eq:classical_closure}
+\begin{equation}\label{eq:IS_closure}
 	\phi^p = s \qquad \text{(constant)}
 \end{equation}
 %
-The share of productive capacity claimed by investment is structurally fixed. This is the first behavioral assumption in the system---the classical savings-determines-investment condition: under Say's law, the investment share is determined by the savings propensity of the surplus, with no demand-side feedback to alter it. With $\phi^p$ constant, $\hat{\phi}^p = 0$, which pins investment growth to capacity growth: $\hat{\imath} = \hat{y}^p = \theta\hat{k}$. The system closes and $\theta$-dependent dynamics emerge.
+The share of productive capacity claimed by investment is structurally fixed. This is the first behavioral assumption in the system. It closes the underdetermined accounting structure of the previous section by pinning the investment share, so that $\hat{\phi}^p = 0$ and investment growth is tied to capacity growth: $\hat{\imath} = \hat{y}^p = \theta\hat{k}$. The system closes and $\theta$-dependent dynamics emerge.
 
-% =========================================================================
-% §3.2.3 — Bernoulli ODE and Regime Classification
-% =========================================================================
+The condition $I = S$ in capacity shares is coherent with the smooth reproduction benchmark already imposed, and its economic content varies across traditions of political economy. In Marx's reproduction schemas, the condition corresponds to the total reinvestment of surplus value: the surplus product is entirely directed toward expanded reproduction, and the proportionality conditions of the two-departmental schema ensure that the material composition of the surplus matches the input requirements of both departments \citep{MarxKVII}. In the classical tradition, savings out of profits determines investment, and the profit rate adjusts through competition to enforce the condition. In the Keynesian tradition, the same equality $I = S$ holds at the goods market equilibrium locus, but the adjustment mechanism is output rather than the profit rate. What these traditions share, and what matters for the accounting laws derived below, is the \emph{constancy} of $\phi^p$: no feedback from accumulation dynamics to the investment share operates within the period. The traditions disagree about the causal mechanism that enforces the condition---what adjusts, and through which institutional channel---but they converge on the equilibrium restriction.
 
-\subsubsection{The Bernoulli ODE and Regime Classification}
-
-From $\hat{k} + \delta = sB$ with $s$ constant, differentiate:
+The Cambridge equation makes explicit what $\phi^p = s$ packages. Since $\phi^p \equiv I/Y^p$ and $I = s_\pi \Pi$, the investment share decomposes as:
 %
-\begin{equation}\label{eq:bernoulli_deriv}
-	\frac{d\hat{k}}{dt} = s\dot{B} = sB\,\hat{b} = (\hat{k} + \delta)\,\hat{b}
+\begin{equation}\label{eq:cambridge}
+	\phi^p = s_\pi \cdot \pi^p
 \end{equation}
 %
-Substituting $\hat{b} = (\theta - 1)\hat{k}$:
+where $s_\pi$ is the savings propensity out of profits and $\pi^p \equiv \Pi/Y^p$ is the profit share at capacity. The constant $s$ is therefore the product of a behavioral assumption (the propensity to save out of profits) and a distributional assumption (the share of capacity output appropriated as profit). Both are suppressed---held constant---under the closure imposed here. The constancy of $\phi^p$ prevents the investment channel from absorbing the $\theta$ signal: the regime's structural character passes through to the dynamics of accumulation without being filtered by distributional adjustments. Chapter~2 reopens this package: when the exploitation rate enters through $\theta(e_t)$, the profit share $\pi^p$ is no longer fixed, the product $s_\pi \cdot \pi^p$ becomes endogenous to the regime dynamics it currently holds constant, and the investment share responds to the distributional structure the scalar world suppresses.
+
+% =========================================================================
+% §3.2.4 — Accumulation Regimes and Supply-Side Instability
+% [B1: renamed; C3: derivation compressed; C4: intuitive framing added;
+%  C7: B(t) merged; orphaned summary moved to §3.2.6]
+% =========================================================================
+
+\subsubsection{Accumulation Regimes and Supply-Side Instability}
+\label{sec:regimes}
+
+The sign of $(\theta - 1)$ determines whether accumulation is self-reinforcing or self-exhausting. When each unit of capital generates more productive capacity than it displaces ($\theta > 1$), accumulation accelerates its own conditions: each period's investment improves the next period's capital productivity. When each unit generates less capacity than it displaces ($\theta < 1$), accumulation erodes its own conditions: capital productivity falls as the stock grows. The boundary case $\theta = 1$ is the knife-edge where capital and capacity expand in exact proportion and the accumulation rate is stationary. The question is what dynamics each regime produces under the closures derived above.
+
+Differentiating the accounting identity $\hat{k} + \delta = sB$ under constant $\phi^p$ and substituting the capital productivity growth rate from equation~\eqref{eq:bhat} yields a nonlinear ODE of the Bernoulli type\footnote{The full derivation is presented in Appendix~\ref{app:bernoulli}.}:
 %
 \begin{equation}\label{eq:bernoulli}
 	\boxed{\frac{d\hat{k}}{dt} = (\theta(\Lambda) - 1)\,\hat{k}\,(\hat{k} + \delta)}
 \end{equation}
 %
-This is a Bernoulli equation in $\hat{k}$: nonlinear, but analytically solvable. The $\theta$-dependent dynamics emerge because the constant investment share prevents the investment channel from absorbing the $\theta$ signal---the regime's structural character feeds back directly into the acceleration of accumulation.
+The equation is nonlinear but analytically solvable. The $\theta$-dependent dynamics emerge because the constant investment share prevents the investment channel from absorbing the $\theta$ signal---the regime's structural character feeds back directly into the acceleration of accumulation.
 
 The equilibria are $\hat{k}^* = 0$ (net stagnation: gross investment just covers depreciation) and $\hat{k}^* = -\delta$ (zero gross investment: the capital stock is not being replaced). The vector field in the feasible region $\hat{k} > 0$ is governed entirely by the regime, since both $\hat{k}$ and $(\hat{k} + \delta)$ are strictly positive:
 
@@ -768,13 +790,7 @@ No feasible interior attractor exists under either regime. Over-mechanization dr
 
 Unbalanced growth is inherently destabilizing on the supply side. The sign of $(\theta - 1)$ determines whether the system decelerates or accelerates, but in neither case does it converge to a feasible interior equilibrium. The stabilizing force, when it arrives, must come from the demand side: as $\hat{k}$ rises and the accumulation rate approaches its limits, $\mu$ falls below~1, labor markets tighten, the consumption share is squeezed, and the three channels of distribution re-enter simultaneously. The class struggle over distribution, operating through the institutional forms of the accumulation regime, is what prevents the supply-side instability from realizing its tendential law. That terrain is developed in Chapter~2.
 
-% =========================================================================
-% §3.2.4 — The Mapping of Capital Productivity
-% =========================================================================
-
-\subsubsection{The Mapping of Capital Productivity}
-
-From $\hat{b} = (\theta - 1)\hat{k}$ and the Bernoulli solution for $\hat{k}(t)$, the level trajectory of $B$ is recovered by integration:
+The level trajectory of capital productivity confirms the regime classification. From $\hat{b} = (\theta - 1)\hat{k}$ and the solution for $\hat{k}(t)$, integrating gives:
 %
 \begin{equation}\label{eq:B_trajectory}
 	B(t) = B_0 \cdot \exp\left[\int_0^t (\theta - 1)\,\hat{k}(\tau)\,d\tau\right]
@@ -782,13 +798,13 @@ From $\hat{b} = (\theta - 1)\hat{k}$ and the Bernoulli solution for $\hat{k}(t)$
 %
 The trajectory separates into a transient component---driven by the initial deviation of $\hat{k}$ from equilibrium, decaying under over-mechanization, exploding under under-mechanization---and a trend component determined by the regime's structural character. Log-differentiating $B(t)$ recovers $\hat{b} = (\theta - 1)\hat{k}$: the mapping is internally consistent.
 
-The regime classification, the instability result, the capital productivity mapping, and the absence of a feasible interior attractor all emerge from three ingredients: the accounting identity $\hat{k} + \delta = \phi^p B$, the unbalanced growth closure $\hat{y}^p = \theta\hat{k}$, and the classical investment closure $\phi^p = s$. The first two are pre-behavioral; the third is the classical savings condition under Say's law---the only behavioral assumption in the system. No investment function, Phillips curve, or demand-formation equation has been imposed.
-
 % =========================================================================
-% §3.2.5 — The Extended Closure: Autonomous Technical Progress
+% §3.2.5 — Mechanization, Autonomous Progress, and the Limits of Shaikh's Closure
+% [B4: renamed; C5: pivot sentence added; grammar fixes applied]
 % =========================================================================
 
-\subsubsection{The Extended Closure: Autonomous Technical Progress and the Quadratic Law}
+\subsubsection{Mechanization, Autonomous Progress, and the Limits of Shaikh's Closure}
+\label{sec:extended_closure}
 
 The pure closure $\hat{y}^p = \theta\hat{k}$ locates the capital-to-capacity mapping entirely within the mechanization choice governed by $\theta(\Lambda)$---the mechanization possibilities frontier at its origin, where the transformation elasticity is grounded in the connection between surplus extraction and the direction and intensity of technical change. Shaikh's cointegrating relation introduces a second channel:
 %
@@ -806,13 +822,13 @@ where $\beta$ is the rate of autonomous technical progress---capacity growth tha
 
 The distinction between the pure and extended closures is not merely technical. Under the interpretation developed in this chapter---which Shaikh himself does not articulate, since he does not interpret $d$ as a transformation elasticity of capital into productive capacity---the cointegrating parameter $d$ \emph{is} the empirical counterpart of $\theta(\Lambda)$, and the relation $\hat{y}^p = \theta\hat{k} + \beta$ asserts that unbalanced growth ($\theta \neq 1$) takes place \emph{alongside} a linear deterministic trend representing an autonomous component of technical change. Two features of this specification deserve explicit attention.
 
-First, Shaikh's empirical specification embeds a claim that he does not theorize as such: that the transformation of capital into productive capacity operates through two distinct channels simultaneously---a mechanization channel governed by $\theta$ and an autonomous channel governed by $\beta$. The mechanization channel is regime-dependent by construction; the autonomous channel is, by definition, independent of accumulation, profitability, and the institutional configuration $\Lambda$. The coexistence of these two channels within a single cointegrating relation is the empirical structure that the ARDL bounds-testing procedure estimates.
+Shaikh's empirical specification embeds a claim he does not theorize as such. The transformation of capital into productive capacity operates through two distinct channels simultaneously---a mechanization channel governed by $\theta$ and an autonomous channel governed by $\beta$. The mechanization channel is regime-dependent by construction; the autonomous channel is, by definition, independent of accumulation, profitability, and the institutional configuration $\Lambda$. The coexistence of these two channels within a single cointegrating relation is the empirical structure that the ARDL bounds-testing procedure estimates. It is also the site of an internal contradiction within Shaikh's theoretical framework.
 
-Second, and more consequentially, this coexistence sits in tension with Shaikh's own theoretical commitments throughout \emph{Capitalism}. The entire architecture of the book argues for the full endogeneity of technical change to profitability: the profit rate drives the direction and intensity of mechanization, investment responds to profitability signals, and the classical competitive process selects techniques on the basis of cost-cutting driven by the wage-profit frontier \citep{Shaikh2016}. There is no theoretical location in that architecture for a component of capacity growth that operates independently of the accumulation rate and the profit-driven mechanization channel. Yet the time trend in his cointegrating relation is precisely such a component. The contradiction is invisible to Shaikh because he does not interpret $d$ as unbalanced growth---the parameter remains an unexplained long-run elasticity rather than a structural object whose coexistence with $\beta$ requires theoretical justification.
+This coexistence sits in tension with Shaikh's own theoretical commitments throughout \emph{Capitalism}. The entire architecture of the book argues for the full endogeneity of technical change to profitability: the profit rate drives the direction and intensity of mechanization, investment responds to profitability signals, and the classical competitive process selects techniques on the basis of cost-cutting driven by the wage-profit frontier \citep{Shaikh2016}. There is no theoretical location in that architecture for a component of capacity growth that operates independently of the accumulation rate and the profit-driven mechanization channel. Yet the time trend in his cointegrating relation is precisely such a component. The contradiction is invisible to Shaikh because he does not interpret $d$ as unbalanced growth---the parameter remains an unexplained long-run elasticity rather than a structural object whose coexistence with $\beta$ requires theoretical justification.
 
-This chapter does not resolve the contradiction. It inherits it: the critical replication operates within Shaikh's extended closure because the empirical strategy requires the time trend to absorb secular technical progress. The resolution belongs to Chapter~2, where the distributional conditioning of $\theta$ through $\theta(e_t) = \theta_0 + \theta_1 e_t + \theta_2 e_t^2$ endogenizes the channel that $\beta$ currently absorbs, providing the framework within which the tension between mechanization-driven and autonomous capacity growth can be formally addressed. Here, the consequences of Shaikh's extended closure are derived in order to locate the quadratic structure that his specification implies.
+This chapter does not resolve the contradiction. It inherits it, but subjects to scrutiny by means of critical replication. This departs within Shaikh's extended closure, to find a canonical base to progress throguh different replications studies towards refining his proposal on co-integration as means to identify a rate of capacity utilizatiokn once interpreted his framework under an unbalanced growth closure. 
 
-\paragraph{The extended ODE.} Under $\phi^p = s$ and $\hat{y}^p = \theta\hat{k} + \beta$, the capital productivity growth rate becomes $\hat{b} = (\theta - 1)\hat{k} + \beta$, and the ODE is:
+Under $\phi^p = s$ and $\hat{y}^p = \theta\hat{k} + \beta$, the capital productivity growth rate becomes $\hat{b} = (\theta - 1)\hat{k} + \beta$, and the ODE is:
 %
 \begin{equation}\label{eq:extended_ode}
 	\frac{d\hat{k}}{dt} = (\hat{k} + \delta)\left[(\theta - 1)\hat{k} + \beta\right]
@@ -832,7 +848,7 @@ This is a genuine quadratic in $\hat{k}$, with equilibria at the roots of $(\hat
 %
 The second equilibrium is new: it is the net growth rate at which autonomous technical progress exactly offsets the regime's structural drag. Under over-mechanization ($\theta < 1$) and $\beta > 0$: $\hat{k}_2^* = \beta/(1 - \theta) > 0$---a feasible positive equilibrium emerges. Autonomous technical progress provides the interior attractor that the pure closure could not generate.
 
-\paragraph{Vieta's formulas.} Writing the quadratic $(\theta - 1)\hat{k}^2 + [(\theta - 1)\delta + \beta]\hat{k} + \beta\delta = 0$, Vieta's formulas give:
+Writing the quadratic $(\theta - 1)\hat{k}^2 + [(\theta - 1)\delta + \beta]\hat{k} + \beta\delta = 0$, Vieta's formulas give:
 %
 \begin{equation}\label{eq:vieta_product}
 	\hat{k}_1 \cdot \hat{k}_2 = \frac{\beta\delta}{\theta - 1}
@@ -844,7 +860,7 @@ The second equilibrium is new: it is the net growth rate at which autonomous tec
 %
 Under over-mechanization ($\theta < 1$) the product of roots is negative---one positive root, one negative---confirming the existence of a feasible attractor alongside a decumulation equilibrium. Under under-mechanization ($\theta > 1$) the product is positive and both roots share sign. The depreciation rate anchors the sum; the ratio $\beta/(\theta - 1)$ scales autonomous progress by the inverse degree of unbalanced growth.
 
-\paragraph{The degeneracy locus.} As $\theta \to 1$, the quadratic coefficient vanishes and the equilibrium $\hat{k}_2^*$ diverges:
+ As $\theta \to 1$, the quadratic coefficient vanishes and the equilibrium $\hat{k}_2^*$ diverges:
 %
 \begin{equation}\label{eq:degeneracy}
 	\mathcal{D} \equiv \left\{\theta(\Lambda) = 1,\;\; \beta = 0\right\}
@@ -852,25 +868,25 @@ Under over-mechanization ($\theta < 1$) the product of roots is negative---one p
 %
 At $\mathcal{D}$ both the regime classification and the autonomous-progress channel collapse simultaneously---the system has no determinate growth rate. The degeneracy locus is a singularity in the $(\theta, \beta)$ parameter plane.
 
-\paragraph{The pure closure as limiting case.} When $\beta \to 0$, $\hat{k}_2^* \to 0$, the positive equilibrium collapses to the stagnation point, the quadratic degenerates to $(\theta - 1)\hat{k}(\hat{k} + \delta) = 0$, and the Bernoulli ODE of \S\ref{sec:accounting_laws} is recovered. The pure closure is the limiting case of Shaikh's specification in which the entire capital-to-capacity mapping is exhausted by the mechanization choice. The quadratic structure and Vieta's formulas are properties of Shaikh's extended closure, not of the accounting laws per se.
+When $\beta \to 0$, $\hat{k}_2^* \to 0$, the positive equilibrium collapses to the stagnation point, the quadratic degenerates to $(\theta - 1)\hat{k}(\hat{k} + \delta) = 0$, and the Bernoulli ODE of \S\ref{sec:regimes} holds. The pure closure is the limiting case of Shaikh's specification in which the entire capital-to-capacity mapping is exhausted by the mechanization choice. The quadratic structure and Vieta's formulas are properties of Shaikh's extended closure, not of the accounting laws per se. 
 
 % =========================================================================
 % §3.2.6 — Summary
+% [Absorbs orphaned summary from old §3.2.4; C2 applied]
 % =========================================================================
 
 \subsubsection{Summary: What the Accounting Laws Establish}
+\label{sec:accounting_summary}
 
-The accounting laws of capital accumulation under unbalanced growth establish the following.
+The regime classification, the instability result, the capital productivity mapping, and the absence of a feasible interior attractor all emerge from three ingredients: the accounting identity $\hat{k} + \delta = \phi^p B$, the unbalanced growth closure $\hat{y}^p = \theta\hat{k}$, and the investment-savings closure $\phi^p = s$. The first two are pre-behavioral; the third is the only behavioral assumption in the system. No investment function, Phillips curve, or demand-formation equation has been imposed.
 
-The \textbf{regime classification} is determined by the sign of $(\theta - 1)$. Over-mechanization ($\theta < 1$) generates decelerating accumulation; under-mechanization ($\theta > 1$) generates accelerating accumulation; balanced growth ($\theta = 1$) is the knife-edge singularity. This result requires the accounting identity, the pure closure, and the classical investment condition $\phi^p = s$---no further behavioral assumptions.
+The \textbf{regime classification} is determined by the sign of $(\theta - 1)$. Over-mechanization ($\theta < 1$) generates decelerating accumulation; under-mechanization ($\theta > 1$) generates accelerating accumulation; balanced growth ($\theta = 1$) is the knife-edge singularity.
 
 \textbf{No feasible interior attractor} exists under the pure closure. The supply-side accounting structure is inherently destabilizing. The demand side provides the stabilizing force.
 
 The \textbf{quadratic structure}---Vieta's formulas, the degeneracy locus, and the feasible interior equilibrium under over-mechanization---requires Shaikh's extended closure $\hat{y}^p = \theta\hat{k} + \beta$. The autonomous progress term $\beta$ introduces a channel absent from the mechanization possibilities frontier at its origin. This is a finding, not merely a technicality: it means the quadratic law is a property of Shaikh's empirical specification, not of the pure accounting laws, and locates it within his identification strategy. The coexistence of $\theta \neq 1$ and $\beta > 0$ in a single cointegrating relation embeds a theoretical tension between the regime-dependent mechanization channel and an autonomous component of technical change that has no grounding within Shaikh's own commitment to the full endogeneity of technical change to profitability.
 
-The \textbf{empirical task} is now defined. The transformation elasticity $\theta(\Lambda)$ must be recovered from observed data, and its regime-dependence tested. The next section develops Shaikh's identification strategy for this recovery, operating within his extended closure and the ARDL bounds-testing framework it implies.
-
-
+The empirical task is now defined: identifying the transformation elasticity $\theta(\Lambda)$ and estimating it from observed data, moving towards being tested on regime dependence. The next section develops Shaikh's identification strategy for this recovery, operating within his extended closure and the ARDL bounds-testing framework, showcasing the limits of single equation of single equation models for co-integration frameworks by discussing researcher decision making for model preference, under conditions of uncertaininty.
 
 
 
@@ -1614,7 +1630,6 @@ $\beta$ and $\alpha$ jointly --- exactly what the reduced-rank VECM
 architecture of \S\ref{sec:4reduced_rank} supplies.
 
 
-\subsection{A System Co-Integration Strategy for Estimating Capacity Utilization in the United States}
 
 %%%%% References %%%%%%%%%%%%%
 \pagebreak
@@ -1628,6 +1643,271 @@ architecture of \S\ref{sec:4reduced_rank} supplies.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \appendix
+
+
+% =============================================================================
+% Appendix — Derivation of the Accumulation Dynamics under Unbalanced Growth
+% Companion to §1.3.2
+% 2026-03-16
+% =============================================================================
+
+\appendix
+
+\section{Derivation of the Accumulation Dynamics under Unbalanced Growth}
+\label{app:bernoulli}
+
+This appendix provides the full derivation of the dynamical equations summarized in \S\ref{sec:regimes} and \S\ref{sec:extended_closure}. All results follow from three ingredients: the accounting identity $\hat{k} + \delta = \phi^p B$ (equation~\ref{eq:gross_rate}), the unbalanced growth closure $\hat{y}^p = \theta(\Lambda)\hat{k}$ (equation~\ref{eq:closure}), and the investment-savings closure $\phi^p = s$ (equation~\ref{eq:IS_closure}).
+
+% =========================================================================
+% A.1 — From accounting identity to the Bernoulli ODE
+% =========================================================================
+
+\subsection{The Pure Closure: Derivation of the Bernoulli ODE}
+\label{app:bernoulli_derivation}
+
+Begin from the accounting identity under the investment-savings closure:
+%
+\begin{equation}\label{eq:app_identity}
+	\hat{k} + \delta = s \, B
+\end{equation}
+%
+Since $s$ is constant, differentiate both sides with respect to time:
+%
+\begin{equation}\label{eq:app_diff}
+	\frac{d\hat{k}}{dt} = s \, \dot{B}
+\end{equation}
+%
+Rewrite $\dot{B}$ in terms of the growth rate of capital productivity:
+%
+\begin{equation}\label{eq:app_Bdot}
+	\dot{B} = B \, \hat{b}
+\end{equation}
+%
+Substituting into equation~\eqref{eq:app_diff} and using $sB = \hat{k} + \delta$ from the accounting identity:
+%
+\begin{equation}\label{eq:app_chain}
+	\frac{d\hat{k}}{dt} = s \, B \, \hat{b} = (\hat{k} + \delta) \, \hat{b}
+\end{equation}
+%
+This is the acceleration identity: the rate of change of the net accumulation rate equals the gross accumulation rate times the growth rate of capital productivity. It holds for any closure on $\hat{b}$.
+
+Now substitute the unbalanced growth closure. From equation~\eqref{eq:bhat}:
+%
+\begin{equation}\label{eq:app_bhat}
+	\hat{b} = (\theta(\Lambda) - 1) \, \hat{k}
+\end{equation}
+%
+Inserting into equation~\eqref{eq:app_chain}:
+%
+\begin{equation}\label{eq:app_bernoulli}
+	\boxed{\frac{d\hat{k}}{dt} = (\theta(\Lambda) - 1) \, \hat{k} \, (\hat{k} + \delta)}
+\end{equation}
+%
+This is a Bernoulli equation of order 2 in $\hat{k}$. The nonlinearity arises from the product $\hat{k}(\hat{k} + \delta)$: the acceleration of accumulation depends on both the current net rate and the gross rate, coupled through the regime parameter.
+
+% =========================================================================
+% A.2 — Analytical solution
+% =========================================================================
+
+\subsection{Analytical Solution via the Bernoulli Substitution}
+\label{app:bernoulli_solution}
+
+Expand the right-hand side of equation~\eqref{eq:app_bernoulli}:
+%
+\begin{equation}\label{eq:app_expanded}
+	\frac{d\hat{k}}{dt} = (\theta - 1)\,\hat{k}^2 + (\theta - 1)\,\delta\,\hat{k}
+\end{equation}
+%
+This is a Bernoulli equation of the form $\dot{x} = P(t)\,x + Q(t)\,x^n$ with $n = 2$, $P = (\theta - 1)\delta$, and $Q = (\theta - 1)$, all constant. Apply the standard substitution $v \equiv \hat{k}^{1-n} = \hat{k}^{-1}$:
+%
+\begin{equation}\label{eq:app_sub}
+	\dot{v} = -\hat{k}^{-2}\,\dot{\hat{k}}
+\end{equation}
+%
+Dividing equation~\eqref{eq:app_expanded} by $\hat{k}^2$:
+%
+\begin{equation}\label{eq:app_divided}
+	\hat{k}^{-2}\,\frac{d\hat{k}}{dt} = (\theta - 1) + (\theta - 1)\,\delta\,\hat{k}^{-1}
+\end{equation}
+%
+Substituting $v = \hat{k}^{-1}$ and $\dot{v} = -\hat{k}^{-2}\dot{\hat{k}}$:
+%
+\begin{equation}\label{eq:app_linear}
+	\frac{dv}{dt} = -(\theta - 1)\,\delta\,v - (\theta - 1)
+\end{equation}
+%
+This is a first-order linear ODE in $v$ with constant coefficients. Let $\alpha \equiv (\theta - 1)\delta$. The equation is:
+%
+\begin{equation}\label{eq:app_linear_standard}
+	\dot{v} + \alpha\,v = -(\theta - 1)
+\end{equation}
+%
+The integrating factor is $e^{\alpha t}$. The general solution is:
+%
+\begin{equation}\label{eq:app_v_solution}
+	v(t) = \left(v_0 + \frac{\theta - 1}{\alpha}\right) e^{-\alpha t} - \frac{\theta - 1}{\alpha}
+\end{equation}
+%
+Since $\alpha = (\theta - 1)\delta$, the ratio simplifies: $(\theta - 1)/\alpha = 1/\delta$. Therefore:
+%
+\begin{equation}\label{eq:app_v_simplified}
+	v(t) = \left(v_0 + \frac{1}{\delta}\right) e^{-(\theta-1)\delta\,t} - \frac{1}{\delta}
+\end{equation}
+%
+Substituting back $v = 1/\hat{k}$:
+%
+\begin{equation}\label{eq:app_khat_solution}
+	\boxed{\hat{k}(t) = \frac{1}{\left(\frac{1}{\hat{k}_0} + \frac{1}{\delta}\right) e^{-(\theta-1)\delta\,t} - \frac{1}{\delta}}}
+\end{equation}
+%
+where $\hat{k}_0 = \hat{k}(0)$ is the initial net accumulation rate.
+
+% =========================================================================
+% A.3 — Equilibria and stability
+% =========================================================================
+
+\subsection{Equilibria and Stability Analysis}
+\label{app:stability}
+
+The equilibria of equation~\eqref{eq:app_bernoulli} are the values $\hat{k}^*$ such that $d\hat{k}/dt = 0$. Factoring:
+%
+\begin{equation}\label{eq:app_equilibria}
+	(\theta - 1)\,\hat{k}\,(\hat{k} + \delta) = 0
+\end{equation}
+%
+For $\theta \neq 1$, the roots are:
+%
+\begin{equation}\label{eq:app_roots}
+	\hat{k}_1^* = 0, \qquad \hat{k}_2^* = -\delta
+\end{equation}
+%
+\textbf{Interpretation.} $\hat{k}^* = 0$ means the net capital stock is stationary: gross investment exactly covers depreciation ($I/K = \delta$). $\hat{k}^* = -\delta$ means gross investment is zero: the capital stock depreciates without replacement.
+
+\textbf{Stability.} Linearize around each equilibrium. The Jacobian of $f(\hat{k}) = (\theta-1)\hat{k}(\hat{k}+\delta)$ is:
+%
+\begin{equation}\label{eq:app_jacobian}
+	f'(\hat{k}) = (\theta - 1)(2\hat{k} + \delta)
+\end{equation}
+%
+At $\hat{k}_1^* = 0$:
+%
+\begin{equation}
+	f'(0) = (\theta - 1)\,\delta
+\end{equation}
+%
+\begin{itemize}
+	\item Over-mechanization ($\theta < 1$): $f'(0) < 0$ — the stagnation equilibrium is \textbf{locally stable}.
+	\item Under-mechanization ($\theta > 1$): $f'(0) > 0$ — the stagnation equilibrium is \textbf{unstable}.
+\end{itemize}
+
+At $\hat{k}_2^* = -\delta$:
+%
+\begin{equation}
+	f'(-\delta) = -(\theta - 1)\,\delta
+\end{equation}
+%
+\begin{itemize}
+	\item Over-mechanization ($\theta < 1$): $f'(-\delta) > 0$ — the zero-investment equilibrium is \textbf{unstable}.
+	\item Under-mechanization ($\theta > 1$): $f'(-\delta) < 0$ — the zero-investment equilibrium is \textbf{locally stable}.
+\end{itemize}
+
+\textbf{Summary of the phase portrait:}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Regime} & $\hat{k}^* = 0$ & $\hat{k}^* = -\delta$ & \textbf{In the feasible region $\hat{k} > 0$} \\
+		\midrule
+		Over-mechanization ($\theta < 1$) & Stable & Unstable & $\hat{k} \to 0$: accumulation stagnates \\
+		Under-mechanization ($\theta > 1$) & Unstable & Stable & $\hat{k} \to \infty$: accumulation explodes \\
+		\bottomrule
+	\end{tabular}
+	\caption{Stability of equilibria under the pure unbalanced growth closure.}
+	\label{tab:app_stability}
+\end{table}
+
+Under over-mechanization, any positive $\hat{k}_0 > 0$ decays to zero: the economy converges to a state where net accumulation vanishes. Under under-mechanization, any positive $\hat{k}_0 > 0$ diverges: the economy accelerates without bound. In neither case does a feasible interior attractor exist. This confirms the regime classification in Table~\ref{tab:regime_classification} and the instability result stated in \S\ref{sec:regimes}.
+
+\textbf{Verification from the explicit solution.} In equation~\eqref{eq:app_khat_solution}, the denominator contains the term $e^{-(\theta-1)\delta\,t}$. Under over-mechanization ($\theta < 1$), the exponent is positive and the exponential grows, driving the denominator toward $+\infty$ and $\hat{k}(t) \to 0$. Under under-mechanization ($\theta > 1$), the exponent is negative and the exponential decays, driving the denominator toward $-1/\delta < 0$ and $\hat{k}(t) \to -\delta$ — but since $\hat{k}$ passes through zero or diverges before reaching $-\delta$, the solution blows up in finite time. Both regimes are consistent with the linearized stability analysis.
+
+% =========================================================================
+% A.4 — Extended closure derivation
+% =========================================================================
+
+\subsection{The Extended Closure: Derivation of the Quadratic ODE}
+\label{app:extended_derivation}
+
+Under Shaikh's extended closure $\hat{y}^p = \theta\hat{k} + \beta$, the growth rate of capital productivity becomes:
+%
+\begin{equation}\label{eq:app_bhat_extended}
+	\hat{b} = \hat{y}^p - \hat{k} = (\theta - 1)\hat{k} + \beta
+\end{equation}
+%
+Substituting into the acceleration identity (equation~\ref{eq:app_chain}):
+%
+\begin{equation}\label{eq:app_extended_ode}
+	\frac{d\hat{k}}{dt} = (\hat{k} + \delta)\left[(\theta - 1)\hat{k} + \beta\right]
+\end{equation}
+%
+Expanding:
+%
+\begin{equation}\label{eq:app_quadratic}
+	\frac{d\hat{k}}{dt} = (\theta - 1)\hat{k}^2 + \left[(\theta - 1)\delta + \beta\right]\hat{k} + \beta\delta
+\end{equation}
+%
+The equilibria are the roots of $(\hat{k} + \delta)[(\theta - 1)\hat{k} + \beta] = 0$:
+%
+\begin{equation}\label{eq:app_extended_roots}
+	\hat{k}_1^* = -\delta, \qquad \hat{k}_2^* = \frac{-\beta}{\theta - 1} = \frac{\beta}{1 - \theta}
+\end{equation}
+
+\textbf{Stability of the new equilibrium.} The Jacobian of $g(\hat{k}) = (\hat{k}+\delta)[(\theta-1)\hat{k}+\beta]$ is:
+%
+\begin{equation}\label{eq:app_ext_jacobian}
+	g'(\hat{k}) = 2(\theta - 1)\hat{k} + (\theta-1)\delta + \beta
+\end{equation}
+%
+At $\hat{k}_2^* = \beta/(1 - \theta)$:
+%
+\begin{equation}
+	g'\!\left(\frac{\beta}{1-\theta}\right) = \frac{-2\beta(\theta-1)}{1-\theta} + (\theta-1)\delta + \beta = 2\beta + (\theta-1)\delta + \beta = 3\beta + (\theta-1)\delta
+\end{equation}
+%
+Under over-mechanization ($\theta < 1$) with $\beta > 0$: the sign depends on the balance between $3\beta$ and $(1-\theta)\delta$. For the empirically relevant case where $\beta$ is small relative to $\delta$ (secular technical progress is slower than the depreciation rate), $g'(\hat{k}_2^*) < 0$ and the equilibrium is \textbf{locally stable}. This confirms that autonomous technical progress provides the interior attractor that the pure closure lacks.
+
+\textbf{Limiting behavior.} As $\beta \to 0$: $\hat{k}_2^* \to 0$, the new equilibrium collapses onto the stagnation point $\hat{k}_1^* = 0$ of the pure closure, the quadratic degenerates to $(\theta-1)\hat{k}(\hat{k}+\delta) = 0$, and the Bernoulli ODE is recovered. The pure closure is the $\beta = 0$ limit of Shaikh's extended specification.
+
+% =========================================================================
+% A.5 — Vieta's formulas
+% =========================================================================
+
+\subsection{Vieta's Formulas for the Quadratic Equilibrium Structure}
+\label{app:vieta}
+
+Writing the equilibrium condition $(\theta-1)\hat{k}^2 + [(\theta-1)\delta + \beta]\hat{k} + \beta\delta = 0$ in standard form $a\hat{k}^2 + b\hat{k} + c = 0$ with:
+%
+\begin{equation}
+	a = \theta - 1, \qquad b = (\theta-1)\delta + \beta, \qquad c = \beta\delta
+\end{equation}
+%
+Vieta's formulas give:
+%
+\begin{align}
+	\hat{k}_1^* + \hat{k}_2^* &= -\frac{b}{a} = -\delta - \frac{\beta}{\theta - 1} \label{eq:app_vieta_sum} \\[6pt]
+	\hat{k}_1^* \cdot \hat{k}_2^* &= \frac{c}{a} = \frac{\beta\delta}{\theta - 1} \label{eq:app_vieta_product}
+\end{align}
+
+\textbf{Product of roots.} The sign of the product depends on $(\theta - 1)$:
+\begin{itemize}
+	\item Over-mechanization ($\theta < 1$): $\hat{k}_1^* \cdot \hat{k}_2^* < 0$ — one positive root ($\hat{k}_2^* > 0$) and one negative ($\hat{k}_1^* = -\delta$). A feasible attractor exists.
+	\item Under-mechanization ($\theta > 1$): $\hat{k}_1^* \cdot \hat{k}_2^* > 0$ — both roots negative. No feasible positive equilibrium.
+\end{itemize}
+
+\textbf{Sum of roots.} The depreciation rate $\delta$ anchors the sum. The term $\beta/(\theta-1)$ scales autonomous progress by the inverse degree of unbalanced growth: as $\theta \to 1$ from either side, this term diverges, reflecting the amplification of the structural accumulation imbalance near the knife-edge.
+
+\textbf{Degeneracy.} As $\theta \to 1$, $a \to 0$ and the quadratic degenerates. Simultaneously, $\hat{k}_2^* = \beta/(1-\theta) \to \pm\infty$. The joint condition $\theta = 1$ and $\beta = 0$ defines the degeneracy locus $\mathcal{D}$ at which the system has no determinate growth rate.
+
 
 
 \section{Data Glossary and Construction Ledger}

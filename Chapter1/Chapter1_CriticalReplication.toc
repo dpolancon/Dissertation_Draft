@@ -7,35 +7,41 @@
 \contentsline {subsection}{\numberline {2.4}Shaikh's Critique and the Requirement for Structural Identification}{15}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Conceptual Framework}{16}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Reproduction, Smooth Reproduction, and the Say's Law Benchmark}{16}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}The Accounting Laws of Capital Accumulation under Unbalanced Growth}{18}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Laws of Capital Accumulation under Unbalanced Growth}{18}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}The Rate of Capital Accumulation and the Three Channels of Distribution}{18}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}The Unbalanced Growth Closure and the Classical Investment Condition}{19}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}The Bernoulli ODE and Regime Classification}{19}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}The Mapping of Capital Productivity}{20}{subsubsection.3.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.5}The Extended Closure: Autonomous Technical Progress and the Quadratic Law}{21}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.2}The Unbalanced Growth Closure}{19}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Investment-Savings Closure}{19}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Accumulation Regimes and Supply-Side Instability}{20}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Mechanization, Autonomous Progress, and the Limits of Shaikh's Closure}{21}{subsubsection.3.2.5}%
 \contentsline {paragraph}{The extended ODE.}{22}{equation.12}%
-\contentsline {paragraph}{Vieta's formulas.}{22}{equation.15}%
-\contentsline {paragraph}{The degeneracy locus.}{22}{equation.17}%
-\contentsline {paragraph}{The pure closure as limiting case.}{22}{equation.18}%
+\contentsline {paragraph}{Vieta's formulas.}{23}{equation.15}%
+\contentsline {paragraph}{The degeneracy locus.}{23}{equation.17}%
+\contentsline {paragraph}{The pure closure as limiting case.}{23}{equation.18}%
 \contentsline {subsubsection}{\numberline {3.2.6}Summary: What the Accounting Laws Establish}{23}{subsubsection.3.2.6}%
-\contentsline {section}{\numberline {4}Shaikh's Framework for Measuring Capacity Utilization}{23}{section.4}%
+\contentsline {section}{\numberline {4}Shaikh's Framework for Measuring Capacity Utilization}{24}{section.4}%
 \contentsline {subsection}{\numberline {4.1}What the Critical Replication Tests}{24}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Data and Construction}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Data and Construction}{25}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Stage S0: Faithful Replication of the Capacity Benchmark}{25}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Stage S1: ARDL Specification Geometry}{27}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Stage S2: System-Level VECM Replication}{28}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}A System Co-Integration Strategy for Estimating Capacity Utilization in the United States}{30}{subsection.4.6}%
-\contentsline {section}{\numberline {5}References}{31}{section.5}%
-\contentsline {section}{References}{31}{section.5}%
-\contentsline {section}{\numberline {A}Data Glossary and Construction Ledger}{37}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Series Glossary}{37}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Imputed-Interest Correction}{37}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}Corrected Corporate Output: $\text {GVAcorp}_t$}{37}{subsection.A.3}%
-\contentsline {subsection}{\numberline {A.4}Reconstructed Corporate Capital Stock: $\text {KGCcorp}_t$}{37}{subsection.A.4}%
-\contentsline {paragraph}{GPIM accumulation rule.}{37}{subsection.A.4}%
-\contentsline {paragraph}{Three adjustments (applied before the recursion).}{38}{equation.40}%
-\contentsline {paragraph}{Inventories.}{38}{Item.3}%
-\contentsline {paragraph}{Accuracy.}{38}{Item.3}%
-\contentsline {subsection}{\numberline {A.5}Common Deflator: $p_t$}{38}{subsection.A.5}%
-\contentsline {subsection}{\numberline {A.6}Corrected Corporate Profit Share: $\text {Profshcorp}_t$}{38}{subsection.A.6}%
-\contentsline {section}{\numberline {B}Electric Motor Utilization: Physical Measures Lineage}{39}{appendix.B}%
+\contentsline {subsection}{\numberline {4.5}Stage S2: System-Level VECM Replication}{29}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}A System Co-Integration Strategy for Estimating Capacity Utilization in the United States}{31}{subsection.4.6}%
+\contentsline {section}{\numberline {5}References}{32}{section.5}%
+\contentsline {section}{References}{32}{section.5}%
+\contentsline {section}{\numberline {A}Derivation of the Accumulation Dynamics under Unbalanced Growth}{38}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}The Pure Closure: Derivation of the Bernoulli ODE}{38}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Analytical Solution via the Bernoulli Substitution}{38}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Equilibria and Stability Analysis}{39}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}The Extended Closure: Derivation of the Quadratic ODE}{40}{subsection.A.4}%
+\contentsline {subsection}{\numberline {A.5}Vieta's Formulas for the Quadratic Equilibrium Structure}{41}{subsection.A.5}%
+\contentsline {section}{\numberline {B}Data Glossary and Construction Ledger}{41}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Series Glossary}{41}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Imputed-Interest Correction}{41}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Corrected Corporate Output: $\text {GVAcorp}_t$}{42}{subsection.B.3}%
+\contentsline {subsection}{\numberline {B.4}Reconstructed Corporate Capital Stock: $\text {KGCcorp}_t$}{42}{subsection.B.4}%
+\contentsline {paragraph}{GPIM accumulation rule.}{42}{subsection.B.4}%
+\contentsline {paragraph}{Three adjustments (applied before the recursion).}{42}{equation.68}%
+\contentsline {paragraph}{Inventories.}{43}{Item.3}%
+\contentsline {paragraph}{Accuracy.}{43}{Item.3}%
+\contentsline {subsection}{\numberline {B.5}Common Deflator: $p_t$}{43}{subsection.B.5}%
+\contentsline {subsection}{\numberline {B.6}Corrected Corporate Profit Share: $\text {Profshcorp}_t$}{43}{subsection.B.6}%
+\contentsline {section}{\numberline {C}Electric Motor Utilization: Physical Measures Lineage}{43}{appendix.C}%
