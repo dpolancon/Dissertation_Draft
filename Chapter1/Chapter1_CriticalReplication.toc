@@ -22,23 +22,41 @@
 \contentsline {subsection}{\numberline {4.3}Stage S0: Faithful Replication of the Capacity Benchmark}{28}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Stage S1: ARDL Specification Geometry}{30}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Stage S2: System-Level VECM Replication}{31}{subsection.4.5}%
-\contentsline {section}{\numberline {5}References}{35}{section.5}%
-\contentsline {section}{References}{35}{section.5}%
-\contentsline {section}{\numberline {A}Derivation of the Accumulation Dynamics under Unbalanced Growth}{41}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}The Pure Closure: Derivation of the Bernoulli ODE}{41}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}Analytical Solution via the Bernoulli Substitution}{41}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}Equilibria and Stability Analysis}{42}{subsection.A.3}%
-\contentsline {subsection}{\numberline {A.4}The Extended Closure: Derivation of the Quadratic ODE}{43}{subsection.A.4}%
-\contentsline {subsection}{\numberline {A.5}Vieta's Formulas for the Quadratic Equilibrium Structure}{44}{subsection.A.5}%
-\contentsline {section}{\numberline {B}Data Glossary and Construction Ledger}{44}{appendix.B}%
-\contentsline {subsection}{\numberline {B.1}Series Glossary}{44}{subsection.B.1}%
-\contentsline {subsection}{\numberline {B.2}Imputed-Interest Correction}{44}{subsection.B.2}%
-\contentsline {subsection}{\numberline {B.3}Corrected Corporate Output: $\text {GVAcorp}_t$}{45}{subsection.B.3}%
-\contentsline {subsection}{\numberline {B.4}Reconstructed Corporate Capital Stock: $\text {KGCcorp}_t$}{45}{subsection.B.4}%
-\contentsline {paragraph}{GPIM accumulation rule.}{45}{subsection.B.4}%
-\contentsline {paragraph}{Three adjustments (applied before the recursion).}{45}{equation.67}%
-\contentsline {paragraph}{Inventories.}{46}{Item.3}%
-\contentsline {paragraph}{Accuracy.}{46}{Item.3}%
-\contentsline {subsection}{\numberline {B.5}Common Deflator: $p_t$}{46}{subsection.B.5}%
-\contentsline {subsection}{\numberline {B.6}Corrected Corporate Profit Share: $\text {Profshcorp}_t$}{46}{subsection.B.6}%
-\contentsline {section}{\numberline {C}Electric Motor Utilization: Physical Measures Lineage}{46}{appendix.C}%
+\contentsline {section}{\numberline {5}Critical Replication: S0--S2}{34}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The Confinement Architecture}{34}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Data}{34}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Variable Selection: Why NVA Replaces Shaikh's (Probable) GVA}{34}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Construction}{35}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}S0: Faithful Replication and the Fragility Architecture}{36}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Non-Replication}{36}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}The Four-Pairing Exercise}{36}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Persistence Amplification}{38}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}Identification Issues}{38}{subsubsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.5}What S0 Establishes}{38}{subsubsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.4}S1: Specification Confinement}{39}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}The Specification Search Shaikh Skipped}{39}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}IC Consensus}{39}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Bounds Test Evidence}{40}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4}What Case~2 Means}{41}{subsubsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.5}What S1 Resolves and What It Leaves Open}{41}{subsubsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.5}S2: System Estimation}{42}{subsection.5.5}%
+\contentsline {section}{\numberline {6}References}{43}{section.6}%
+\contentsline {section}{References}{43}{section.6}%
+\contentsline {section}{\numberline {A}Derivation of the Accumulation Dynamics under Unbalanced Growth}{49}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}The Pure Closure: Derivation of the Bernoulli ODE}{49}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Analytical Solution via the Bernoulli Substitution}{49}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Equilibria and Stability Analysis}{50}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}The Extended Closure: Derivation of the Quadratic ODE}{51}{subsection.A.4}%
+\contentsline {subsection}{\numberline {A.5}Vieta's Formulas for the Quadratic Equilibrium Structure}{52}{subsection.A.5}%
+\contentsline {section}{\numberline {B}Data Glossary and Construction Ledger}{52}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}Series Glossary}{52}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}Imputed-Interest Correction}{52}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Corrected Corporate Output: $\text {GVAcorp}_t$}{53}{subsection.B.3}%
+\contentsline {subsection}{\numberline {B.4}Reconstructed Corporate Capital Stock: $\text {KGCcorp}_t$}{53}{subsection.B.4}%
+\contentsline {paragraph}{GPIM accumulation rule.}{53}{subsection.B.4}%
+\contentsline {paragraph}{Three adjustments (applied before the recursion).}{53}{equation.68}%
+\contentsline {paragraph}{Inventories.}{54}{Item.3}%
+\contentsline {paragraph}{Accuracy.}{54}{Item.3}%
+\contentsline {subsection}{\numberline {B.5}Common Deflator: $p_t$}{54}{subsection.B.5}%
+\contentsline {subsection}{\numberline {B.6}Corrected Corporate Profit Share: $\text {Profshcorp}_t$}{54}{subsection.B.6}%
+\contentsline {section}{\numberline {C}Electric Motor Utilization: Physical Measures Lineage}{54}{appendix.C}%
