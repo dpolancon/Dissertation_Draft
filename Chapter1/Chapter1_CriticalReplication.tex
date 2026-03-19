@@ -960,41 +960,54 @@ The remainder of this section executes the confinement. \S\ref{sec:ch3_data} pre
 % §1.4.1 — Data and Construction
 % =========================================================================
 
-\subsection{Data and Construction}
+\subsection{Data}
 \label{sec:ch3_data}
 
-Replicating Shaikh's corporate utilization series requires three inputs: a
-corrected corporate output series $\text{GVAcorp}_t$, a matching
-reconstructed corporate capital stock $\text{KGCcorp}_t$, and a common
-deflator $p_t$ applied to \emph{both}. The profit-rate-consistent
-identification demands a single numeraire for output and capital; separate
-deflators would introduce a spurious relative-price term, violating the
-identification constraint derived in \citet[Appendix~6.6]{Shaikh2016}. The
-transformed series entering all three replication stages are therefore
-$y_t \equiv \ln(\text{GVAcorp}_t / p_t)$ and $k_t \equiv \ln(\text{KGCcorp}_t
-/ p_t)$. Both $\text{GVAcorp}_t$ and $\text{KGCcorp}_t$ require corrections
-relative to the raw NIPA and BEA figures: the output series applies an
-imputed-interest adjustment that removes a fictional intermediation cost
-embedded in NIPA corporate value added; the capital series is reconstructed
-via a Generalized Perpetual Inventory Method using BEA 1993 depletion rates,
-pre-war IRS initial values, and a Great Depression correction. Full
-construction formulas, source-line provenance, and vintage notes are in
-Appendix~\ref{app:data_ledger}.
+% ---------------------------------------------------------------
+% Variable selection: why NVA replaces Shaikh's (probable) GVA
+% ---------------------------------------------------------------
 
-A fourth variable, the corrected corporate profit share
-$\text{Profshcorp}_t$, is constructed in the same data environment as the
-empirical proxy for the rate of exploitation $\ln e_t$ entering the $m=3$
-VECM system in Stage~S2. It does not enter the S0 or S1 identification
-objects. One replication gap must be noted: Shaikh's Appendix~6.8 tables do
-not tabulate the output-side deflator used in the corporate utilization
-exercise, leaving $p_t$ implicit.\footnote{The Appendix~6.8 spreadsheet
-	includes an internal note cross-referencing Appendix~6.7.VI but states that
-	the matching utilization-construction data are not tabulated.} The GDP
-implicit price deflator (BEA NIPA Table~1.1.9, line~1) is used as the
-common numeraire---the minimal transparent choice consistent with the
-identification constraint. Non-zero RMSE between the replicated and
-published utilization series may therefore reflect this deflator gap rather
-than a specification error.
+Shaikh does not document which NIPA series correspond to the regression variables labeled \texttt{l\_ys} and \texttt{l\_ks} in Appendix Table~6.7.14. No replication dataset accompanies the published work. The replicator must reverse-engineer the data construction from indirect evidence---coefficient magnitudes, sample size, fit statistics---rather than from an explicit data manifest.
+
+The replication uses net value added of the corporate sector ($\text{VAcorp}_t$) rather than gross value added ($\text{GVAcorp}_t$). This correction is not an arbitrary switch chosen for better results; it is grounded in the GPIM formalization of the four output--capital pairings and can be stated as a theorem about residual structure. The capacity closure defines productive potential with respect to the gross capital stock:
+%
+\begin{equation}
+	\label{eq:capacity_closure}
+	Y_t^p = A_0\, e^{bt}\, \bigl(\tilde{K}_t^{G,R}\bigr)^{\theta(\Lambda)}
+\end{equation}
+%
+where $\tilde{K}_t^{G,R} = K_t^G / p_t$ is the gross stock under the common GDP deflator. Four logically possible pairings arise from crossing the output measure (GVA or NVA) with the capital stock concept (gross $K^G$ or net $K^N$). Each pairing recovers the same $\theta$ under appropriate auxiliary assumptions, but the pairings differ in their residual composition and fragility conditions.
+
+The gross-gross pairing (GVA~$\sim$~$K^G$) has the cleanest residual---it contains only the utilization term $\ln u_t$. But its cointegration is fragile to nonlinearity in the depreciation share $s_t^D = D_t / \text{GVA}_t$, which has trended upward secularly as consumption of fixed capital rises relative to gross output. When $s_t^D$ deviates from a linear trend---as current BEA release data indicates---the trending wedge contaminates the deterministic terms of the estimated cointegrating vector.
+
+The net-gross pairing (NVA~$\sim$~$K^G$) nets out the depreciation flow from the left-hand side, removing the trending wedge explicitly. Its residual $\ln u_t - \eta_t$ adds the depreciation-share deviation $\eta_t$, which is a stationary fluctuation of a flow ratio around a slow-moving trend---harmless to cointegration by construction. The cost is a noisier residual; the gain is robustness to the trending depreciation share that contaminates the gross-gross specification under current data.
+
+The two net-capital pairings ($K^N$) introduce a deeper fragility. The net-to-gross ratio $\psi_t = K_t^{N,R} / K_t^{G,R}$ drifts slowly over decades as asset composition changes, with a half-life on the order of 15--25~years. This slow drift contaminates the autoregressive dynamics of the ARDL, pushing the denominator $1 - \Sigma\gamma$ toward zero and amplifying the specification sensitivity of the long-run multiplier. The net capital stock also introduces a conceptual error: it discounts older vintages by accumulated depreciation (value attrition), not by service attrition. A machine 80\% depreciated still produces at full service capacity until it retires.
+
+NVA~$\sim$~$K^G$ is therefore the only pairing satisfying three criteria simultaneously: (i)~the correct capacity concept on the right-hand side (gross stock $=$ physical installed capacity), (ii)~stock-flow consistent output on the left-hand side (NVA nets out the depreciation flow mechanically tied to gross stock), and (iii)~no dependence on the net-to-gross ratio's stationarity. The four-pairing exercise reported in \S\ref{subsec:S0_results} indicates empirically that the capital concept dominates the specification sensitivity (25--85\% $\theta$ swing governed by $K^G$ versus $K^N$), while the output measure contributes less than three percentage points within any capital definition.
+
+\begin{figure}[!ht]
+	\centering
+	% \includegraphics[width=\textwidth]{figures/fig_depreciation_psi.pdf}
+	\caption{Depreciation share $s_t^D = D_t / \text{GVA}_t$ (left) and net-to-gross ratio $\psi_t = K_t^{N,R} / K_t^{G,R}$ (right), US corporate sector, 1947--2011. Linear trend overlays. The depreciation share deviations are small and stationary (flow ratio); the net-to-gross deviations are slow and persistent (stock ratio).}
+	\label{fig:depreciation_psi}
+\end{figure}
+
+% ---------------------------------------------------------------
+% Construction
+% ---------------------------------------------------------------
+
+The transformed series entering all replication stages are $y_t \equiv \ln(\text{VAcorp}_t / p_t)$ and $k_t \equiv \ln(\text{KGCcorp}_t / p_t)$, where $p_t$ is the GDP implicit price deflator (BEA NIPA Table~1.1.9, line~1). The common-deflator rule is a theoretical commitment: it eliminates the relative price channel between output goods and capital goods by construction, preserving the profit-rate-consistent identification derived in \citet[Appendix~6.6]{Shaikh2016}. Full construction formulas, source-line provenance, and release notes are in Appendix~\ref{app:data_ledger}.
+
+Sample: 1947--2011 ($T = 65$), with effective estimation sample determined by the lag order. The three step dummies $d_{1956}$, $d_{1974}$, $d_{1980}$ follow Shaikh's periodization. In S0, these enter the long-run equation as permanent level shifts; in S1, they are treated as transitory (impulse dummies, short-run only) or omitted, consistent with PSS case discipline.
+
+The canonical initial-year gross capital stock is $\text{KGC}_{1947}^{corp} = 170.58$~Bn, reconstructed via the Generalized Perpetual Inventory Method. Shaikh does not report this value; discrepancies between the replication's initial value and Shaikh's propagate through the entire capital stock series and into the ARDL coefficients.
+
+A fourth variable, the corrected corporate profit share $\text{Profshcorp}_t$, is constructed in the same data environment as the empirical proxy for the rate of exploitation $\ln e_t$ entering the $m=3$ VECM system in Stage~S2. It does not enter the S0 or S1 identification objects.
+
+One replication gap must be noted: Shaikh's Appendix~6.8 tables do not tabulate the output-side deflator used in the corporate utilization exercise, leaving $p_t$ implicit.\footnote{The Appendix~6.8 spreadsheet includes an internal note cross-referencing Appendix~6.7.VI but states that the matching utilization-construction data are not tabulated.} The GDP implicit price deflator (BEA NIPA Table~1.1.9, line~1) is used as the common numeraire---the minimal transparent choice consistent with the identification constraint. Non-zero RMSE between the replicated and published utilization series may therefore reflect this deflator gap rather than a specification error.
+
+The estimated $\hat{\theta}$ recovered from the ARDL long-run multiplier is an operational proxy for the transformation elasticity $\theta(\Lambda)$, not a direct measure of it. The proxy relationship depends on the validity of the capacity closure~\eqref{eq:capacity_closure}, the common-deflator rule, and the stationarity of the cointegrating residual.
 
 
 % =========================================================================
@@ -1222,6 +1235,106 @@ selected.
 
 
 % =========================================================================
+% S0 RESULTS — inserted from S1_4_Results_v2.tex
+% =========================================================================
+
+\subsubsection{S0 Results: Non-Replication}
+\label{subsec:S0_results}
+
+No coefficient, fit statistic, or long-run multiplier from Shaikh's Appendix Table~6.7.14 replicates under current-release BEA data. The discrepancy is not marginal. Shaikh's capital stock coefficients (L0 through L4) are an order of magnitude larger than the replication's, and all are individually significant at the 1\% level; the replication finds significance only at L0 and L1. Shaikh's RMSE (0.016) is roughly half the replication's (0.031). The long-run elasticity $\theta$ is in the right neighbourhood---0.661 (Shaikh) versus 0.745 (replication, no trend)---but the path to it is entirely different: different autoregressive structure, different denominator, different dummy effects.
+
+The most likely sources are data release differences (the BEA's comprehensive revisions, especially the 2013 R\&D capitalization), Shaikh's undocumented variable definitions and deflator choice, and the unreported initial capital stock value. These are reproducibility failures, not specification failures---they concern the inputs to the method, not the method itself. The non-replication concerns point estimates, not the existence of the cointegrating relationship. Whether output and capital maintain a long-run equilibrium under current-release data is a separate question, tested in the four-pairing exercise and the PSS bounds test below.
+
+\begin{table}[!ht]
+	\centering
+	\small
+	\caption{ARDL(2,4) coefficient comparison: Shaikh (2016) versus replication}
+	\label{tab:S0_coefficients}
+	\begin{tabular}{lrrr}
+		\toprule
+		Variable & Shaikh (2016) & Replication (no trend) & Replication (with trend) \\
+		\midrule
+		\multicolumn{4}{l}{\textit{Lagged dependent $(\ln Y)$}} \\
+		L1 & $1.298^{***}$  & $0.891^{***}$  & $0.884^{***}$ \\
+		L2 & $-0.393^{***}$ & $-0.015$       & $-0.016$ \\
+		\addlinespace
+		\multicolumn{4}{l}{\textit{Capital stock $(\ln K)$}} \\
+		L0 & $5.086^{***}$  & $0.753^{**}$   & $0.755^{**}$ \\
+		L1 & $-14.285^{***}$& $-1.143^{***}$ & $-1.157^{***}$ \\
+		L2 & $15.705^{***}$ & $0.057$        & $0.063$ \\
+		L3 & $-8.296^{***}$ & $0.286$        & $0.283$ \\
+		L4 & $1.853^{**}$   & $0.139$        & $0.128$ \\
+		\addlinespace
+		\multicolumn{4}{l}{\textit{Dummies}} \\
+		$d_{74}$ & $-0.081^{***}$ & $-0.013$ & $-0.008$ \\
+		$d_{56}$ & $-0.071^{***}$ & $-0.012$ & $-0.007$ \\
+		$d_{80}$ & $-0.045^{**}$  & $-0.010$ & $-0.009$ \\
+		\addlinespace
+		\multicolumn{4}{l}{\textit{Deterministic}} \\
+		Trend    & ---  & ---   & $0.001$ \\
+		Constant & $0.207^{**}$ & $0.257^{*}$ & $0.462$ \\
+		\bottomrule
+	\end{tabular}
+	\par\vspace{0.3em}
+	\footnotesize $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$. Sample: 1951--2011 ($N=61$). Replication uses NVA~$\sim$~$K^G$ with current-release BEA data.
+\end{table}
+
+
+\subsubsection{S0 Results: The Four-Pairing Exercise}
+
+To determine whether the specification sensitivity documented at the NVA~$\sim$~$K^G$ baseline is an artifact of the particular pairing, the ARDL(2,4) is re-estimated across all four output--capital combinations, each with and without an explicit linear trend. Eight specifications total, all other settings identical.
+
+\begin{table}[!ht]
+	\centering
+	\small
+	\caption{Four-pairing robustness: $\theta$, $\pi_y$, and $1 - \Sigma\gamma$ across output--capital definitions}
+	\label{tab:S0_four_pairings}
+	\begin{tabular}{llrrr}
+		\toprule
+		Pairing & Spec & $\theta$ & $\pi_y$ & $1 - \Sigma\gamma$ \\
+		\midrule
+		GVA~$\sim$~$K^G$ & no trend & $0.750$ & $-0.089^{*}$ & $0.111$ \\
+		GVA~$\sim$~$K^G$ & trend    & $0.565$ & $+0.013$     & $0.119$ \\
+		NVA~$\sim$~$K^G$ & no trend & $0.745$ & $-0.096^{*}$ & $0.124$ \\
+		NVA~$\sim$~$K^G$ & trend    & $0.541$ & $+0.013$     & $0.132$ \\
+		\addlinespace
+		NVA~$\sim$~$K^N$ & no trend & $0.807$ & $-0.052^{*}$ & $0.063$ \\
+		NVA~$\sim$~$K^N$ & trend    & $0.129$ & $-0.029$     & $0.089$ \\
+		GVA~$\sim$~$K^N$ & no trend & $0.769$ & $-0.046^{*}$ & $0.053$ \\
+		GVA~$\sim$~$K^N$ & trend    & $0.111$ & $-0.046$     & $0.077$ \\
+		\bottomrule
+	\end{tabular}
+	\par\vspace{0.3em}
+	\footnotesize $^{*}p<0.05$ on the RECM error-correction coefficient. All three dummies individually insignificant ($p > 0.5$) across all eight specifications.
+\end{table}
+
+The table partitions into two blocks governed by the capital stock concept, not the output measure. The gross~$K$ block ($1 - \Sigma\gamma \approx 0.11$--$0.13$) shows $\theta$ dropping approximately 25\% upon trend inclusion, with $\pi_y$ flipping from negative-significant to positive-insignificant. The net~$K$ block ($1 - \Sigma\gamma \approx 0.05$--$0.09$) shows $\theta$ collapsing approximately 85\%, with $\pi_y$ retaining its sign but losing all statistical significance. Interpreted through the measurement framework, these results suggest that the ARDL long-run multiplier is not identified as a stable structural parameter at this estimation site---it is a specification-contingent projection through a near-zero denominator, whose severity is predictable from the capital stock concept used.
+
+\begin{figure}[!ht]
+	\centering
+	% \includegraphics[width=\textwidth]{figures/cu_comparison_8series.pdf}
+	\caption{Implicit capacity utilization: 8 pairings versus benchmarks, US corporate sector, 1947--2011. Left: No trend. Right: With trend. Blue: Gross~$K$. Orange: Net~$K$. Dark red: Shaikh $u_K$. Black: FRB.}
+	\label{fig:S0_8pairings}
+\end{figure}
+
+
+\subsubsection{S0 Results: Persistence Amplification}
+
+The instability has a precise mechanism. The ARDL long-run multiplier $\theta = \Sigma\hat{\phi}_i / (1 - \Sigma\hat{\gamma}_i)$ is a ratio in which the denominator measures how fast output forgets its own past---the memory decay rate of the autoregressive process. When the denominator is small, output has long memory: shocks persist, the ``long run'' to which the multiplier extrapolates is distant, and the extrapolation is sensitive to anything that perturbs the allocation of trending variation between the autoregressive lags and the capital stock coefficients.
+
+A trend term competes with $\ln K$ for the same upward-trending variation in a postwar sample where capital grows monotonically. The insignificant trend carries no information; it merely reshuffles weight between collinear regressors. A structural parameter should be invariant to such a reshuffling. $\theta$ is not, because the persistence of output amplifies the specification perturbation into a qualitative change in the long-run projection. The persistence amplification documented here is the econometric counterpart of the long-memory amplification that the accounting laws predict when $\theta < 1$: in the over-mechanization regime, the output--capital system has a weak attractor and long memory, and the ARDL's denominator sits close to zero as a direct consequence.
+
+A note on interpretation is warranted. This persistence amplification is a property of the ARDL estimator at this site. Whether it reflects genuine long-memory dynamics in the output--capital relationship or an artifact of near-unit-root estimation cannot be resolved within the ARDL framework alone. The VECM estimator in S2 recovers $\theta$ as an eigenvector of a reduced-rank regression---a fundamentally different approach that does not pass through the near-zero divisor.
+
+
+\subsubsection{What S0 Establishes}
+
+S0 documents a fragility architecture that persists across every specification and variable pairing tested. The method's core pathologies---the persistence amplification of specification choices through the near-zero denominator, the trend sensitivity, the capital-concept regime---are structural properties of the ARDL long-run multiplier at this estimation site, not artifacts of Shaikh's particular data release or variable definitions.
+
+Three questions remain open: (O1)~is the specification arbitrary? (O2)~which PSS case governs the bounds test? (O3)~does the normalization assumption bias the utilization series? S1 addresses O1 and O2 by releasing the specification axis.
+
+
+% =========================================================================
 % §1.4.3 — Stage S1: ARDL Specification Geometry
 % =========================================================================
 
@@ -1381,8 +1494,107 @@ conditional single-equation relation.
 
 
 % =========================================================================
-% §1.4.4 — Stage S2: System-Level VECM Replication
+% S1 RESULTS — inserted from S1_4_Results_v2.tex
 % =========================================================================
+
+\subsubsection{S1 Results: IC Consensus}
+
+Both AIC and BIC select ARDL(1,3) under Cases~2--3, with and without Shaikh's dummies. The convergence is the strongest possible confinement of the specification axis. The lag structure is asymmetric---one lag on output, three on capital---and invariant to the dummy toggle. Output adjusts to shocks within a year; capital effects propagate over three. This asymmetry is physically coherent: a flow variable responds faster than a stock variable.
+
+Shaikh's ARDL(2,4) ranks fourth by AIC under Cases~2--3, almost 3.5 AIC points behind the winner. The data does not want the second output lag or the fourth capital lag. The trend class (Cases~4--5) is dominated: its best specification loses to the no-trend winner by 2 AIC points.
+
+\begin{table}[!ht]
+	\centering
+	\small
+	\caption{IC contest: Top-5 ARDL lag orders by model class (with impulse dummies)}
+	\label{tab:S1_IC_contest}
+	\begin{tabular}{llccrl}
+		\toprule
+		Model class & PSS cases & $p$ & $q$ & AIC & BIC \\
+		\midrule
+		\multicolumn{6}{l}{\textit{No constant (Case~1)}} \\
+		& Case~1 & 3 & 3 & $-260.72$ & $-237.33$ \\
+		\addlinespace
+		\multicolumn{6}{l}{\textit{Constant (Cases~2--3)}} \\
+		& \textbf{Cases~2--3} & \textbf{1} & \textbf{3} & $\bm{-270.23}$ & $\bm{-248.96}$ \\
+		& Cases~2--3 & 3 & 3 & $-270.15$ & $-244.62$ \\
+		& Cases~2--3 & 2 & 3 & $-268.47$ & $-245.07$ \\
+		& Cases~2--3 & 3 & 4 & $-266.81$ & --- \\
+		\addlinespace
+		\multicolumn{6}{l}{\textit{Constant + trend (Cases~4--5)}} \\
+		& Cases~4--5 & 1 & 3 & $-268.23$ & --- \\
+		\bottomrule
+	\end{tabular}
+	\par\vspace{0.3em}
+	\footnotesize Global AIC and BIC winner bolded. Top entries per model class shown; full grid in Appendix. Shaikh's ARDL(2,4) = Cases~2--3 row~4.
+\end{table}
+
+ICOMP---the information complexity criterion of \citet{Bozdogan1988}, which penalizes not only the number of free parameters but the degree of interdependence among them through the maximal information complexity of the inverse Fisher information matrix---agrees with AIC and BIC at the same specification. Three criteria with fundamentally different penalty structures select the same neighbourhood. The specification axis is genuinely resolved.
+
+\begin{figure}[!ht]
+	\centering
+	% \includegraphics[width=\textwidth]{figures/fig_S1_composite.pdf}
+	\caption{S1 specification lattice. (a)~Admissible cloud in the fit-complexity plane; Pareto frontier in dark red; Shaikh's ARDL(2,4) marked---dominated. (b)~IC tangency points cluster at $k \approx 6$. (c)~Informational domain $\hat{F}^{0.20}$: 15 specifications, $\theta \in [0.40,\, 0.71]$. (d)~Utilization band from frontier specifications versus benchmarks.}
+	\label{fig:S1_composite}
+\end{figure}
+
+
+\subsubsection{S1 Results: Bounds Test Evidence}
+
+The PSS bounds test is evaluated at exact finite-sample critical values conditioned on $T = 65$, using $R = 40{,}000$ simulation draws. Asymptotic PSS critical values---the default in most software---are too permissive for this sample size; the finite-sample penalty makes the Case~2 rejection more conservative, and therefore more credible, than it would appear under asymptotic tables.
+
+\begin{table}[!ht]
+	\centering
+	\small
+	\caption{PSS (2001) bounds test: dummy toggle comparison. ARDL(1,3), Cases~I--V.}
+	\label{tab:S1_bounds_toggle}
+	\begin{tabular}{lrrrr}
+		\toprule
+		& \multicolumn{2}{c}{With dummies} & \multicolumn{2}{c}{Without dummies} \\
+		\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+		Case & $F$ & $p$ & $F$ & $p$ \\
+		\midrule
+		Case~1 & $2.03$ & $0.272$ & $5.19$ & $0.023$ \\
+		\textbf{Case~2} & $\bm{6.22}$ & $\bm{0.009}$ & $\bm{7.03}$ & $\bm{0.004}$ \\
+		Case~3 & $6.44$ & $0.038$ & $5.27$ & $0.077$ \\
+		Case~4 & $4.22$ & $0.145$ & $3.73$ & $0.213$ \\
+		Case~5 & $2.41$ & $0.693$ & $1.32$ & $0.898$ \\
+		\bottomrule
+	\end{tabular}
+	\par\vspace{0.3em}
+	\footnotesize Exact $p$-values, $T=65$, $R=40{,}000$ draws. Removing dummies concentrates evidence into Case~2 alone; Case~3 weakens from $p=0.038$ to $p=0.077$. $t$-bounds test structurally undefined for Cases~2 and~4.
+\end{table}
+
+Cointegration is found under Case~2 ($p = 0.004$) and marginally under Case~3 ($p = 0.077$). Every specification that includes a trend (Cases~4--5) fails. The trend exclusion is now established through three independent channels: the IC contest, the bounds test, and the S0 direct estimation. All three converge.
+
+The $t$-bounds test never rejects across any case or dummy toggle. The system cointegrates in the joint~$F$ sense but the speed at which output adjusts toward equilibrium is indistinguishable from zero. The capacity utilization series implied by the ARDL is constructed from a cointegrating residual whose error-correction dynamics cannot be distinguished from zero---the ``equilibrium'' to which the series is referenced barely functions as an attractor within the sample.
+
+
+\subsubsection{S1 Results: What Case~2 Means}
+
+Case~2 restricts the intercept to the long-run equation: $\ln Y^* = \mu + \theta \ln K$. No drift in the short-run dynamics. The system has one fixed equilibrium level across the entire sample---one $\mu$, one $\theta$, 1947--2011.
+
+This restriction is the necessary condition for Shaikh's demeaning normalization to be internally coherent. The transformation $\hat{u}_t = \exp(\text{ECT}_t - \overline{\text{ECT}})$ requires that the ECT have a stable mean across the sample. Under Case~2 (no short-run drift), it does. Under Case~3 (drift permitted), the mean migrates and the demeaning produces a moving target disguised as a fixed normalization. The data indicates cointegration strongest precisely where the normalization is valid.
+
+But ``one fixed equilibrium across 1947--2011'' means the accumulation regime did not shift---across the Fordist golden age, the stagflationary crisis, the neoliberal turn, financialization, and the Great Recession. The confinement that makes the cointegrating evidence strongest is the same confinement that most aggressively suppresses the regime-dependence the theoretical framework predicts.
+
+
+\subsubsection{What S1 Resolves and What It Leaves Open}
+
+S1 confines the specification axis completely. The IC-preferred specification is ARDL(1,3) under Cases~2--3. AIC, BIC, and ICOMP converge. The lag structure is stable. The trend is excluded by three independent channels.
+
+The S0 pathologies persist under proper specification search. The persistence amplification is not a lag-order artifact---it is a structural property of the ARDL long-run multiplier near the unit root boundary. The weak error correction is not fixable by better specification---the $t$-test fails under the IC-preferred order just as it did under Shaikh's arbitrary (2,4). The method works---cointegration exists---but the ceiling is visible.
+
+The ARDL framework pre-commits to three architectural constraints that define this ceiling: rank~$= 1$ (assumed, not tested), normalization on output (capital treated as weakly exogenous), and long-run multiplier recovery through the near-zero denominator (the persistence amplification mechanism). No specification search can release these constraints. They are properties of the single-equation framework, not of any particular specification within it.
+
+S2 releases all three simultaneously by moving to the Johansen VECM---rank determination replaces the assumed rank, the loading matrix reveals which variables adjust, and the eigenvector estimator recovers $\theta$ without passing through a near-zero divisor.
+
+\begin{figure}[!ht]
+	\centering
+	% \includegraphics[width=\textwidth]{figures/cu_fan_S0_S1.pdf}
+	\caption{S0--S1 closing figure: capacity utilization specification fan. 24 series from the full \{pairing $\times$ lag order $\times$ trend $\times$ dummy\} grid, faceted by capital stock concept. Left: Gross~$K$ (blue)---tight band. Right: Net~$K$ (orange)---wide band, $\psi_t$ contamination visible. Benchmarks: Shaikh~$u_K$ (dark red), FRB (black).}
+	\label{fig:S0S1_fan}
+\end{figure}
 
 \subsection{Stage S2: System-Level VECM Replication}
 \label{sec:S2}
@@ -1634,383 +1846,6 @@ structural heterogeneity of the kind the accounting laws of
 parametric change is tested within the VECM framework through historical
 toggles under a regulationist interpretation of the Fordist/post-Fordist
 boundary.
-
-
-% ============================================================
-% §1.4 — Critical Replication: S0–S2 Results
-% Chapter 1 — A Historical Trace of Capacity Utilization Measurements
-% Dissertation: Diego Polanco
-%
-% WLM v3.1 calibrated: Critical Replication Results Mode + Econometrics Interpreter
-% Epistemic discipline: findings are properties of the estimator at this site,
-%   not structural claims, unless corroborated by S2/S3.
-% Register: reportative throughout S0–S2.
-%
-% Recalibration edits applied (7/7):
-%   [R1] §1.4.1 — mechanism statement before procedure
-%   [R2] §1.4.3 — identification layer in non-replication
-%   [R3] §1.4.3 — identification + reinterpretation after four-pairing table
-%   [R4] §1.4.4 — measurement infrastructure reminder on exact p-values
-%   [R5] §1.4.4 — reinterpretation of split verdict for CU series
-%   [R6] §1.4.2 — proxy transparency statement for θ̂
-%   [R7] — language softened: "confirms" → "indicates"
-%
-% Draft v2 | 2026-03-18
-% ============================================================
-
-
-
-\label{sec:results}
-
-
-% =========================================================================
-% §1.4.1 — The Confinement Architecture
-% =========================================================================
-
-\subsection{The Confinement Architecture}
-\label{subsec:confinement_architecture}
-
-% [R1] Mechanism statement before procedure
-The theoretical object under investigation is $\theta(\Lambda)$---the transformation elasticity of capital stock into productive capacity, which the accounting laws of \S\ref{sec:conceptual_framework} predict to be regime-dependent. The critical replication tests whether the ARDL methodology can recover this object under fixed-parameter estimation, and at what cost to identification.
-
-The replication proceeds along four axes of a model uncertainty lattice: specification (S1), estimator (S2), institutional configuration (S3), and external restriction (Chile). The first two axes are methodological---they reduce researcher degrees of freedom. The second two are structural---they test whether the fixed-parameter estimation has suppressed detectable regime-dependence.
-
-S0 is the lattice origin. It holds Shaikh's specification fixed---the ARDL(2,4), the three step dummies, the common deflator, the undisclosed PSS case---and asks what reproduces. S0 operates in the scalar $\theta$ world: one elasticity, one adjustment channel, one normalization. S1--S2 remain in that world; only S3 tests $\theta(\Lambda)$ via parametric change within the confined model.
-
-The pipeline is: corporate accounting objects $\to$ common deflator $\to$ ARDL estimation $\to$ bounds admissibility $\to$ long-run multiplier recovery $\to$ capacity benchmark $\to$ utilization residual. Each stage inherits the output of the previous one. S3 inherits the utilization series implied by the confined S2 system---it does not re-estimate $\theta$ from scratch but tests whether the survivor of three prior stages is structurally stable across the Fordist/post-Fordist boundary.
-
-
-% =========================================================================
-% §1.4.2 — Data
-% =========================================================================
-
-\subsection{Data}
-\label{subsec:data}
-
-\subsubsection{Variable Selection: Why NVA Replaces Shaikh's (Probable) GVA}
-
-Shaikh does not document which NIPA series correspond to the regression variables labeled \texttt{l\_ys} and \texttt{l\_ks} in Appendix Table~6.7.14. No replication dataset accompanies the published work. The replicator must reverse-engineer the data construction from indirect evidence---coefficient magnitudes, sample size, fit statistics---rather than from an explicit data manifest.
-
-The replication uses net value added of the corporate sector ($\text{VAcorp}_t$) rather than gross value added ($\text{GVAcorp}_t$). This correction is not an arbitrary switch chosen for better results; it is grounded in the GPIM formalization of the four output--capital pairings and can be stated as a theorem about residual structure.
-
-The capacity closure defines productive potential with respect to the gross capital stock:
-%
-\begin{equation}
-	\label{eq:capacity_closure}
-	Y_t^p = A_0\, e^{bt}\, \bigl(\tilde{K}_t^{G,R}\bigr)^{\theta(\Lambda)}
-\end{equation}
-%
-where $\tilde{K}_t^{G,R} = K_t^G / p_t$ is the gross stock under the common GDP deflator. Four logically possible pairings arise from crossing the output measure (GVA or NVA) with the capital stock concept (gross $K^G$ or net $K^N$). Each pairing recovers the same $\theta$ under appropriate auxiliary assumptions, but the pairings differ in their residual composition and fragility conditions.
-
-The gross-gross pairing (GVA~$\sim$~$K^G$) has the cleanest residual---it contains only the utilization term $\ln u_t$. But its cointegration is fragile to nonlinearity in the depreciation share $s_t^D = D_t / \text{GVA}_t$, which has trended upward secularly as consumption of fixed capital rises relative to gross output. When $s_t^D$ deviates from a linear trend---as current BEA release data indicates---the trending wedge contaminates the deterministic terms of the estimated cointegrating vector.
-
-The net-gross pairing (NVA~$\sim$~$K^G$) nets out the depreciation flow from the left-hand side, removing the trending wedge explicitly. Its residual $\ln u_t - \eta_t$ adds the depreciation-share deviation $\eta_t$, which is a stationary fluctuation of a flow ratio around a slow-moving trend---harmless to cointegration by construction. The cost is a noisier residual; the gain is robustness to the trending depreciation share that contaminates the gross-gross specification under current data.
-
-The two net-capital pairings ($K^N$) introduce a deeper fragility. The net-to-gross ratio $\psi_t = K_t^{N,R} / K_t^{G,R}$ drifts slowly over decades as asset composition changes, with a half-life on the order of 15--25~years. This slow drift contaminates the autoregressive dynamics of the ARDL, pushing the denominator $1 - \Sigma\gamma$ toward zero and amplifying the specification sensitivity of the long-run multiplier. The net capital stock also introduces a conceptual error: it discounts older vintages by accumulated depreciation (value attrition), not by service attrition. A machine 80\% depreciated still produces at full service capacity until it retires. Net stock measures book value, not physical installed capacity.
-
-NVA~$\sim$~$K^G$ is therefore the only pairing satisfying three criteria simultaneously: (i)~the correct capacity concept on the right-hand side (gross stock = physical installed capacity), (ii)~stock-flow consistent output on the left-hand side (NVA nets out the depreciation flow mechanically tied to gross stock), and (iii)~no dependence on the net-to-gross ratio's stationarity. The four-pairing exercise reported in \S\ref{subsec:S0_results} indicates empirically that the capital concept dominates the specification sensitivity (25--85\% $\theta$ swing governed by $K^G$ versus $K^N$), while the output measure contributes less than three percentage points within any capital definition.
-
-% [R7] "confirms" → "indicates" applied above
-
-\begin{figure}[!ht]
-	\centering
-	% \includegraphics[width=\textwidth]{figures/fig_depreciation_psi.pdf}
-	\caption{Depreciation share $s_t^D = D_t / \text{GVA}_t$ (left) and net-to-gross ratio $\psi_t = K_t^{N,R} / K_t^{G,R}$ (right), US corporate sector, 1947--2011. Linear trend overlays. The depreciation share deviations are small and stationary (flow ratio); the net-to-gross deviations are slow and persistent (stock ratio). The contrast motivates the pairing selection.}
-	\label{fig:depreciation_psi}
-\end{figure}
-
-
-\subsubsection{Construction}
-
-The transformed series entering all replication stages are $y_t \equiv \ln(\text{VAcorp}_t / p_t)$ and $k_t \equiv \ln(\text{KGCcorp}_t / p_t)$, where $p_t$ is the GDP implicit price deflator (BEA NIPA Table~1.1.9, line~1). The common-deflator rule is a theoretical commitment: it eliminates the relative price channel between output goods and capital goods by construction, preserving the profit-rate-consistent identification derived in \citet[Appendix~6.6]{Shaikh2016}. Full construction formulas, source-line provenance, and release notes are in Appendix~\ref{app:data_ledger}.
-
-Sample: 1947--2011 ($T = 65$), with effective estimation sample determined by the lag order. The three step dummies $d_{1956}$, $d_{1974}$, $d_{1980}$ follow Shaikh's periodization. In S0, these enter the long-run equation as permanent level shifts; in S1, they are treated as transitory (impulse dummies, short-run only) or omitted, consistent with PSS case discipline.
-
-The canonical initial-year gross capital stock is $\text{KGC}_{1947}^{corp} = 170.58$~Bn, reconstructed via the Generalized Perpetual Inventory Method. Shaikh does not report this value; discrepancies between the replication's initial value and Shaikh's propagate through the entire capital stock series and into the ARDL coefficients.
-
-% [R6] Proxy transparency statement
-The estimated $\hat{\theta}$ recovered from the ARDL long-run multiplier is an operational proxy for the transformation elasticity $\theta(\Lambda)$, not a direct measure of it. The proxy relationship depends on the validity of the capacity closure~\eqref{eq:capacity_closure}, the common-deflator rule, and the stationarity of the cointegrating residual.
-
-
-% =========================================================================
-% §1.4.3 — S0: Faithful Replication and the Fragility Architecture
-% =========================================================================
-
-\subsection{S0: Faithful Replication and the Fragility Architecture}
-\label{subsec:S0_results}
-
-
-\subsubsection{Non-Replication}
-
-No coefficient, fit statistic, or long-run multiplier from Shaikh's Appendix Table~6.7.14 replicates under current-release BEA data. The discrepancy is not marginal. Shaikh's capital stock coefficients (L0 through L4) are an order of magnitude larger than the replication's, and all are individually significant at the 1\% level; the replication finds significance only at L0 and L1. Shaikh's RMSE (0.016) is roughly half the replication's (0.031). The long-run elasticity $\theta$ is in the right neighborhood---0.661 (Shaikh) versus 0.745 (replication, no trend)---but the path to it is entirely different: different autoregressive structure, different denominator, different dummy effects.
-
-The most likely sources are data release differences (the BEA's comprehensive revisions, especially the 2013 R\&D capitalization), Shaikh's undocumented variable definitions and deflator choice, and the unreported initial capital stock value. These are reproducibility failures, not specification failures---they concern the inputs to the method, not the method itself.
-
-% [R2] Identification layer
-The non-replication concerns point estimates, not the existence of the cointegrating relationship. Whether output and capital maintain a long-run equilibrium under current-release data is a separate question, tested in the four-pairing exercise and the PSS bounds test below. The non-replication alone is a narrow finding. Its contribution begins when the question shifts from \emph{what doesn't replicate} to \emph{whether the method is robust to the things that changed}.
-
-
-\begin{table}[!ht]
-	\centering
-	\small
-	\caption{ARDL(2,4) coefficient comparison: Shaikh (2016) versus replication}
-	\label{tab:S0_coefficients}
-	\begin{tabular}{lrrr}
-		\toprule
-		Variable & Shaikh (2016) & Replication (no trend) & Replication (with trend) \\
-		\midrule
-		\multicolumn{4}{l}{\textit{Lagged dependent $(\ln Y)$}} \\
-		L1 & $1.298^{***}$  & $0.891^{***}$  & $0.884^{***}$ \\
-		L2 & $-0.393^{***}$ & $-0.015$       & $-0.016$ \\
-		\addlinespace
-		\multicolumn{4}{l}{\textit{Capital stock $(\ln K)$}} \\
-		L0 & $5.086^{***}$  & $0.753^{**}$   & $0.755^{**}$ \\
-		L1 & $-14.285^{***}$& $-1.143^{***}$ & $-1.157^{***}$ \\
-		L2 & $15.705^{***}$ & $0.057$        & $0.063$ \\
-		L3 & $-8.296^{***}$ & $0.286$        & $0.283$ \\
-		L4 & $1.853^{**}$   & $0.139$        & $0.128$ \\
-		\addlinespace
-		\multicolumn{4}{l}{\textit{Dummies}} \\
-		$d_{74}$ & $-0.081^{***}$ & $-0.013$ & $-0.008$ \\
-		$d_{56}$ & $-0.071^{***}$ & $-0.012$ & $-0.007$ \\
-		$d_{80}$ & $-0.045^{**}$  & $-0.010$ & $-0.009$ \\
-		\addlinespace
-		\multicolumn{4}{l}{\textit{Deterministic}} \\
-		Trend    & ---  & ---   & $0.001$ \\
-		Constant & $0.207^{**}$ & $0.257^{*}$ & $0.462$ \\
-		\bottomrule
-	\end{tabular}
-	\par\vspace{0.3em}
-	\footnotesize $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$. Sample: 1951--2011 ($N=61$). Replication uses NVA~$\sim$~$K^G$ with current-release BEA data.
-\end{table}
-
-
-\subsubsection{The Four-Pairing Exercise}
-
-To determine whether the specification sensitivity documented at the NVA~$\sim$~$K^G$ baseline is an artifact of the particular pairing, the ARDL(2,4) is re-estimated across all four output--capital combinations, each with and without an explicit linear trend. Eight specifications total, all other settings identical.
-
-\begin{table}[!ht]
-	\centering
-	\small
-	\caption{Four-pairing robustness: $\theta$, $\pi_y$, and $1 - \Sigma\gamma$ across output--capital definitions}
-	\label{tab:S0_four_pairings}
-	\begin{tabular}{llrrr}
-		\toprule
-		Pairing & Spec & $\theta$ & $\pi_y$ & $1 - \Sigma\gamma$ \\
-		\midrule
-		GVA~$\sim$~$K^G$ & no trend & $0.750$ & $-0.089^{*}$ & $0.111$ \\
-		GVA~$\sim$~$K^G$ & trend    & $0.565$ & $+0.013$     & $0.119$ \\
-		NVA~$\sim$~$K^G$ & no trend & $0.745$ & $-0.096^{*}$ & $0.124$ \\
-		NVA~$\sim$~$K^G$ & trend    & $0.541$ & $+0.013$     & $0.132$ \\
-		\addlinespace
-		NVA~$\sim$~$K^N$ & no trend & $0.807$ & $-0.052^{*}$ & $0.063$ \\
-		NVA~$\sim$~$K^N$ & trend    & $0.129$ & $-0.029$     & $0.089$ \\
-		GVA~$\sim$~$K^N$ & no trend & $0.769$ & $-0.046^{*}$ & $0.053$ \\
-		GVA~$\sim$~$K^N$ & trend    & $0.111$ & $-0.046$     & $0.077$ \\
-		\bottomrule
-	\end{tabular}
-	\par\vspace{0.3em}
-	\footnotesize $^{*}p<0.05$ on the RECM error-correction coefficient. All three dummies individually insignificant ($p > 0.5$) across all eight specifications.
-\end{table}
-
-The table partitions into two blocks governed by the capital stock concept, not the output measure. The gross~$K$ block ($1 - \Sigma\gamma \approx 0.11$--$0.13$) shows $\theta$ dropping approximately 25\% upon trend inclusion, with $\pi_y$ flipping from negative-significant to positive-insignificant. The net~$K$ block ($1 - \Sigma\gamma \approx 0.05$--$0.09$) shows $\theta$ collapsing approximately 85\%, with $\pi_y$ retaining its sign but losing all statistical significance. Within either block, switching between GVA and NVA moves $\theta$ by less than three percentage points.
-
-% [R3] Identification + reinterpretation sentence
-Interpreted through the measurement framework, these results suggest that the ARDL long-run multiplier is not identified as a stable structural parameter at this estimation site. It is a specification-contingent projection through a near-zero denominator, whose severity is predictable from the capital stock concept used. The fragility gradient---the monotonic relationship between $1 - \Sigma\gamma$ and the magnitude of $\theta$ instability under trend inclusion---is the core empirical finding of the four-pairing exercise.
-
-
-\begin{figure}[!ht]
-	\centering
-	% \includegraphics[width=\textwidth]{figures/cu_comparison_8series.pdf}
-	\caption{Implicit capacity utilization: 8 pairings versus benchmarks, US corporate sector, 1947--2011. Left: No trend. Right: With trend. Blue family: Gross~$K$ (GVA and NVA). Orange family: Net~$K$ (GVA and NVA). Dark red: Shaikh $u_K$ (benchmark). Black: FRB industrial CU. The $K^G$ band is tight ($\sim$10pp); the $K^N$ band drifts upward past 120\%.}
-	\label{fig:S0_8pairings}
-\end{figure}
-
-
-\subsubsection{Persistence Amplification}
-
-The instability has a precise mechanism. The ARDL long-run multiplier $\theta = \Sigma\hat{\phi}_i / (1 - \Sigma\hat{\gamma}_i)$ is a ratio in which the denominator measures how fast output forgets its own past---the memory decay rate of the autoregressive process. When the denominator is small, output has long memory: shocks persist, the ``long run'' to which the multiplier extrapolates is distant, and the extrapolation is sensitive to anything that perturbs the allocation of trending variation between the autoregressive lags and the capital stock coefficients.
-
-A trend term competes with $\ln K$ for the same upward-trending variation in a postwar sample where capital grows monotonically. The trend absorbs part of what the autoregressive lags were carrying, slightly reducing $\Sigma\gamma$---and therefore slightly increasing the denominator. But the multiplier is a hyperbolic function of the denominator: a small perturbation near zero produces a large change in the ratio. The insignificant trend carries no information; it merely reshuffles weight between collinear regressors. A structural parameter should be invariant to such a reshuffling. $\theta$ is not, because the persistence of output amplifies the specification perturbation into a qualitative change in the long-run projection.
-
-The capital stock concept determines the severity because the net-to-gross ratio $\psi_t$ contaminates the autoregressive dynamics when net~$K$ is used on the right-hand side, pushing $\Sigma\gamma$ closer to unity and shrinking the denominator further. The persistence amplification documented here is the econometric counterpart of the long-memory amplification that the accounting laws predict when $\theta < 1$: in the over-mechanization regime, the output--capital system has a weak attractor and long memory, and the ARDL's denominator sits close to zero as a direct consequence.
-
-A note on interpretation is warranted. This persistence amplification is a property of the ARDL estimator at this site. Whether it reflects genuine long-memory dynamics in the output--capital relationship or an artifact of near-unit-root estimation cannot be resolved within the ARDL framework alone. The VECM estimator in S2 recovers $\theta$ as an eigenvector of a reduced-rank regression---a fundamentally different approach that does not pass through the near-zero divisor. If the eigenvector estimate is stable where the ARDL estimate is fragile, the instability is method-induced. If it persists, the instability is structural.
-
-
-\subsubsection{Identification Issues}
-
-Three properties of Shaikh's specification compound the fragility. First, the step dummies inside the cointegrating equation fall outside all five PSS cases. The bounds test critical values were simulated under DGPs without restricted dummies; inference under Shaikh's specification is formally invalid. Second, the ECT normalization $\hat{u}_t = \exp(\text{ECT}_t - \overline{\text{ECT}})$ imposes that average capacity utilization equals unity over the sample---a normalization assumption, not an estimation result, which Shaikh does not document. Third, computing long-run multipliers for step dummies is coherent only if they represent permanent regime shifts, but permanent step dummies inside the ECT produce visible discontinuities absent from Shaikh's published plots.
-
-
-\subsubsection{What S0 Establishes}
-
-S0 documents a fragility architecture that persists across every specification and variable pairing tested. The non-replication forces the question; the four-pairing exercise answers it. The method's core pathologies---the persistence amplification of specification choices through the near-zero denominator, the trend sensitivity, the capital-concept regime---are structural properties of the ARDL long-run multiplier at this estimation site, not artifacts of Shaikh's particular data release or variable definitions.
-
-Three questions remain open, all traceable to the fact that Shaikh's ARDL(2,4) was held fixed throughout: (O1)~is the specification arbitrary? (O2)~which PSS case governs the bounds test? (O3)~does the normalization assumption bias the utilization series? S1 addresses O1 and O2 by releasing the specification axis.
-
-
-% =========================================================================
-% §1.4.4 — S1: Specification Confinement
-% =========================================================================
-
-\subsection{S1: Specification Confinement}
-\label{subsec:S1_results}
-
-
-\subsubsection{The Specification Search Shaikh Skipped}
-
-The PSS bounds testing framework presupposes a specification search over two dimensions: the lag order $(p, q)$ and the deterministic case (Cases~1--5). Shaikh's ARDL(2,4) appears without a reported information criterion, without a specification grid, and without a stated PSS case. S1 releases this axis.
-
-The choice of information criterion carries asymmetric risk. Over-specification (AIC's bias) wastes degrees of freedom but preserves clean residuals---the bounds test retains validity. Under-specification (BIC's bias) leaves residual serial correlation, which inflates the $F$-statistic and invalidates the PSS critical values. AIC's failure mode is imprecision; BIC's is invalid inference. For a test whose central question is whether a cointegrating relationship exists, the conservative choice is the criterion that preserves the test's validity.
-
-
-\subsubsection{IC Consensus}
-
-Both AIC and BIC select ARDL(1,3) under Cases~2--3, with and without Shaikh's dummies. The convergence is the strongest possible confinement of the specification axis. The lag structure is asymmetric---one lag on output, three on capital---and invariant to the dummy toggle. Output adjusts to shocks within a year; capital effects propagate over three. This asymmetry is physically coherent: a flow variable responds faster than a stock variable.
-
-Shaikh's ARDL(2,4) ranks fourth by AIC under Cases~2--3, almost 3.5 AIC points behind the winner. The data does not want the second output lag or the fourth capital lag. The trend class (Cases~4--5) is dominated: its best specification loses to the no-trend winner by 2 AIC points.
-
-
-\begin{table}[!ht]
-	\centering
-	\small
-	\caption{IC contest: Top-5 ARDL lag orders by model class (with impulse dummies)}
-	\label{tab:S1_IC_contest}
-	\begin{tabular}{llccrl}
-		\toprule
-		Model class & PSS cases & $p$ & $q$ & AIC & BIC \\
-		\midrule
-		\multicolumn{6}{l}{\textit{No constant (Case~1)}} \\
-		& Case~1 & 3 & 3 & $-260.72$ & $-237.33$ \\
-		\addlinespace
-		\multicolumn{6}{l}{\textit{Constant (Cases~2--3)}} \\
-		& \textbf{Cases~2--3} & \textbf{1} & \textbf{3} & $\bm{-270.23}$ & $\bm{-248.96}$ \\
-		& Cases~2--3 & 3 & 3 & $-270.15$ & $-244.62$ \\
-		& Cases~2--3 & 2 & 3 & $-268.47$ & $-245.07$ \\
-		& Cases~2--3 & 3 & 4 & $-266.81$ & --- \\
-		\addlinespace
-		\multicolumn{6}{l}{\textit{Constant + trend (Cases~4--5)}} \\
-		& Cases~4--5 & 1 & 3 & $-268.23$ & --- \\
-		\bottomrule
-	\end{tabular}
-	\par\vspace{0.3em}
-	\footnotesize Global AIC and BIC winner bolded. Top entries per model class shown; full grid in Appendix. Shaikh's ARDL(2,4) = Cases~2--3 row~4.
-\end{table}
-
-
-ICOMP---the information complexity criterion of \citet{Bozdogan1988}, which penalizes not only the number of free parameters but the degree of interdependence among them through the maximal information complexity of the inverse Fisher information matrix---agrees with AIC and BIC at the same specification. Three criteria with fundamentally different penalty structures select the same neighbourhood. The specification axis is genuinely resolved.
-
-
-\begin{figure}[!ht]
-	\centering
-	% \includegraphics[width=\textwidth]{figures/fig_S1_composite.pdf}
-	\caption{S1 specification lattice. (a)~Admissible cloud in the fit-complexity plane ($-2\log L$ versus $k$); Pareto frontier in dark red; Shaikh's ARDL(2,4) marked with blue asterisk---dominated. (b)~IC tangency points: AIC, BIC, ICOMP cluster at $k \approx 6$. (c)~Informational domain $\hat{F}^{0.20}$: 15 specifications within 20\% of the frontier, $\theta \in [0.40,\, 0.71]$. (d)~Utilization band from frontier specifications: median with 10th/90th percentile, versus Shaikh $u_K$ and FRB benchmarks.}
-	\label{fig:S1_composite}
-\end{figure}
-
-
-\subsubsection{Bounds Test Evidence}
-
-% [R4] Measurement infrastructure reminder
-The PSS bounds test is evaluated at exact finite-sample critical values conditioned on $T = 65$, using $R = 40{,}000$ simulation draws. This matters because asymptotic PSS critical values---the default in most software---are too permissive for this sample size; the finite-sample penalty makes the Case~2 rejection more conservative, and therefore more credible, than it would appear under asymptotic tables.
-
-
-\begin{table}[!ht]
-	\centering
-	\small
-	\caption{PSS (2001) bounds test for cointegration, Cases~I--V. ARDL(1,3), no dummies.}
-	\label{tab:S1_bounds_nodummy}
-	\begin{tabular}{lrrrr}
-		\toprule
-		& \multicolumn{2}{c}{$F$-bounds test} & \multicolumn{2}{c}{$t$-bounds test} \\
-		\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-		Case & $F$ & $p$ & $t$ & $p$ \\
-		\midrule
-		Case~1 & $5.19$ & $0.023$ & $+2.02$ & $0.991$ \\
-		\textbf{Case~2} & $\bm{7.03}$ & $\bm{0.004}$ & --- & --- \\
-		Case~3 & $5.27$ & $0.077$ & $-1.28$ & $0.713$ \\
-		Case~4 & $3.73$ & $0.213$ & --- & --- \\
-		Case~5 & $1.32$ & $0.898$ & $-1.53$ & $0.836$ \\
-		\bottomrule
-	\end{tabular}
-	\par\vspace{0.3em}
-	\footnotesize Exact $p$-values conditioned on $T = 65$. $t$-bounds test structurally undefined for Cases~2 and~4 (see text).
-\end{table}
-
-
-Cointegration is found under Case~2 ($p = 0.004$) and marginally under Case~3 ($p = 0.077$). Every specification that includes a trend (Cases~4--5) fails. The trend exclusion is now established through three independent channels: the IC contest, the bounds test, and the S0 direct estimation. All three converge.
-
-The $t$-bounds test never rejects. The strongest result (Case~3 with dummies: $t = -2.35$, $p = 0.269$) falls well short of conventional levels. The system cointegrates in the joint~$F$ sense but the speed at which output adjusts toward equilibrium is indistinguishable from zero. The split verdict---$F$ rejects, $t$ does not---indicates that the long-run relationship exists but the adjustment channel through output is either very slow or runs through a variable the bivariate system treats as exogenous.
-
-% [R5] Reinterpretation of split verdict for CU series
-The capacity utilization series implied by the ARDL is constructed from a cointegrating residual whose error-correction dynamics cannot be distinguished from zero---the ``equilibrium'' to which the series is referenced barely functions as an attractor within the sample.
-
-The $t$-bounds test is structurally undefined for Cases~2 and~4. In these cases, the deterministic component (intercept or trend) is restricted to the long-run equation, entering the ECM multiplied by $\pi_y$. Under the null $H_0{:}\; \pi_y = 0$, the restricted deterministic vanishes from the equation---whether the model has an intercept depends on the parameter being tested. This circularity prevents PSS from tabulating critical values. The $F$-test escapes because the joint null wipes the entire levels block regardless of entanglement.
-
-
-\begin{table}[!ht]
-	\centering
-	\small
-	\caption{PSS bounds test: dummy toggle comparison. ARDL(1,3), Cases~I--V.}
-	\label{tab:S1_bounds_toggle}
-	\begin{tabular}{lrrrr}
-		\toprule
-		& \multicolumn{2}{c}{With dummies} & \multicolumn{2}{c}{Without dummies} \\
-		\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-		Case & $F$ & $p$ & $F$ & $p$ \\
-		\midrule
-		Case~1 & $2.03$ & $0.272$ & $5.19$ & $0.023$ \\
-		\textbf{Case~2} & $\bm{6.22}$ & $\bm{0.009}$ & $\bm{7.03}$ & $\bm{0.004}$ \\
-		Case~3 & $6.44$ & $0.038$ & $5.27$ & $0.077$ \\
-		Case~4 & $4.22$ & $0.145$ & $3.73$ & $0.213$ \\
-		Case~5 & $2.41$ & $0.693$ & $1.32$ & $0.898$ \\
-		\bottomrule
-	\end{tabular}
-	\par\vspace{0.3em}
-	\footnotesize Exact $p$-values, $T=65$, $R=40{,}000$ draws. Removing dummies concentrates evidence into Case~2 alone; Case~3 weakens from $p=0.038$ to $p=0.077$.
-\end{table}
-
-
-\subsubsection{What Case~2 Means}
-
-Case~2 restricts the intercept to the long-run equation: $\ln Y^* = \mu + \theta \ln K$. No drift in the short-run dynamics. The system has one fixed equilibrium level across the entire sample---one $\mu$, one $\theta$, 1947--2011.
-
-% [R7] "confirms" → "indicates"
-This restriction is the necessary condition for Shaikh's demeaning normalization to be internally coherent. The transformation $\hat{u}_t = \exp(\text{ECT}_t - \overline{\text{ECT}})$ requires that the ECT have a stable mean across the sample. Under Case~2 (no short-run drift), it does. Under Case~3 (drift permitted), the mean migrates and the demeaning produces a moving target disguised as a fixed normalization. The data indicates cointegration strongest precisely where the normalization is valid.
-
-But ``one fixed equilibrium across 1947--2011'' means the accumulation regime did not shift---across the Fordist golden age, the stagflationary crisis, the neoliberal turn, financialization, and the Great Recession. The confinement that makes the cointegrating evidence strongest is the same confinement that most aggressively suppresses the regime-dependence the theoretical framework predicts.
-
-
-\subsubsection{What S1 Resolves and What It Leaves Open}
-
-S1 confines the specification axis completely. The IC-preferred specification is ARDL(1,3) under Cases~2--3. AIC, BIC, and ICOMP converge. The lag structure is stable. The trend is excluded by three independent channels.
-
-The S0 pathologies persist under proper specification search. The persistence amplification is not a lag-order artifact---it is a structural property of the ARDL long-run multiplier near the unit root boundary. The weak error correction is not fixable by better specification---the $t$-test fails under the IC-preferred order just as it did under Shaikh's arbitrary (2,4). The method works---cointegration exists---but the ceiling is visible.
-
-The ARDL framework pre-commits to three architectural constraints that define this ceiling: rank~$= 1$ (assumed, not tested), normalization on output (capital treated as weakly exogenous), and long-run multiplier recovery through the near-zero denominator (the persistence amplification mechanism). No specification search can release these constraints. They are properties of the single-equation framework, not of any particular specification within it.
-
-S2 releases all three simultaneously by moving to the Johansen VECM---rank determination replaces the assumed rank, the loading matrix reveals which variables adjust, and the eigenvector estimator recovers $\theta$ without passing through a near-zero divisor.
-
-
-\begin{figure}[!ht]
-	\centering
-	% \includegraphics[width=\textwidth]{figures/cu_fan_S0_S1.pdf}
-	\caption{S0--S1 closing figure: capacity utilization specification fan. 24 series from the full \{pairing $\times$ lag order $\times$ trend $\times$ dummy\} grid, faceted by capital stock concept. Left: Gross~$K$ (blue family)---tight band, tracks Shaikh's shape, diverges from FRB post-1990. Right: Net~$K$ (orange family)---wide band, drifts past 120\%, $\psi_t$ contamination visible. Benchmarks: Shaikh~$u_K$ (dark red), FRB (black).}
-	\label{fig:S0S1_fan}
-\end{figure}
-
-
-% =========================================================================
-% §1.4.5 — S2: System Estimation (stub)
-% =========================================================================
-
-\subsection{S2: System Estimation}
-\label{subsec:S2_results}
-
-\textit{[S2 results pending. Johansen rank test, VECM estimation, loading matrix extraction not yet run.]}
-
-
 \pagebreak
 
 
