@@ -1,9 +1,11 @@
 \documentclass[11pt,a4paper]{article}
+
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[a4paper,margin=1in]{geometry}
-\usepackage{color} % Define colors for hyperlinks
+
+\usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
@@ -11,39 +13,29 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tabularx}
-\usepackage{amsmath}
-\usepackage{hyperref}
-\usepackage{enumitem}
-\usepackage{titlesec} % Include the titlesec package
-\usepackage[nottoc]{tocbibind} % Manage Table of Contents entries
-\usepackage[authoryear]{natbib}
-\usepackage{fancyhdr}
-\usepackage{titlesec}
-\usepackage{enumitem}
-\usepackage{xcolor}    
-\usepackage{pdflscape}  % For landscape pages
-\usepackage{xfrac}
-\usepackage{tikz}         % For drawing with TikZ
-\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{bm}
- 
-\usepackage{pdflscape}  % For landscape pages
 
+\usepackage{amsmath,amssymb,bm}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[authoryear]{natbib}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{pdflscape}
+\usepackage{xfrac}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
 
 \definecolor{darkblue}{rgb}{0,0,0.8}
 \hypersetup{
-	colorlinks=true, 
+	colorlinks=true,
 	citecolor=darkblue,
-	linkcolor=darkblue, 
+	linkcolor=darkblue,
 	urlcolor=darkblue
 }
 
-% ---------- Optional: cleaner paragraphs ----------
 \setlength{\parskip}{0.55em}
 \setlength{\parindent}{0pt}
-
 \begin{document}
 	
 
@@ -1853,11 +1845,10 @@ boundary.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%% Section 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{References}
+% REF References
+\label{references}
 \bibliographystyle{apalike}
 \bibliography{references}
-\label{references}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  Appendix %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
