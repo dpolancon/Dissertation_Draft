@@ -1,0 +1,282 @@
+% =============================================================================
+% Appendix D — GPIM Formalization
+% Source: GPIM_Formalization_v3.md
+% Companion to §1.4.1 (subsec:gpim)
+% =============================================================================
+
+\section{The Generalized Perpetual Inventory Method: Derivation and
+Corporate Adjustments}
+\label{app:gpim}
+
+This appendix provides the derivations summarized in
+\S\ref{subsec:gpim}. The argument proceeds in four steps: the
+micro-level perpetual inventory identity, the aggregation problem under
+BEA chain-weighting, the GPIM accumulation rules for current-cost and
+real stocks, and the three corporate-sector adjustments that generate the
+capital stock objects entering the replication.
+
+% -------------------------------------------------------------------------
+% D.1 — Micro-level identity
+% -------------------------------------------------------------------------
+
+\subsection{Micro-Level Perpetual Inventory Identity}
+\label{app:gpim_micro}
+
+For an individual asset type $i$, the standard perpetual inventory
+identity defines the net capital stock recursively as
+$K_{it} = IG_{it} + (1 - z_{it})\,K_{i,t-1}$,
+where $IG_{it}$ is gross investment in asset $i$ and $z_{it}$ is the
+asset-specific depletion rate. In current-cost terms, the inherited stock
+must be marked to period-$t$ prices before the depletion deduction is
+applied:
+%
+\begin{equation}
+  \label{eq:app_micro_pim}
+  K_{it}^{\mathrm{nom}}
+  \;=\; p_{it}^{K}\,IG_{it}^{R}
+  \;+\; (1 - z_{it})\,\frac{p_{it}^{K}}{p_{i,t-1}^{K}}\,K_{i,t-1}^{\mathrm{nom}},
+\end{equation}
+%
+where $p_{it}^{K}$ is the price index for asset type $i$ and
+$IG_{it}^{R}$ is real gross investment. Nominal depreciation for asset
+$i$ is $D_{it} = z_{it}\,p_{it}^{K}\,K_{i,t-1}^{R}$.
+
+% -------------------------------------------------------------------------
+% D.2 — The aggregation problem
+% -------------------------------------------------------------------------
+
+\subsection{The Aggregation Problem Under Chain-Weighting}
+\label{app:gpim_aggregation}
+
+The BEA constructs aggregate capital stocks via Fisher-ideal
+chain-aggregation of individual asset-type stocks. The standard
+micro-level identity~\eqref{eq:app_micro_pim} does not survive this
+aggregation. The chain index introduces a composition effect: the
+aggregate price index $p_t^{K}$ reflects shifts in the asset mix, not
+merely common price movements. Summing the micro identities across asset
+types yields a cross-term whose magnitude depends on covariances between
+individual price changes and individual stock shares --- a term that
+cannot be expressed as a function of aggregate quantities alone.
+
+This is the gap the GPIM closes. \citet[Appendix~6.5, \S V]{Shaikh2016}
+shows that, to a close approximation, the aggregate current-cost stock
+satisfies an accumulation rule of the same form as the micro identity,
+with an aggregate composite factor replacing the asset-specific terms.
+The approximation error is shown empirically to be below 0.5\% for the
+US corporate sector over 1947--2005.
+
+% -------------------------------------------------------------------------
+% D.3 — GPIM accumulation rules
+% -------------------------------------------------------------------------
+
+\subsection{GPIM Accumulation Rules}
+\label{app:gpim_rules}
+
+\paragraph{Current-cost stock.}
+The generalized accumulation rule for the aggregate current-cost capital
+stock is:
+%
+\begin{equation}
+  \label{eq:app_gpim_nom}
+  K_t \;=\; IG_t \;+\; z_t^{\ast}\cdot K_{t-1},
+  \qquad
+  z_t^{\ast} \;\equiv\; (1 - z_t)\,\frac{p_t^{K}}{p_{t-1}^{K}},
+\end{equation}
+%
+where $IG_t$ is aggregate gross investment in current prices, $z_t$ is
+the theoretically correct aggregate depletion rate (defined below), and
+$z_t^{\ast}$ is the composite survival-revaluation factor. The factor
+compresses two operations: the fraction $(1-z_t)$ of the stock that
+physically survives the period, and the revaluation of that surviving
+fraction from period-$(t-1)$ to period-$t$ prices via
+$p_t^{K}/p_{t-1}^{K}$.
+
+\paragraph{Real (constant-cost) stock.}
+Dividing both sides of~\eqref{eq:app_gpim_nom} by $p_t^{K}$ yields the
+accumulation rule for the real stock:
+%
+\begin{equation}
+  \label{eq:app_gpim_real}
+  K_t^{R} \;=\; IG_t^{R} \;+\; (1 - z_t)\,K_{t-1}^{R},
+\end{equation}
+%
+where $IG_t^{R} \equiv IG_t/p_t^{K}$ is real gross investment. Since
+\eqref{eq:app_gpim_real} follows from~\eqref{eq:app_gpim_nom} by an
+exact algebraic operation, the approximation error of the GPIM is
+identical for both valuation bases.
+
+\paragraph{Theoretically correct aggregate depletion rate.}
+Aggregating the individual depreciation allowances
+$D_{it} = z_{it}\,p_{it}^{K}\,K_{i,t-1}^{R}$ gives:
+%
+\begin{equation}
+  \label{eq:app_dep_rate}
+  z_t \;=\; \frac{D_t}{p_t^{K}\cdot K_{t-1}^{R}}
+  \;=\; \sum_{i=1}^{n} z_{it}\,w_{it},
+  \qquad
+  w_{it} \;\equiv\;
+  \frac{p_{it}^{K}\,K_{i,t-1}^{R}}{p_t^{K}\,K_{t-1}^{R}},
+\end{equation}
+%
+where $w_{it}$ is the share of asset $i$'s reflated past real stock in
+the aggregate. The weights use current-period asset prices $p_{it}^{K}$,
+not lagged prices --- the critical distinction from the
+Whelan--Liu approximation $z_t^{WL} = D_t/K_{t-1}$, which uses lagged
+current-cost shares and is therefore biased by the covariance between
+individual depreciation rates and asset-specific price changes.
+
+\paragraph{Convergence properties.}
+Under the constant-coefficient approximation
+($z_t \approx z$, $p_t^{K}/p_{t-1}^{K} \approx 1 + g_{p_K}$), the
+general solution to~\eqref{eq:app_gpim_nom} decomposes into a transient
+term governed by initial conditions and a permanent term proportional to
+the gross investment flow:
+%
+\begin{equation}
+  \label{eq:app_gen_solution}
+  K_t \;=\; A(z)\cdot(z^{\ast})^t \;+\; C(z)\cdot IG_t,
+  \qquad
+  C(z) \;\equiv\;
+  \frac{1+g_I}{(1+g_I)-(1-z)(1+g_{p_K})},
+\end{equation}
+%
+where $g_I$ is the average growth rate of gross investment and
+$A(z) \equiv K_0 - C(z)\cdot IG_0$. The transient decays if and only if
+$z^{\ast} < 1$, which requires:
+%
+\begin{equation}
+  \label{eq:app_critical_z}
+  z \;>\; z^{\star} \;\equiv\; \frac{g_{p_K}}{1+g_{p_K}}.
+\end{equation}
+%
+For the US corporate sector ($g_{p_K} \approx 3.4\%$),
+$z^{\star} \approx 3.3\%$. Net depreciation rates of 5--8\% place the
+net stock firmly in the convergent regime; gross retirement rates below
+$z^{\star}$ may leave the gross stock non-convergent over the sample
+horizon. When $z > z^{\star}$, the half-life of the transient is:
+%
+\begin{equation}
+  \label{eq:app_halflife}
+  \tau_{1/2} \;=\;
+  \frac{\ln 2}{\ln\!\bigl[1/\bigl((1-z)(1+g_{p_K})\bigr)\bigr]}.
+\end{equation}
+%
+For a corporate net stock with $z \approx 0.06$, this yields
+$\tau_{1/2} \approx 24$ years --- consistent with the observed narrowing
+of the BEA 1993 vs.\ 2011 initial-value gap from 31\% in 1925 to
+$<2\%$ by 1969.
+
+% -------------------------------------------------------------------------
+% D.4 — Shaikh's three corporate adjustments
+% -------------------------------------------------------------------------
+
+\subsection{Shaikh's Three Adjustments to BEA Official Stocks}
+\label{app:gpim_adjustments}
+
+The GPIM rules provide the algebraic machinery to generate alternative
+aggregate capital stock measures by modifying BEA assumptions at three
+points.
+
+\paragraph{Adjustment 1 — Depletion rates.}
+Since 1997, the BEA has assumed geometrically declining efficiency over
+an infinite asset lifetime. This precludes the calculation of gross
+stocks (infinitely lived assets never retire) and implies lower
+depreciation rates than the pre-1997 methodology. Shaikh reverts to the
+BEA 1993 finite-service-life assumption, which yields higher depreciation
+rates, lower retirement rates, and time-varying $z_t$ that shifts only
+with the asset mix rather than with assumed efficiency profiles.
+
+\paragraph{Adjustment 2 — Initial values.}
+The 1925 initial value of the current-cost corporate net stock is
+approximately 31\% lower under BEA 1993 than under BEA 2011. By the
+convergence analysis of \S\ref{app:gpim_rules}, a lower initial value
+with $z > z^{\star}$ implies faster transitional growth; the gap narrows
+to 10\% by 1947 and to $<2\%$ by 1969.
+
+\paragraph{Adjustment 3 — Great Depression scrapping correction.}
+The BEA methodology assumes that asset scrapping is independent of
+economic conditions. Shaikh uses the IRS book-value index
+\citep[Series V~115]{UScensus1975} as an external control for actual
+corporate write-downs over 1929--1947. The adjustment multiplies the BEA
+historical-cost stock by the IRS-to-BEA ratio over 1925--1947, then
+resumes the GPIM accumulation rule from 1948 onward:
+%
+\begin{align}
+  K_t^{\mathrm{adj}}
+  &\;=\; \frac{\mathrm{IRS}_t}{\mathrm{BEA}_t}\cdot K_t^{\mathrm{BEA}},
+  \qquad t \in [1925,\,1947],
+  \label{eq:app_irs_adj} \\[4pt]
+  K_t^{\mathrm{adj}}
+  &\;=\; IG_t \;+\; z_t^{\ast}\cdot K_{t-1}^{\mathrm{adj}},
+  \qquad t \geq 1948.
+  \label{eq:app_gpim_resume}
+\end{align}
+%
+The net effect: by 1947, $\texttt{KNCcorp}$ is approximately 28\% lower
+than the BEA 2011 official net stock $\texttt{KNCcorpbea}$. The
+adjustment is applied identically across current-cost, real, and
+historical-cost valuations, since all three share the same depletion
+rates.
+
+\paragraph{Final series.}
+The three adjustments plus inventory augmentation (IRS book-value ratio
+extrapolated backward from 1990) produce the capital stock objects
+entering the replication:
+
+\begin{table}[!ht]
+  \centering
+  \small
+  \caption{GPIM-adjusted capital stock series}
+  \label{tab:app_gpim_series}
+  \begin{tabular}{lll}
+    \hline\hline
+    Series & Description & Valuation \\
+    \hline
+    $\texttt{KGCcorp}$
+      & Corporate gross fixed capital $+$ inventories (GPIM)
+      & Current cost \\
+    $\texttt{KNCcorp}$
+      & Corporate net fixed capital (GPIM)
+      & Current cost \\
+    $\texttt{KNCcorpbea}$
+      & Corporate net fixed capital (BEA 2011 official)
+      & Current cost \\
+    \hline
+  \end{tabular}
+  \par\vspace{0.4em}
+  \footnotesize
+  $\texttt{KNCcorpbea}$ is retained as a comparison benchmark.
+  The ratio $\texttt{KNCcorp}/\texttt{KNCcorpbea}$ summarizes the
+  cumulative effect of the three adjustments on net stock level over the
+  sample. Source: \citet[Appendix~6.8]{Shaikh2016},
+  \texttt{realeconomicanalysis.com}.
+\end{table}
+
+% -------------------------------------------------------------------------
+% D.5 — Notation summary
+% -------------------------------------------------------------------------
+
+\subsection*{Notation}
+
+\begin{center}
+\small
+\begin{tabular}{ll}
+  \hline\hline
+  Symbol & Definition \\
+  \hline
+  $K_t$ & Aggregate current-cost capital stock \\
+  $K_t^{R}$ & Aggregate real (constant-cost) capital stock \\
+  $IG_t$ & Aggregate gross investment (current prices) \\
+  $IG_t^{R}$ & Aggregate real gross investment \\
+  $z_t$ & Theoretically correct aggregate depletion rate \\
+  $z_t^{\ast}$ & Composite survival-revaluation factor \\
+  $z^{\star}$ & Critical depletion rate (convergence threshold) \\
+  $p_t^{K}$ & Aggregate chain-weighted capital-goods price index \\
+  $p_{it}^{K}$ & Asset-type $i$ price index \\
+  $w_{it}$ & Reflated real-stock weight for asset $i$ \\
+  $C(z)$ & Permanent-component multiplier \\
+  $A(z)$ & Transient-component amplitude \\
+  $\tau_{1/2}$ & Half-life of transient (initial-value) component \\
+  \hline
+\end{tabular}
+\end{center}

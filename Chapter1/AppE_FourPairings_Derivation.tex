@@ -1,0 +1,248 @@
+% =============================================================================
+% Appendix E — Cointegration under the Four Output–Capital Pairings
+% Source: Cointegration_FourPairings_v1.md
+% Companion to §1.4.2 (sec:ch3_data), equations (eq:capacity_closure)
+% and (eq:four_pairings_errors)
+% =============================================================================
+
+\section{Cointegration Under the Four Output--Capital Pairings}
+\label{app:four_pairings}
+
+This appendix provides the formal derivations summarized in
+\S\ref{sec:ch3_data}. The four logically possible output--capital pairings
+are derived from two accounting identities applied to the capacity closure.
+The appendix establishes: (i)~that all four pairings recover the same
+elasticity $\theta$ under the closure, (ii)~the residual composition of
+each pairing, and (iii)~the auxiliary stationarity assumptions each
+requires for valid cointegration.
+
+% -------------------------------------------------------------------------
+% E.1 — Foundations
+% -------------------------------------------------------------------------
+
+\subsection{Foundations}
+\label{app:fp_foundations}
+
+\paragraph{Capacity closure.}
+Following \S\ref{sec:ch3_data}, the closure defines productive capacity
+with respect to the gross stock under the common GDP deflator
+$\tilde{K}_t^{G,R} \equiv K_t^G / p_t$:
+%
+\begin{equation}
+  \label{eq:app_closure}
+  Y_t^p \;=\; A_0\,e^{bt}\,\bigl(\tilde{K}_t^{G,R}\bigr)^{\theta(\Lambda)},
+  \qquad
+  u_t \;\equiv\; \frac{GVA_t^R}{Y_t^p} \;\sim\; I(0).
+\end{equation}
+%
+The gross stock is the theoretically appropriate capacity measure:
+productive capacity depends on the physical quantity of installed capital,
+not on its book-value depreciation (see \S\ref{subsec:gpim}).
+
+\paragraph{Accounting identities.}
+Two identities generate the four pairings by substitution into the
+closure. The \emph{output identity} links net and gross value added:
+%
+\begin{equation}
+  \label{eq:app_output_id}
+  NVA_t^R \;=\; GVA_t^R\,(1 - s_t^D),
+  \qquad
+  s_t^D \;\equiv\; \frac{D_t}{GVA_t},
+\end{equation}
+%
+where $D_t$ is nominal depreciation and $s_t^D$ is the depreciation share.
+The \emph{stock identity} links log net and gross capital stocks:
+%
+\begin{equation}
+  \label{eq:app_stock_id}
+  \ln\tilde{K}_t^{N,R} \;=\; \ln\tilde{K}_t^{G,R} \;+\; \ln\psi_t,
+  \qquad
+  \psi_t \;\equiv\; \frac{K_t^{N,R}}{K_t^{G,R}} \;\in\; (0,1).
+\end{equation}
+
+\paragraph{Auxiliary trending variables.}
+The depreciation share trends upward (secular rise in CFC/GVA under
+post-2013 BEA data) and the net-to-gross ratio trends downward (shift
+toward shorter-lived assets). Each is decomposed as:
+%
+\begin{align}
+  s_t^D &\;=\; s_0^D + \gamma\,t + \eta_t,
+  \qquad \eta_t \;\sim\; I(0),\quad \gamma > 0,
+  \label{eq:app_sd_trend} \\
+  \ln\psi_t &\;=\; \ln\psi_0 + \varphi\,t + \xi_t,
+  \qquad \xi_t \;\sim\; I(0),\quad \varphi < 0.
+  \label{eq:app_psi_trend}
+\end{align}
+%
+When these trend-stationarity conditions fail --- due to structural breaks
+in asset composition or vintage-revision discontinuities --- the
+corresponding terms enter the cointegrating residual as near-$I(1)$
+processes and the cointegration test breaks down.
+
+% -------------------------------------------------------------------------
+% E.2 — Four propositions
+% -------------------------------------------------------------------------
+
+\subsection{The Four Pairings}
+\label{app:fp_propositions}
+
+\paragraph{Proposition GG (Gross--Gross).}
+Under closure~\eqref{eq:app_closure}:
+%
+\begin{equation}
+  \label{eq:app_GG}
+  \ln GVA_t^R
+  \;=\; \ln A_0 + b\,t + \theta\,\ln\tilde{K}_t^{G,R}
+  \;+\; \underbrace{\ln u_t}_{\varepsilon_t^{GG}}.
+\end{equation}
+%
+\emph{Proof.} $\ln GVA_t^R = \ln(u_t Y_t^p) = \ln u_t + \ln A_0 + bt +
+\theta\ln\tilde{K}_t^{G,R}$.
+Residual is $I(0)$ by assumption.\hfill$\square$
+
+\noindent\textit{Auxiliary assumption:} None beyond the closure.
+
+\bigskip
+
+\paragraph{Proposition NG (Net--Gross).}
+Under closure~\eqref{eq:app_closure} and~\eqref{eq:app_sd_trend}:
+%
+\begin{equation}
+  \label{eq:app_NG}
+  \ln NVA_t^R
+  \;\approx\; (\ln A_0 - s_0^D) + (b - \gamma)\,t
+  + \theta\,\ln\tilde{K}_t^{G,R}
+  + \underbrace{(\ln u_t - \eta_t)}_{\varepsilon_t^{NG}}.
+\end{equation}
+%
+\emph{Proof.} From~\eqref{eq:app_output_id}:
+$\ln NVA_t^R = \ln GVA_t^R + \ln(1-s_t^D)$.
+Apply the first-order approximation $\ln(1-s_t^D) \approx -s_t^D$
+(valid for $s_t^D \ll 1$). Substitute Proposition~GG and~\eqref{eq:app_sd_trend}:
+$\ln NVA_t^R \approx \ln A_0 + bt + \theta\ln\tilde{K}_t^{G,R} + \ln u_t
+- s_0^D - \gamma t - \eta_t$.
+Collect deterministic terms. Both $\ln u_t$ and $\eta_t$ are $I(0)$, so
+residual is $I(0)$.\hfill$\square$
+
+\noindent\textit{Auxiliary assumption:} $\eta_t \sim I(0)$ — depreciation
+share deviations from linear trend are stationary. Since $s_t^D$ is a
+ratio of flows, this holds robustly: the flow adjusts within a few years
+as new investment enters the numerator, making deviations short-lived.
+
+\bigskip
+
+\paragraph{Proposition GN (Gross--Net).}
+Under closure~\eqref{eq:app_closure} and~\eqref{eq:app_psi_trend}:
+%
+\begin{equation}
+  \label{eq:app_GN}
+  \ln GVA_t^R
+  \;=\; (\ln A_0 - \theta\ln\psi_0) + (b - \theta\varphi)\,t
+  + \theta\,\ln\tilde{K}_t^{N,R}
+  + \underbrace{(\ln u_t - \theta\,\xi_t)}_{\varepsilon_t^{GN}}.
+\end{equation}
+%
+\emph{Proof.} From~\eqref{eq:app_stock_id}:
+$\ln\tilde{K}_t^{G,R} = \ln\tilde{K}_t^{N,R} - \ln\psi_t$.
+Substitute into Proposition~GG and apply~\eqref{eq:app_psi_trend}:
+$\ln GVA_t^R = \ln A_0 + bt + \theta(\ln\tilde{K}_t^{N,R} - \ln\psi_0 -
+\varphi t - \xi_t) + \ln u_t$.
+Collect.\hfill$\square$
+
+\noindent\textit{Auxiliary assumption:} $\xi_t \sim I(0)$ — net-to-gross
+ratio deviations from linear trend are stationary. Since $\psi_t$ is a
+ratio of stocks, it integrates the entire history of
+$(\delta_\tau - ret_\tau)$ shocks. A structural break in asset composition
+(e.g., the 2013 BEA R\&D capitalization) shifts the long-run $\psi^*$
+discontinuously; the transition half-life is on the order of 15--25 years
+for the US corporate sector. A linear trend cannot absorb this path.
+
+\bigskip
+
+\paragraph{Proposition NN (Net--Net).}
+Under closure~\eqref{eq:app_closure}, \eqref{eq:app_sd_trend},
+and~\eqref{eq:app_psi_trend}:
+%
+\begin{equation}
+  \label{eq:app_NN}
+  \ln NVA_t^R
+  \;\approx\; (\ln A_0 - s_0^D - \theta\ln\psi_0)
+  + (b - \gamma - \theta\varphi)\,t
+  + \theta\,\ln\tilde{K}_t^{N,R}
+  + \underbrace{(\ln u_t - \eta_t - \theta\,\xi_t)}_{\varepsilon_t^{NN}}.
+\end{equation}
+%
+\emph{Proof.} Apply the output substitution of Proposition~NG to
+Proposition~GN (equivalently: apply both
+identities~\eqref{eq:app_output_id} and~\eqref{eq:app_stock_id} to
+Proposition~GG). Collect. Both $\eta_t$ and $\xi_t$ are $I(0)$ by
+assumption, so residual is $I(0)$.\hfill$\square$
+
+\noindent\textit{Auxiliary assumptions:} Both $\eta_t \sim I(0)$ and
+$\xi_t \sim I(0)$.
+
+% -------------------------------------------------------------------------
+% E.3 — Comparison and selection
+% -------------------------------------------------------------------------
+
+\subsection{Residual Structure and Pairing Selection}
+\label{app:fp_comparison}
+
+All four pairings recover $\theta(\Lambda)$ under the closure. They differ
+in residual composition and in the auxiliary assumptions required:
+
+\begin{table}[!ht]
+  \centering
+  \small
+  \caption{Four output--capital pairings: residuals and auxiliary
+    assumptions}
+  \label{tab:app_four_pairings}
+  \begin{tabular}{llll}
+    \hline\hline
+    Pairing & Residual $\varepsilon_t$ & Variance & Auxiliary assumption \\
+    \hline
+    GG & $\ln u_t$
+      & $\sigma_u^2$
+      & None \\
+    NG & $\ln u_t - \eta_t$
+      & $\sigma_u^2 + \sigma_\eta^2$
+      & $\eta_t \sim I(0)$ \\
+    GN & $\ln u_t - \theta\xi_t$
+      & $\sigma_u^2 + \theta^2\sigma_\xi^2$
+      & $\xi_t \sim I(0)$ \\
+    NN & $\ln u_t - \eta_t - \theta\xi_t$
+      & $\sigma_u^2 + \sigma_\eta^2 + \theta^2\sigma_\xi^2$
+      & $\eta_t, \xi_t \sim I(0)$ \\
+    \hline
+  \end{tabular}
+  \par\vspace{0.4em}
+  \footnotesize
+  Variance column assumes independence of components.
+  Since $\theta < 1$ (over-mechanization), the $\xi_t$ contribution is
+  attenuated relative to the raw net-to-gross variance.
+\end{table}
+
+GG has the smallest residual variance, but its fragility is indirect: the
+secular rise in $s_t^D$ under post-2013 BEA vintages prevents the linear
+deterministic trend from absorbing the depreciation wedge, degrading the
+cointegrating vector even though $s_t^D$ does not appear explicitly in the
+residual. NG resolves this by netting depreciation from the left-hand side
+explicitly, absorbing the trend into $(b - \gamma)$ rather than silently
+loading it onto the estimated $\hat{b}$. GN and NN both require
+$\xi_t \sim I(0)$, which is vulnerable to the slow-healing stock-ratio
+breaks described above, and GN additionally introduces a conceptual error:
+the capacity closure is defined with respect to the gross stock, so
+placing the net stock on the right-hand side conflates physical capacity
+with value depreciation.
+
+The net--gross pairing (NG) is therefore the only specification
+satisfying all three criteria simultaneously: correct capacity concept on
+the right-hand side, stock-flow consistent output on the left-hand side,
+and no dependence on $\psi_t$ stationarity. The cost --- $\sigma_\eta^2$
+added to residual variance --- is bounded and stationary by construction.
+\citet{Shaikh2016}'s probable use of the gross--gross pairing
+($\hat{\theta}^{GG} = 0.770$) versus the replication's net--gross
+($\hat{\theta}^{NG} = 0.747$) produces a gap of 2.3 percentage points,
+consistent with the first-order approximation error in the NG proof and
+with the observed $\text{Var}[\ln(NVA/K)] = 0.049$ versus
+$\text{Var}[\ln(GVA/K)] = 0.040$.
