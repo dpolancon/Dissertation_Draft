@@ -1,12 +1,16 @@
-# LaTeX build artifacts
-*.aux
-*.log
-*.out
-*.toc
-*.synctex.gz
-*.fls
-*.fdb_latexmk
-*.blg
-*.bbl
+﻿# LaTeX build artifacts
+Chapter1/*.bbl
+Chapter1/*.blg
+Chapter1/*.pdf
+Chapter2/*.pdf
 
-*.synctex.gz
+# Working snapshots and version files
+Chapter1/*_pre_*.tex
+Chapter1/*_v[0-9]*.tex
+Chapter1/*_v[0-9][0-9]*.tex
+Chapter1/s3_*.txt
+Chapter1/s3_*.tex
+Chapter1/s3_*.tex
+
+# Archives
+*.zip
