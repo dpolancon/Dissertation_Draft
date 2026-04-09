@@ -1161,7 +1161,7 @@ Notice that \citet{Shaikh2016} strongly emphasizes on avoidiing relative prices 
 
 The US panel comprises 96 annual observations spanning 1929--2024. It is an original dataset assembled programmatically from the Bureau of Economic Analysis (BEA) and Federal Reserve Economic Data (FRED) APIs. The pipeline fetches raw National Income and Product Accounts (NIPA) income and Fixed Asset Tables, constructs non-financial (NF) sector aggregates, and applies the GPIM to produce capital stock series that remain stock-flow consistent. Because the pipeline draws directly from the API, the entire panel can be regenerated against any future BEA data vintage without manual intervention.
 
-A deliberate sectoral boundary governs the panel. Pairing corporate profit shares with aggregate GDP and total private capital---as is common in much of the empirical literature---introduces an accounting inconsistency at the NF sector margin. I avoid this by constructing all variables within the same NF boundary: output is gross value added, the profit share $\pi_t$ is the ratio of gross operating surplus to gross value added, only net of employment compensation, the capacity state variable is gross capital stock derived under \citet{Shaikh2016} GPIM rules using a Weibull retirement function with asset $K^G_t$ from Fixed Asset Table~4.1, and the profit rate denominator is $K^N_{\text{cc},t}$.
+A deliberate sectoral boundary governs the panel. Pairing corporate profit shares with aggregate GDP and total private capital---as is common in much of the empirical literature---introduces an accounting inconsistency at the NF sector margin. I avoid this by constructing all variables within the same NF boundary: output is gross value added, the profit share $\pi_t$ is the ratio of gross operating surplus to gross value added, only net of employment compensation, the capacity state variable is gross capital stock derived under \citet{Shaikh2016} GPIM rules using a Weibull retirement function with asset $K^G_t$ from Fixed Asset Table~4.1 (retirement distribution formalization and parameter decisions in Appendix~\ref{app:ret_distribution}), and the profit rate denominator is $K^N_{\text{cc},t}$.
 
 Two estimation windows structure the empirical work. Stage~A --- capacity utilization identification via the Johansen VECM --- exploits the full 1929--2024 sample; this long span is feasible because the cointegration procedure requires only real quantity series, not deflated price data. Stage~B --- profitability decomposition --- restricts attention to the post-WWII deflator-reliable period, with the Fordist window (1944--1973) as the primary estimation interval, which makes it possible to read the channel decomposition against the institutional periodization of the US accumulation regime. 
 
@@ -2453,7 +2453,7 @@ begins.
 \pagebreak
 \section{Chile Estimation of Capacity Utilization via MPF}
 \label{app:chile_stage_a}
-%\input{appendix/appendix_chile_stage_a}
+\input{appendix/appendix_chile_stage_a}
 
 \pagebreak
 \section{Weibull Retirement Distributions: Formalization, Sources, and Parameter Decision}
