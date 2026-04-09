@@ -1,0 +1,177 @@
+% =============================================================
+% Table: S_closure — v4
+% Full critical replication audit: S0 through S3
+% Updated 2026-04-02 to match current §4 results text.
+% S2 foregrounds ρ̂ as the identified object via confirmed
+% renormalization + delta method. S3 footnotes replaced.
+% =============================================================
+\begin{table}[H]
+	\centering
+	\scriptsize
+	\caption{Critical Replication Audit: Findings Across S0--S3}
+	\label{tab:S_closure}
+	\setlength{\tabcolsep}{4pt}
+	\renewcommand{\arraystretch}{1.25}
+	\begin{threeparttable}
+	\begin{tabular}{@{}
+			>{\raggedright\arraybackslash}p{2.0cm}
+			>{\raggedright\arraybackslash}p{2.8cm}
+			>{\raggedright\arraybackslash}p{2.6cm}
+			>{\raggedright\arraybackslash}p{2.8cm}
+			>{\raggedright\arraybackslash}p{4.8cm}
+			@{}}
+		\toprule
+		\textbf{Stage} &
+		\textbf{Constraint released} &
+		\textbf{Tracked parameter(s)} &
+		\textbf{Admissibility} &
+		\textbf{Primary finding} \\
+		\midrule
+		\addlinespace[4pt]
+		
+		S0\newline
+		\textit{Faithful replication} &
+		None\newline
+		(baseline: Shaikh's\newline
+		ARDL(2,4)) &
+		$\hat\theta = 0.720$\textsuperscript{a}\newline
+		vs.\ $0.661$ published\newline
+		$1{-}\Sigma\hat\gamma_i = 0.096$ &
+		Marginal (Case~1 only)\newline
+		$F = 3.35$, $p = 0.099$\newline
+		Cases~2--3: fail &
+		Shaikh's reported $F(10,50) = 6257$ is the OLS
+		goodness-of-fit statistic, not the PSS 2-restriction
+		bounds test; no PSS case is declared. Co-integration
+		survives only under Case~1 (unbalanced growth closure).
+		Deflator identified as $p^{KN}$; trend excluded by
+		data (collinearity with $k_t$). \\
+		
+		\addlinespace[6pt]
+		
+		S1\newline
+		\textit{Specification geometry} &
+		Lag order, PSS case,\newline
+		dummy structure\newline
+		(500 candidates) &
+		$\hat\theta\in[0.651,\,0.866]$\textsuperscript{b}\newline
+		$\bar\theta = 0.829$\newline
+		($\sigma = 0.060$) &
+		65 of 400 pass\newline
+		($\mathcal{A}_{S1}$);\newline
+		17 on $\mathcal{E}_{S1}$ &
+		Magnitude of $\hat\theta$ governed by the researcher's
+		implicit criterion prior: BIC/ICOMP/RICOMP $\to$
+		$\hat\theta = 0.651$; AIC/HQ $\to$
+		$\hat\theta \approx 0.85$. Three architectural
+		constraints intrinsic to the ARDL class---rank fixed at
+		$r{=}1$, normalization on output, near-zero denominator
+		amplification---cannot be resolved by any lag order or
+		dummy structure. \\
+		
+		\addlinespace[6pt]
+		
+		S2\newline
+		\textit{System identification} &
+		Rank, normalization,\newline
+		loading vector~$\alpha$;\newline
+		information set\newline
+		$(y,k) \to (y,k,e)$ &
+		$\hat\theta = 0.727$\;($t = -0.15$)\newline
+		$\hat\beta_e = 20.022$\;($t = 7.90^{***}$)\newline
+		$\hat\rho = -0.050$\textsuperscript{c}\newline
+		$\alpha_k \approx 0$ &
+		6 of 108 pass\newline
+		($\mathcal{A}_{S2}$,\newline
+		all $m{=}3$, $r{=}1$);\newline
+		0 bivariate;\newline
+		0 with $r{=}2$ &
+		$\hat\theta$ not statistically significative; the exploitation rate
+		accounts for 99\% of co-integrating variation and
+		provides the primary adjustment channel
+		($\alpha_e = -0.019^{***}$).
+		Bivariate attractor sample-fragile (collapses with 4
+		post-crisis observations). Capital does not adjust
+		($|\alpha_k| < 0.001$).  Rotation of co-integration identifies a
+		reserve-army relation of $g_e$ and $g_u$ ($\hat\rho = -0.050$,
+		$t = -7.90$). \\
+	 
+		\addlinespace[6pt]
+		
+		S3\newline
+		\textit{Temporal composition} &
+		Regime break at\newline
+		1974 threshold\newline
+		(1-df restriction\newline
+		on $\beta_{e^*}$) &
+		$\hat\rho_{\mathrm{Ford}} = 1.071$\textsuperscript{d}\newline
+		$\hat\rho_{\mathrm{PF}}\;\, = 1.016$\newline
+		$\hat\delta_\rho\;\;\;\;\, = 0.055$ &
+		JMN (1-df):\newline
+		$LR_{\mathrm{obs}} = 0.363$\newline
+		$p_{\mathrm{boot}} = 0.984$\newline
+		H\&J: $L_{c,\rho} = 60.55$\textsuperscript{e} &
+		Reserve-army sensitivity $\rho$ regime-stable across
+		the 1974 threshold ($p_{\mathrm{boot}} = 0.984$).
+		$\hat\theta$ untestable ($t = -0.15$ at S2).
+		Recursive constancy shows no discontinuity at 1974;
+		result does not rule out regime change under a
+		better-identified specification---poor theoretical
+		identification is the binding constraint, not the
+		data. \\
+		
+		\addlinespace[4pt]
+		\bottomrule
+	\end{tabular}
+	
+	\begin{tablenotes}
+		\footnotesize
+		\item \textit{Notes:}
+		\textsuperscript{a}\,C3 variable combination
+		($y_t = \ln(\text{GVAcorp}_t / p^{KN}_t)$,
+		$k_t = \ln(K^G_t / p^{KN}_t)$, no trend); residual gap
+		from Shaikh's published $0.661$ attributable to
+		post-publication correction of Appendix~6.8 and
+		undisclosed initial capital stock value; see
+		\S\ref{subsec:S0_shaikh_replication}.
+		%
+		\textsuperscript{b}\,Cases~2--3 only,
+		$\mathcal{E}_{S1}$ (Pareto envelope); Case~4 outlier
+		($\hat\theta = 2.204$) excluded. IC split:
+		BIC/ICOMP/RICOMP select ARDL(1,2,$c_2$,$s_0$),
+		$\hat\theta = 0.651$; AIC/HQ select
+		ARDL(5,3--4,$c_2$,$s_1$),
+		$\hat\theta \approx 0.849$--$0.857$.
+		%
+		\textsuperscript{c}\,Focal specification
+		$(p{=}2,\,d_2,\,h_2,\,r{=}1)$.
+		$\hat\rho \equiv -1/\hat\beta_e = -0.050$
+		(SE~$= 0.006$, $t = -7.90$); standard errors via the
+		delta method from the Johansen asymptotic variance.
+		Variance decomposition: $\hat\beta_e \cdot \ln e_t$
+		accounts for 99.1\% of $\text{Var}(\hat\beta' X_t)$;
+		output--capital gap contributes $\approx 5\%$. IC split:
+		BIC/ICOMP select $(p{=}2,\,d_0,\,h_2)$,
+		$\hat\theta = 1.189$; AIC/HQ select
+		$(p{=}2,\,d_3,\,h_2)$,
+		$\hat\theta = 11.31$ (trend contamination).
+		%
+		\textsuperscript{d}\,Augmented 4-variable VECM
+		with $e^*_t = D_{74,t} \cdot \ln e_t$; base vector
+		$(1,\,-0.973,\,-1.040,\,0)$ under $H_0$.
+		$\hat\rho_{\mathrm{Ford}}$ and
+		$\hat\rho_{\mathrm{PF}}$ from unrestricted $H_1$.
+		$\delta_\rho = 0.055$ ($5.1\%$ of Fordist value).
+		Bootstrap: 999 recursive-design replications
+		\citep{CRT2012}.
+		%
+		\textsuperscript{e}\,$L_{c,\rho} = 60.55$ rejects
+		formal constancy but the recursive plot shows no
+		discontinuity at 1974; the large statistic is driven by
+		early sub-samples where the $h_2$ structural breaks
+		fall inside the recursive window, producing
+		identification instability rather than regime
+		instability (see \S\ref{subsubsec:S3_results}).
+	\end{tablenotes}
+	\end{threeparttable}
+\end{table}
