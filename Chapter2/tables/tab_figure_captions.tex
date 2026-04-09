@@ -1,0 +1,86 @@
+% tab_figure_captions.tex
+% Reference sheet: LaTeX \caption{} text for all Stage B US figures
+% Paste into chapter draft at each \begin{figure} environment.
+% Shared source note goes ONCE before the first figure reference in s2.6.2.
+
+% -----------------------------------------------------------------------
+% SHARED SOURCE NOTE
+% Place once in the chapter body, before the first \ref{fig:B4} citation:
+% -----------------------------------------------------------------------
+%
+% \begin{quote}\small
+% \textit{Note on figures:} All figures cover the US Non-Financial
+% Corporate Sector, 1940--1978. $r_{t} = \text{GOS}_{t}/\text{KNC}_{t}$;
+% $\hat{\mu}_{t}$ from Stage~A MPF (pinned at $\hat{\mu}_{1948} = 0.80$);
+% $B_{r} = \text{GVA}_{r}/(\text{KNR}\cdot\hat{\mu})$;
+% $Py/PK$ = GDP deflator / capital price deflator.
+% Regime shading: Pre-Fordist (1940--1946), Fordist (1947--1973),
+% Post-Fordist onset (1974--1978). Period windows: WWII buildup
+% (1940--1944), Interim (1944--1947).
+% \end{quote}
+
+% -----------------------------------------------------------------------
+% B1 PANEL — 2x3 subfigure assembly
+% Suggested LaTeX order (row-major): B1a, B1b, B1f, B1e, B1d, B1c
+% Row 1: r | mu | B (nominal)
+% Row 2: pi | Py/PK | B_real
+% -----------------------------------------------------------------------
+
+% fig_B1a — Row 1, Col 1
+\caption{Nominal profit rate $r_{t}$, indexed 1947\,=\,100,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B1a}
+
+% fig_B1b — Row 1, Col 2
+\caption{Capacity utilization $\hat{\mu}_{t}$, indexed 1947\,=\,100,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B1b}
+
+% fig_B1f — Row 1, Col 3
+\caption{Nominal capital productivity $B_{t}$, indexed 1947\,=\,100,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B1f}
+
+% fig_B1e — Row 2, Col 1
+\caption{Profit share $\pi_{t}$, indexed 1947\,=\,100,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B1e}
+
+% fig_B1d — Row 2, Col 2
+\caption{Output-to-capital relative price $Py/PK_{t}$, indexed 1947\,=\,100,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B1d}
+
+% fig_B1c — Row 2, Col 3
+\caption{Real capital productivity $B_{r,t}$, indexed 1947\,=\,100,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B1c}
+
+% -----------------------------------------------------------------------
+% STANDALONE FIGURES — main text
+% Citation order in s2.6.2: B4 -> B1 panel -> B2a -> B3
+% -----------------------------------------------------------------------
+
+% fig_B4 — cited first, Movement B (turning-point orientation)
+\caption{Nominal profit rate with identified turning points,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B4}
+
+% fig_B2a — cited in Movements A, C, D
+\caption{Cumulative four-channel contributions to profit-rate growth,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B2a}
+
+% fig_B3 — cited in Movement D1
+\caption{Channel composition of profit-rate swings,
+  US Non-Financial Corporate Sector, 1951--1974.}
+\label{fig:B3}
+
+% -----------------------------------------------------------------------
+% APPENDIX FIGURE
+% -----------------------------------------------------------------------
+
+% fig_B2b — appendix only
+\caption{Annual four-channel contributions to profit-rate growth,
+  US Non-Financial Corporate Sector, 1940--1978.}
+\label{fig:B2b}
