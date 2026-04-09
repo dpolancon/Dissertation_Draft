@@ -1,0 +1,538 @@
+%% ===========================================================================
+%% APPENDIX B — Chilean Stage A: Peripheral Structural Identification
+%% File: appendix_chile_stage_a.tex
+%% Input into main document via \input{appendix_chile_stage_a}
+%% All labels prefixed app:cl: for appendix, Chile
+%% Cross-reference from §2.8.2 via \ref{} and \eqref{}
+%% Status: TEMPLATE — results placeholders marked 
+%% ===========================================================================
+
+\section{Chilean Stage~A: Peripheral Structural Identification}
+
+This appendix reports the econometric detail underlying the Chilean
+capacity utilization estimates presented in
+Section~\ref{sec:results_chile}. The identification mirrors the US
+procedure (Appendix~\ref{app:us_stage_a}) with two structural
+modifications: the capital stock is decomposed into machinery and
+equipment ($K^{ME}$) and non-residential infrastructure ($K^{NR}$),
+and the balance-of-payments constraint enters through the machinery
+share $\phi_t = K_t^{ME}/K_t^{CL}$ as a fifth state variable.
+
+
+% ---- B.1 State Vector and Data --------------------------------------------
+\subsection{State Vector and Data}
+\label{app:cl:data}
+
+The Chilean state vector is:
+%
+\begin{equation}
+	X_t^{CL} = \left(y_t,\; k_t^{NR},\; \omega_t,\;
+	\omega_t \cdot k_t^{ME},\; \phi_t\right)'
+	\label{eq:cl:sa:state_vector}
+\end{equation}
+%
+with a restricted constant (\texttt{ecdet="const"}, Case~3), where
+$y_t = \ln(\text{GDP}^{CL}_{real})$,
+$k_t^{NR} = \ln(K^{NR,CL}_{real})$,
+$\omega_t = EC^{CL}_{NF}/GVA^{CL}_{NF}$ is the non-financial
+corporate wage share, and $\phi_t = K_t^{ME}/K_t^{CL}$ is the
+machinery share of the non-residential capital stock.\footnote{The
+	distributional variable is the wage share $\omega_t$, consistent with
+	the 2026-04-05 specification lock. The interaction $\omega_t k_t^{ME}$
+	--- not $\omega_t k_t^{NR}$ --- follows from the cost-minimization
+	result that distribution conditions technique choice through the
+	machinery component (Section~\ref{subsec:chile_bop_penalty}).}
+
+
+% ---- B.2 Integration Order -------------------------------------------------
+\subsection{Integration Order}
+\label{app:cl:integration}
+
+A critical stage-gate is the integration order of $\phi_t$. If
+$\phi_t \sim I(0)$, it enters the short-run dynamics only and cannot
+serve as a cointegrating variable; in that case, the state vector
+reduces to four dimensions.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Unit Root Tests --- Chilean Variables}
+	\label{tab:cl:sa:unit_root}
+	\begin{threeparttable}
+		\begin{tabular}{lccccc}
+			\toprule
+			Variable & ADF stat & ADF $p$ & KPSS stat & KPSS $p$ & Order \\
+			\midrule
+			$y_t$                &  &  &  &  &  \\
+			$k_t^{NR}$           &  &  &  &  &  \\
+			$\omega_t$           &  &  &  &  &  \\
+			$\omega_t k_t^{ME}$  &  &  &  &  &  \\
+			$\phi_t$             &  &  &  &  &  \\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\small
+			\item \textit{Notes:} Sample: [insert sample period]. ADF specification: [insert lag/deterministic terms]. KPSS bandwidth: [insert method].
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+
+% ---- B.3 Rank Determination ------------------------------------------------
+% ---- B.3 Rank Determination ------------------------------------------------
+\subsection{Rank Determination}
+\label{app:cl:rank}
+
+The Johansen trace test is conducted on
+system~\eqref{eq:cl:sa:state_vector} using lag order $K = [\text{insert lag}]$
+and long-run normalization. The working expectation is $r = 3$:
+two cointegrating relations associated with the capacity frontier and
+the balance-of-payments equilibrium, plus one additional
+distributional or compositional relation.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Johansen Trace Test --- Chilean System}
+	\label{tab:cl:sa:trace}
+	\begin{threeparttable}
+		\begin{tabular}{lccc}
+			\toprule
+			$H_0$ & Eigenvalue & Trace statistic & 5\% critical value \\
+			\midrule
+			$r \leq 0$ &  &  &  \\
+			$r \leq 1$ &  &  &  \\
+			$r \leq 2$ &  &  &  \\
+			$r \leq 3$ &  &  &  \\
+			$r \leq 4$ &  &  &  \\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\small
+			\item \textit{Notes:} Sample: [insert sample period]. The test is
+			implemented with $K = [\text{insert lag}]$ lags,
+			\texttt{spec="longrun"}, and \texttt{ecdet="const"}.
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+% ---- B.4 CV1: Capacity Frontier --------------------------------------------
+% ---- B.4 CV1: Capacity Frontier --------------------------------------------
+\subsection{Cointegrating Vector 1: Capacity Frontier}
+\label{app:cl:cv1}
+
+The $y$-normalized first cointegrating vector, $\hat{\beta}_1^{CL}$, is:
+%
+\begin{equation}
+	y_t
+	= c_1 + \tilde{\theta}_0\, k_t^{NR}
+	+ \theta_3\, \phi_t
+	+ \theta_2\, (\omega_t \phi_t)
+	\label{eq:cl:sa:cv1}
+\end{equation}
+%
+where $\theta_3$ captures the machinery-composition productivity premium
+and $\theta_2 < 0$ captures the distribution--composition interaction.
+
+\begin{table}[htbp]
+	\centering
+	\caption{CV1 Structural Parameters (Chilean Capacity Frontier)}
+	\label{tab:cl:sa:cv1_params}
+	\begin{threeparttable}
+		\begin{tabular}{llr}
+			\toprule
+			Parameter & Structural role & Estimate \\
+			\midrule
+			$\tilde{\theta}_0$ & Infrastructure base elasticity &  \\
+			$\theta_3$ & Machinery-composition productivity premium &  \\
+			$\theta_2$ & Distribution--composition interaction &  \\
+			$c_1$ & Constant &  \\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\small
+			\item \textit{Notes:} Estimated via Johansen MLE on the state
+			vector~\eqref{eq:cl:sa:state_vector}. The theoretically expected
+			signs are $\theta_3 > 0$ and $\theta_2 < 0$.
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+The distribution-conditioned, composition-dependent transformation
+elasticity is:
+%
+\begin{equation}
+	\hat{\theta}^{CL}(\omega_t,\phi_t)
+	= \tilde{\theta}_0 + \theta_3\,\phi_t
+	+ \theta_2\,\omega_t\,\phi_t
+	\label{eq:cl:sa:theta}
+\end{equation}
+%
+This is the empirical counterpart of~\eqref{eq:cl:theta}.\footnote{The
+	theoretical object $\theta^{CL}(\omega,\phi,\lambda)$ includes the shadow
+	cost of foreign exchange. In the linear VECM, $\lambda$ is absorbed into
+	the cointegrating coefficients. The threshold extension
+	(Section~\ref{app:cl:threshold}) recovers $\hat{\lambda}$ from
+	regime-differential loadings.}
+
+% ---- B.5 CV2: BoP Equilibrium ----------------------------------------------
+\subsection{Cointegrating Vector 2: BoP Equilibrium}
+\label{app:cl:cv2}
+
+The second cointegrating vector identifies the long-run BoP
+equilibrium:
+%
+\begin{equation}
+\ln m_t = \zeta_0
++ \zeta_1\, \ln nrs_{Y,t}
++ \zeta_3\, k_t^{ME}
++ \zeta_2\, \omega_t
+\label{eq:cl:sa:cv2}
+\end{equation}
+
+\begin{table}[htbp]
+\centering
+\caption{CV2 Structural Parameters (BoP Equilibrium)}
+\label{tab:cl:sa:cv2_params}
+\begin{threeparttable}
+\begin{tabular}{llrl}
+	\toprule
+	Parameter & Channel & Estimate & Expected sign \\
+	\midrule
+	$\zeta_1$ & Palma--Marcel (NRS relief) &  & $> 0$ \\
+	$\zeta_3$ & Tavares (ME structural imports) &  & $> 0$ \\
+	$\zeta_2$ & Distribution &  & ambiguous \\
+	$\zeta_0$ & Constant &  & --- \\
+	\bottomrule
+\end{tabular}
+\begin{tablenotes}
+	\small
+	\item \textit{Notes:} Trap intensity ratio
+	$\zeta_3/\zeta_1 = \text{}$. If $> 1$,
+	machinery accumulation outpaces the NRS relief valve.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+
+
+% ---- B.6 Error Correction Loading ------------------------------------------
+\subsection{Error Correction Loading}
+\label{app:cl:alpha}
+
+\begin{table}[htbp]
+\centering
+\caption{Loading Matrix $\hat{\alpha}^{CL}$ --- Linear VECM}
+\label{tab:cl:sa:alpha}
+\begin{threeparttable}
+\begin{tabular}{lrrrrrr}
+	\toprule
+	Equation & $\hat{\alpha}_{\cdot,1}$ & SE & $t$
+	& $\hat{\alpha}_{\cdot,2}$ & SE & $t$ \\
+	\midrule
+	$\Delta y_t$
+	&  &  & 
+	&  &  &  \\
+	$\Delta k_t^{NR}$
+	&  &  & 
+	&  &  &  \\
+	$\Delta \omega_t$
+	&  &  & 
+	&  &  &  \\
+	$\Delta(\omega_t k_t^{ME})$
+	&  &  & 
+	&  &  &  \\
+	$\Delta \phi_t$
+	&  &  & 
+	&  &  &  \\
+	\bottomrule
+\end{tabular}
+\begin{tablenotes}
+	\small
+	\item \textit{Notes:} Johansen MLE, $r = \text{}$.
+	Key diagnostic: $\hat{\alpha}_{\phi,2}$ (BoP disequilibrium
+	adjusts machinery composition) and $\hat{\alpha}_{y,1} \approx 0$
+	(output does not error-correct to the capacity frontier ---
+	demand-determined, as in the US).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% ---- B.7 ECT Stationarity --------------------------------------------------
+\subsection{ECT Stationarity}
+\label{app:cl:ect_stationarity}
+
+\begin{table}[htbp]
+\centering
+\caption{ADF Tests on Chilean ECTs}
+\label{tab:cl:sa:ect_adf}
+\begin{threeparttable}
+\begin{tabular}{lrr}
+	\toprule
+	& ADF statistic & $p$-value \\
+	\midrule
+	$ECT_{1,t}$ (capacity frontier) &  &  \\
+	$ECT_{2,t}$ (BoP equilibrium)   &  &  \\
+	\bottomrule
+\end{tabular}
+\begin{tablenotes}
+	\small
+	\item \textit{Notes:} $ECT_{2,t} \sim I(0)$ is a precondition
+	for the threshold VECM extension: the Hansen--Seo procedure
+	requires a stationary threshold variable.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% ---- B.8 Regime Partition ---------------------------------------------------
+\subsection{Regime Partition}
+\label{app:cl:regime}
+
+Setting $\hat{\theta}^{CL}(\omega, \phi) = 1$
+in~\eqref{eq:cl:sa:theta}:
+%
+\begin{equation}
+\omega_H^{CL}(\phi)
+= \frac{\tilde{\theta}_0 + \theta_3\,\phi - 1}{\theta_2\,\phi}
+\label{eq:cl:sa:omega_H}
+\end{equation}
+%
+Unlike the center, the Harrodian knife-edge is \emph{composition-dependent}:
+the wage share at which $\hat{\theta} = 1$ shifts with $\phi_t$.
+As $\phi$ rises (more ME), the knife-edge moves --- the regime
+classification is jointly determined by distribution and
+composition.
+
+\begin{table}[htbp]
+\centering
+\caption{Regime Partition of $\hat{\theta}^{CL}(\omega_t, \phi_t)$}
+\label{tab:cl:sa:regime_summary}
+\begin{threeparttable}
+\begin{tabular}{lr}
+	\toprule
+	Object & Value \\
+	\midrule
+	$\hat{\theta}^{CL}$ at $(\bar{\omega}, \bar{\phi})$
+	&  \\
+	$\hat{\theta}^{CL}$ range &  \\
+	$\omega_H^{CL}$ at $\bar{\phi}$ &  \\
+	\% sample under-accumulation ($\hat{\theta} > 1$)
+	&  \\
+	\% sample over-accumulation ($\hat{\theta} < 1$)
+	&  \\
+	\bottomrule
+\end{tabular}
+\begin{tablenotes}
+	\small
+	\item \textit{Notes:}
+	$\hat{\theta}^{CL}(\omega_t, \phi_t)$
+	from~\eqref{eq:cl:sa:theta}.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% ---- B.9 Capacity Utilization Construction ---------------------------------
+\subsection{Capacity Utilization: Construction}
+\label{app:cl:mu_construction}
+
+The capacity utilization rate $\hat{\mu}_t^{CL}$ is constructed by
+the same growth closure as the US
+(Appendix~\ref{app:sa:mu_structural}). The frontier is pinned at:
+%
+\begin{equation}
+\hat{\mu}^{CL}(t_0) = \mu_0
+\label{eq:cl:sa:mu_pin}
+\end{equation}
+
+The growth rate of productive capacity is:
+%
+\begin{equation}
+g(Y_t^{p,CL}) = \hat{\theta}^{CL}(\omega_t, \phi_t)
+\cdot g(K_t^{NR,CL})
+\label{eq:cl:sa:frontier_growth}
+\end{equation}
+%
+and $Y_t^{p,CL}$ is accumulated forward and backward from the pin
+year:
+%
+\begin{equation}
+\hat{\mu}_t^{CL} = \frac{Y_t^{CL}}{Y_t^{p,CL}}
+\label{eq:cl:sa:mu_def}
+\end{equation}
+
+\begin{table}[htbp]
+\centering
+\caption{$\hat{\theta}^{CL}$ and $\hat{\mu}^{CL}$ Period Averages}
+\label{tab:cl:sa:mu_periods}
+\begin{threeparttable}
+\begin{tabular}{llrrr}
+\toprule
+Period & Years & $n$ & $\bar{\theta}^{CL}$ & $\bar{\mu}^{CL}$ \\
+\midrule
+ISI     &  &  &  &  \\
+UP      & 1970--1973 & 4 &  &  \\
+Regime transition & 1973--1978 & 6 &  &  \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:}
+$\hat{\theta}^{CL}(\omega_t, \phi_t)$
+from~\eqref{eq:cl:sa:theta};
+$\hat{\mu}_t^{CL}$ from~\eqref{eq:cl:sa:mu_def} with
+pin~\eqref{eq:cl:sa:mu_pin}.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% ---- B.10 Pin-Year Sensitivity ---------------------------------------------
+\subsection{Pin-Year Sensitivity}
+\label{app:cl:pin_sensitivity}
+
+\begin{table}[htbp]
+\centering
+\caption{Pin-Year Sensitivity of $\hat{\mu}^{CL}$}
+\label{tab:cl:sa:mu_pin_sensitivity}
+\begin{threeparttable}
+\begin{tabular}{lrrr}
+\toprule
+Pin year & $\mu_0$ & $\bar{\mu}^{CL}$ (ISI)
+& $\bar{\mu}^{CL}$ (UP) \\
+\midrule
+&  &  &  \\
+&  &  &  \\
+&  &  &  \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Level shifts uniformly but cyclical
+profile and regime timing are invariant to pin choice.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% ---- B.11 Threshold VECM Extension ----------------------------------------
+\subsection{Threshold VECM: BoP Regime Switch}
+\label{app:cl:threshold}
+
+The threshold VECM extends the linear system by allowing the
+loading matrix $\alpha$ to switch across two regimes defined by the
+lagged BoP disequilibrium:
+%
+\begin{equation}
+R_t = \mathbf{1}\!\left[ECT_{2,t-1} > \hat{\gamma}\right]
+\label{eq:cl_sa_regime_indicator}
+\end{equation}
+%
+The Hansen--Seo (2002) procedure jointly estimates the threshold
+$\hat{\gamma}$ and the regime-specific loadings. The key diagnostic
+is the loading on $ECT_2$ in the $k^{ME}$ equation:
+%
+\begin{table}[htbp]
+\centering
+\caption{Threshold VECM Regime-Specific Loadings ($ECT_2$, $k^{ME}$ equation)}
+\label{tab:cl:sa:tvecm_loadings}
+\begin{threeparttable}
+\begin{tabular}{lrrl}
+\toprule
+Regime & $\hat{\alpha}_{k^{ME},\,ECT_2}$ & SE & Interpretation \\
+\midrule
+1 (BoP slack) &  &
+& ME unconstrained \\
+2 (BoP binding) &  &
+& Leash activates ($< 0$ expected) \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Regime-specific loading matrices (iii); recovered $\hat{\lambda}$
+from~\eqref{eq:cl_sa_lambda_recovered}.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+The recovered shadow cost:
+%
+\begin{equation}
+\hat{\lambda} = \frac{-2|\lambda_2|\;
+\hat{\alpha}^{(2)}_{k^{ME},\,ECT_2}
+\cdot \text{SD}(ECT_2)}{\xi\,\hat{\phi}}
+\label{eq:cl_sa_lambda_recovered}
+\end{equation}
+%
+The recovered $\hat{\lambda}$ carries bootstrap confidence intervals.
+Compare to Kaldor (1959) implicit shadow cost; the import
+content $\xi \approx 0.92$--$0.94$ provides a scaling check for plausibility.
+
+
+% ---- B.12 Cross-Country Comparison Objects ---------------------------------
+\subsection{Cross-Country Comparison Objects}
+\label{app:cl:cross_country}
+
+Four diagnostics produce the restriction menu for Chapter~3:
+\begin{enumerate}
+\item $\Delta r$: profit rate gap
+$\hat{r}^{US} - \hat{r}^{CL}$
+\item $\Delta\hat{\theta}$: transformation elasticity gap
+$\hat{\theta}^{US}(\omega_t) - \hat{\theta}^{CL}(\omega_t,
+\phi_t)$, evaluated at respective sample means
+\item IICS sign stability: does the sign of the loading on
+$ECT_1$ in the $\omega$ equation hold across both countries?
+\item Block exogeneity: Granger causality from
+$\hat{u}_t^{US}$ to $\Delta X_t^{CL}$
+\end{enumerate}
+
+
+% ---- B.13 Label Directory ---------------------------------------------------
+%
+% CROSS-REFERENCE DIRECTORY for §2.8.2 drafting:
+%
+% EQUATIONS:
+%   \eqref{eq:cl:sa:state_vector}      — Chilean state vector
+%   \eqref{eq:cl:sa:cv1}               — CV1 (capacity frontier)
+%   \eqref{eq:cl:sa:cv2}               — CV2 (BoP equilibrium)
+%   \eqref{eq:cl:sa:theta}             — theta(omega, phi)
+%   \eqref{eq:cl:sa:omega_H}           — composition-dependent knife-edge
+%   \eqref{eq:cl:sa:mu_pin}            — pin year condition
+%   \eqref{eq:cl:sa:frontier_growth}   — frontier growth closure
+%   \eqref{eq:cl:sa:mu_def}            — mu definition
+%   \eqref{eq:cl:sa:regime_indicator}  — threshold regime indicator
+%   \eqref{eq:cl:sa:lambda_recovered}  — shadow cost recovery
+%
+% TABLES:
+%   \ref{tab:cl:sa:unit_root}          — integration order tests
+%   \ref{tab:cl:sa:trace}              — trace test
+%   \ref{tab:cl:sa:cv1_params}         — CV1 parameters
+%   \ref{tab:cl:sa:cv2_params}         — CV2 parameters
+%   \ref{tab:cl:sa:alpha}              — loading matrix (linear)
+%   \ref{tab:cl:sa:ect_adf}            — ECT stationarity
+%   \ref{tab:cl:sa:regime_summary}     — regime partition
+%   \ref{tab:cl:sa:mu_periods}         — theta and mu period averages
+%   \ref{tab:cl:sa:mu_pin_sensitivity} — pin-year sensitivity
+%
+% SECTIONS:
+%   \ref{app:chile_stage_a}            — appendix top-level
+%   \ref{app:cl:data}                  — data and state vector
+%   \ref{app:cl:integration}           — integration order
+%   \ref{app:cl:rank}                  — rank determination
+%   \ref{app:cl:cv1}                   — CV1 capacity frontier
+%   \ref{app:cl:cv2}                   — CV2 BoP equilibrium
+%   \ref{app:cl:alpha}                 — error correction loading
+%   \ref{app:cl:ect_stationarity}      — ECT stationarity
+%   \ref{app:cl:regime}                — regime partition
+%   \ref{app:cl:mu_construction}       — mu construction
+%   \ref{app:cl:pin_sensitivity}       — pin-year sensitivity
+%   \ref{app:cl:threshold}             — threshold VECM extension
+%   \ref{app:cl:cross_country}         — cross-country comparison
+%
+% FORWARD REFERENCES (must exist in main body):
+%   \ref{sec:results_chile}            — §2.8.2 Chilean results
+%   \ref{subsec:chile_bop_penalty}     — §2.5.4 BoP penalty
+%   \ref{app:us_stage_a}               — Appendix A (US Stage A)
+%   \ref{app:sa:mu_structural}         — US mu construction
+%
