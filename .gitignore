@@ -1,8 +1,27 @@
-﻿# LaTeX build artifacts
-Chapter1/*.bbl
-Chapter1/*.blg
+# Local workspace state
+.obsidian/
+*.code-workspace
+qwen-export/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Compiled manuscript PDFs at chapter/manuscript roots
 Chapter1/*.pdf
 Chapter2/*.pdf
+Chapter3/*.pdf
 
 # Working snapshots and version files
 Chapter1/*_pre_*.tex
@@ -11,6 +30,10 @@ Chapter1/*_v[0-9][0-9]*.tex
 Chapter1/s3_*.txt
 Chapter1/s3_*.tex
 Chapter1/s3_*.tex
+
+# Consolidated generated files
+Consolidated/*.pdf
+Consolidated/_generated/
 
 # Archives
 *.zip

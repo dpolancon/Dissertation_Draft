@@ -1,0 +1,408 @@
+%% ===========================================================================
+%% APPENDIX A — US Stage A: Johansen Structural Identification
+%% File: appendix_us_stage_a.tex
+%% Input into main document via \input{appendix_us_stage_a}
+%% All labels prefixed app: for appendix, sa: for Stage A
+%% Cross-reference from §2.8.1 via \ref{} and \eqref{}
+%% ===========================================================================
+
+This appendix reports the full econometric detail underlying the US
+mechanization possibility frontier (MPF) and capacity utilization estimates
+presented in Section~\ref{sec:results_us}. All results are produced by
+Johansen reduced-rank regression on the state vector
+%
+\begin{equation}
+    X_t = \left(y_t,\; k_t,\; \omega_t,\; \omega_t k_t\right)'
+    \label{eq:sa:state_vector}
+\end{equation}
+%
+with a restricted constant (\texttt{ecdet="const"}, Case~3), where $y_t =
+\ln(\text{GDP}_{real})$, $k_t = \ln(K^G_{NR,real})$ is the log of the gross
+non-residential capital stock, and $\omega_t = EC_{NF}/GVA_{NF}$ is the
+non-financial corporate wage share.\footnote{The wage share $\omega_t$ is the
+distributional variable per the 2026-04-05 specification lock. Capital is
+measured as the gross stock --- see Section~\ref{sec:data} for the capital
+accounting rationale.}
+
+
+% ---- A.1 Rank Determination ------------------------------------------------
+\subsection{Rank Determination}
+\label{app:sa:rank}
+
+The Johansen trace test is conducted on the system~\eqref{eq:sa:state_vector}
+with lag order $K=2$ and long-run normalization (\texttt{spec="longrun"}).
+Table~\ref{tab:sa:trace} reports the first eigenvalue; the full trace
+sequence is available on request.
+
+\begin{table}[htbp]
+\centering
+\caption{Johansen Trace Test --- First Eigenvalue}
+\label{tab:sa:trace}
+\begin{threeparttable}
+\begin{tabular}{lccc}
+\toprule
+$H_0$ & $\lambda_1$ & Trace statistic & 5\% CV \\
+\midrule
+$r \leq 0$ & $0.5901$ & $159.26$ & $53.12$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Sample 1929--2024 ($T = 96$). $K = 2$ lags,
+\texttt{spec="longrun"}, \texttt{ecdet="const"}.
+Critical values from \citet{Osterwald-Lenum1992}.
+The null $r \leq 0$ is rejected at any conventional level.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+The first eigenvalue alone ($\lambda_1 = 0.590$) carries overwhelming
+evidence of at least one cointegrating relation. The full system supports
+$r = 3$ (see the rank sequence in the estimation script); we verify in
+Appendix~\ref{app:sa:rank_invariance} that the first eigenvector is
+invariant to the rank specification.
+
+
+% ---- A.2 Cointegrating Vector (CV1) ----------------------------------------
+\subsection{Cointegrating Vector}
+\label{app:sa:cv1}
+
+The $y$-normalized first eigenvector $\hat{\beta}_1$ is:
+%
+\begin{equation}
+    y_t = \underbrace{8.924}_{\alpha_1}\, k_t
+        + \underbrace{222.161}_{\gamma}\, \omega_t
+        - \underbrace{12.851}_{\alpha_2}\, \omega_t k_t
+        - 138.254
+    \label{eq:sa:cv1}
+\end{equation}
+%
+Table~\ref{tab:sa:cv1_params} reports the structural parameters.
+
+\begin{table}[htbp]
+\centering
+\caption{MPF Structural Parameters (CV1, $y$-normalized)}
+\label{tab:sa:cv1_params}
+\begin{threeparttable}
+\begin{tabular}{llr}
+\toprule
+Parameter & Structural role & Estimate \\
+\midrule
+$\alpha_1$ & Base elasticity ($\theta$ at $\omega = 0$) & $8.9238$ \\
+$\alpha_2$ & Distribution slope ($\partial\theta / \partial\omega$) & $-12.8509$ \\
+$\gamma$   & Direct distributional level shift & $222.1611$ \\
+$c_1$      & Constant & $-138.2544$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Estimated via Johansen MLE on the state
+vector~\eqref{eq:sa:state_vector}. Coefficients are identical under
+$r=1$ and $r=3$ (see Table~\ref{tab:sa:rank_invariance}).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+The distribution-conditioned transformation elasticity is:
+%
+\begin{equation}
+    \boxed{\hat{\theta}(\omega_t) = \alpha_1 - \alpha_2\,\omega_t
+        = 8.924 - 12.851\,\omega_t}
+    \label{eq:sa:theta_omega}
+\end{equation}
+%
+This is the empirical counterpart of the theoretical object
+$\theta(\Lambda)$ in the reproduction function
+(Section~\ref{sec:analytical_framework}). The sign $\alpha_2 < 0$
+satisfies the FOC-grounded restriction: higher wage share reduces the
+capacity transformation elasticity.
+
+
+% ---- A.3 Regime Partition ---------------------------------------------------
+\subsection{Regime Partition}
+\label{app:sa:regime}
+
+Setting $\hat{\theta}(\omega) = 1$ in~\eqref{eq:sa:theta_omega} and solving:
+%
+\begin{equation}
+    \omega_H = \frac{\alpha_1 - 1}{\alpha_2} = \frac{8.924 - 1}{12.851}
+    = 0.617
+    \label{eq:sa:omega_H}
+\end{equation}
+%
+This is the Harrodian knife-edge: the wage share at which the frontier
+grows at the same rate as the capital stock ($\hat{\theta} = 1$). Since
+$\omega_H = 0.617$ lies inside the sample range
+$[\omega_{\min}, \omega_{\max}] = [0.540, 0.682]$, the regime switching
+between over-accumulation ($\hat{\theta} < 1$, frontier lags capital) and
+under-accumulation of accumulation demand ($\hat{\theta} > 1$, frontier outpaces capital) is empirically operative.
+
+The crisis boundary ($\hat{\theta} = 0$) obtains at:
+%
+\begin{equation}
+    \omega^* = \frac{\alpha_1}{\alpha_2} = \frac{8.924}{12.851}
+    = 0.694
+    \label{eq:sa:omega_star}
+\end{equation}
+%
+which lies outside the observed sample --- the economy never reaches the
+structural collapse threshold.
+
+Table~\ref{tab:sa:regime_summary} summarizes the regime partition.
+
+\begin{table}[htbp]
+\centering
+\caption{Regime Partition of $\hat{\theta}(\omega_t)$}
+\label{tab:sa:regime_summary}
+\begin{threeparttable}
+\begin{tabular}{lr}
+\toprule
+Object & Value \\
+\midrule
+$\hat{\theta}$ at $\bar{\omega} = 0.623$ & $0.921$ \\
+$\hat{\theta}$ range $[\omega_{\min}, \omega_{\max}]$ & $[0.214,\; 1.666]$ \\
+$\omega_H$ ($\hat{\theta} = 1$ knife-edge) & $0.617$ \\
+$\omega^*$ ($\hat{\theta} = 0$ crisis boundary) & $0.694$ \\
+\% sample under-accumulation ($\hat{\theta} > 1$) & 29\% \\
+\% sample over-accumulation ($\hat{\theta} < 1$) & 71\% \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Regime classification based on annual
+$\hat{\theta}(\omega_t)$ from~\eqref{eq:sa:theta_omega}.
+Sub-/super-Harrodian refers to whether the productive capacity frontier
+grows slower/faster than the capital stock.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% ---- A.4 Error Correction Structure ----------------------------------------
+\subsection{Error Correction Loading ($r=1$)}
+\label{app:sa:alpha}
+
+Table~\ref{tab:sa:alpha} reports the loading vector $\hat{\alpha}$ under
+$r = 1$.
+
+\begin{table}[htbp]
+\centering
+\caption{Loading Vector $\hat{\alpha}$ --- Rank 1}
+\label{tab:sa:alpha}
+\begin{threeparttable}
+\begin{tabular}{lrrr}
+\toprule
+Equation & $\hat{\alpha}$ & SE & $t$-stat \\
+\midrule
+$\Delta y_t$              & $+0.011$ & $0.015$ & $0.74$ \\
+$\Delta k_t$              & $+0.024$ & $0.008$ & $2.89$** \\
+$\Delta \omega_t$         & $+0.009$ & $0.003$ & $3.11$** \\
+$\Delta(\omega_t k_t)$    & $+0.131$ & $0.046$ & $2.86$** \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Johansen MLE, $r = 1$.
+** significant at 5\%. Output does not error-correct to the MPF
+($t = 0.74$); capital and the wage share adjust. This pattern is
+consistent with the theoretical architecture of
+Section~\ref{sec:analytical_framework}: the MPF is a supply-side
+locus, and output deviations from the frontier are
+demand-determined.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+% ---- A.6 Rank Invariance ---------------------------------------------------
+\subsection{Rank Invariance: $r = 1$ versus $r = 3$}
+\label{app:sa:rank_invariance}
+
+A key property of Johansen's procedure is that eigenvectors are ordered by
+eigenvalue magnitude. The first eigenvector $\hat{\beta}_1$ should therefore
+be invariant to the rank specification. Table~\ref{tab:sa:rank_invariance}
+confirms this.
+
+\begin{table}[H]
+\centering
+\caption{First Eigenvector under $r = 1$ and $r = 3$}
+\label{tab:sa:rank_invariance}
+\begin{threeparttable}
+\begin{tabular}{lrr}
+\toprule
+Parameter & $r = 1$ & $r = 3$ \\
+\midrule
+$\alpha_1$ ($k$)         & $8.9238$    & $8.9238$ \\
+$\gamma$ ($\omega$)      & $222.1611$  & $222.1611$ \\
+$\alpha_2$ ($\omega k$)  & $-12.8509$  & $-12.8509$ \\
+$c_1$ (const)            & $-138.2544$ & $-138.2544$ \\
+$\hat{\theta}(\bar{\omega})$ & $0.9206$ & $0.9206$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} Perfect numerical agreement. The MPF
+identification does not depend on the additional cointegrating
+relations. Additional rank adds error correction channels (ECT$_2$
+disciplines distribution, ECT$_3$ is output-specific) but does not
+alter the structural content of $\hat{\beta}_1$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% ---- A.7 Restriction Tests -------------------------------------------------
+\subsection{Over-Identification: Restriction Tests}
+\label{app:sa:restrictions}
+
+Two sets of restrictions are tested on the $r = 3$ system.
+
+\paragraph{(i) Joint restriction $\omega = 0$, $\omega k = 1/2$.}
+This restriction is \emph{accepted} across all three cointegrating vectors
+(LR $= 0.00$, $p = 1.00$). Under the restriction, $\hat{\theta}$
+collapses to a narrow over-accumulation band $[1.48, 1.54]$, eliminating
+regime switching entirely. Since the theoretical framework requires
+$\omega_H$ inside the sample (Section~\ref{sec:analytical_framework}),
+the restricted specification is interpreted as supportive evidence to the assumption of a mechanization function with increasing returns at decreasing rates on labour productivity growth from mechanization intensity.
+
+\paragraph{(ii) Test of $\alpha_1 = 1$ under the joint restriction.}
+Rejected for CV2 and CV3 (LR $= 17.06$, $p = 0.0007$), confirming that
+the base elasticity $\alpha_1$ is significantly greater than unity. This
+result supports the wide-range specification reported in
+Table~\ref{tab:sa:cv1_params}.
+
+
+% ---- A.8 Capacity Utilization Construction ---------------------------------
+\subsection{Capacity Utilization: Construction and Sensitivity}
+\label{app:sa:mu_construction}
+
+\subsubsection{Structural Closure}
+\label{app:sa:mu_structural}
+
+The capacity utilization rate $\hat{\mu}_t$ is constructed via a growth
+closure. The frontier is pinned at:
+%
+\begin{equation}
+    \hat{\mu}(1948) = 0.80
+    \label{eq:sa:mu_pin}
+\end{equation}
+%
+following the Federal Reserve benchmark. The growth rate of productive
+capacity is:
+%
+\begin{equation}
+    g_{Y^p_t} = \hat{\theta}(\omega_t) \cdot g_{K_t}
+    \label{eq:sa:frontier_growth}
+\end{equation}
+%
+and $Y^p_t$ is accumulated forward and backward from the pin year, yielding:
+%
+\begin{equation}
+   \mu_t = \frac{Y_t}{Y^p_t}
+    \label{eq:sa:mu_def}
+\end{equation}
+
+Table~\ref{tab:sa:mu_periods} reports period averages.
+
+\begin{table}[htbp]
+\centering
+\caption{$\hat{\theta}$ and $\hat{\mu}$ Period Averages}
+\label{tab:sa:mu_periods}
+\begin{threeparttable}
+\begin{tabular}{llrrr}
+\toprule
+Period & Years & $n$ & $\bar{\theta}$ & $\bar{\mu}$ \\
+\midrule
+Pre-Fordist  & 1929--1944 & 16 & $0.831$ & $0.780$ \\
+Fordist      & 1945--1973 & 29 & $0.787$ & $0.734$ \\
+Post-Fordist & 1974--2024 & 51 & $1.021$ & $0.681$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item \textit{Notes:} $\hat{\theta}(\omega_t)$
+from~\eqref{eq:sa:theta_omega}; $\hat{\mu}_t$
+from~\eqref{eq:sa:mu_def} with pin~\eqref{eq:sa:mu_pin}. The
+Post-Fordist under-accumulation mean ($\bar{\theta} > 1$) drives
+the secular decline in $\hat{\mu}$: the frontier expansion outpaces the realized output. 
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Key landmarks in the $\hat{\mu}_t$ series:
+%
+\begin{itemize}
+    \item \textbf{1932--33}: $\hat{\mu} \approx 0.58$--$0.60$ (Great
+        Depression trough --- severe underutilization).
+    \item \textbf{1943--44}: $\hat{\mu} > 1.0$ (wartime full capacity ---
+        the only years at or above the frontier).
+    \item \textbf{1945--1973}: $\hat{\mu}$ stabilizes at $0.73$--$0.76$
+        (Fordist plateau).
+    \item \textbf{Post-2004}: $\hat{\mu}$ declines from $0.74$ to $0.55$
+        (2024), as the super-Harrodian regime makes the frontier grow
+        faster than actual output.
+\end{itemize}
+
+\subsubsection{ECT-Based Alternative}
+\label{app:sa:mu_ect}
+
+An alternative capacity utilization measure uses the full cointegrating
+residual in the same fashion as \citet{Shaikh2016} does: 
+%
+\begin{equation}
+    \hat{\mu}^{ect}_t = \exp\!\left(\text{ECT}_{1,t}
+    - \overline{\text{ECT}_1}\right)
+    \label{eq:sa:mu_ect}
+\end{equation}
+%
+centered on 1 by construction. Period means: Pre-Fordist ($1.75$),
+Fordist ($1.12$), Post-Fordist ($0.94$). This measure confirms the secular
+decline but uses a different normalization and includes the direct $\omega$
+and constant terms. $\hat{\mu}^{ect}_t$ serves as a robustness check;
+the structural closure $\hat{\mu}_t$ from~\eqref{eq:sa:mu_def} is the
+primary object for Stages~B and~C.
+
+
+% ---- A.9 Label Directory ---------------------------------------------------
+%
+% CROSS-REFERENCE DIRECTORY for §2.8.1 drafting:
+%
+% EQUATIONS:
+%   \eqref{eq:sa:state_vector}    — state vector definition
+%   \eqref{eq:sa:cv1}             — cointegrating vector (MPF)
+%   \eqref{eq:sa:theta_omega}     — theta(omega) structural formula
+%   \eqref{eq:sa:omega_H}         — Harrodian knife-edge
+%   \eqref{eq:sa:omega_star}      — crisis boundary
+%   \eqref{eq:sa:ect1}            — ECT definition
+%   \eqref{eq:sa:mu_pin}          — pin year condition
+%   \eqref{eq:sa:frontier_growth} — frontier growth closure
+%   \eqref{eq:sa:mu_def}          — mu definition
+%   \eqref{eq:sa:mu_ect}          — ECT-based mu (robustness)
+%
+% TABLES:
+%   \ref{tab:sa:trace}            — trace test
+%   \ref{tab:sa:cv1_params}       — MPF structural parameters
+%   \ref{tab:sa:regime_summary}   — regime partition
+%   \ref{tab:sa:alpha}            — loading vector (r=1)
+%   \ref{tab:sa:ect_adf}          — ECT stationarity
+%   \ref{tab:sa:rank_invariance}  — rank invariance (r=1 vs r=3)
+%   \ref{tab:sa:mu_periods}       — theta and mu period averages
+%
+% SECTIONS:
+%   \ref{app:us_stage_a}          — appendix top-level
+%   \ref{app:sa:rank}             — rank determination
+%   \ref{app:sa:cv1}              — cointegrating vector
+%   \ref{app:sa:regime}           — regime partition
+%   \ref{app:sa:alpha}            — error correction loading
+%   \ref{app:sa:ect_stationarity} — ECT stationarity
+%   \ref{app:sa:rank_invariance}  — rank invariance
+%   \ref{app:sa:restrictions}     — restriction tests
+%   \ref{app:sa:mu_construction}  — mu construction
+%   \ref{app:sa:mu_structural}    — structural closure
+%   \ref{app:sa:mu_ect}           — ECT-based mu
+%   \ref{app:sa:pin_sensitivity}  — pin-year sensitivity (deferred)
+%
+% FORWARD REFERENCES (must exist in main body):
+%   \ref{sec:results_us}          — §2.8.1 US results
+%   \ref{sec:analytical_framework}— §2.3 analytical framework
+%   \ref{sec:data}                — §2.4 data section
+%

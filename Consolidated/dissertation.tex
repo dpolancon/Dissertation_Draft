@@ -1,0 +1,122 @@
+% =============================================================================
+%  Consolidated Dissertation — Three Essays in Political Economy
+%  This master document fetches pre-extracted tagged fragments from Chapter1/,
+%  Chapter2/, Chapter3/. Do NOT edit essay content here — edit the source
+%  chapter files instead and rebuild.
+% =============================================================================
+\documentclass[11pt,a4paper]{report}
+
+% --- Language & fonts --------------------------------------------------------
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=1in]{geometry}
+
+% --- Graphics & tables -------------------------------------------------------
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{rotating}
+\usepackage{pdflscape}
+
+% --- Math ---------------------------------------------------------------------
+\usepackage{amsmath,amssymb,bm}
+\usepackage{xfrac}
+
+% --- Lists & sections ---------------------------------------------------------
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% --- Citations ----------------------------------------------------------------
+\usepackage[authoryear]{natbib}
+
+% --- Links --------------------------------------------------------------------
+\usepackage{hyperref}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+\hypersetup{
+    colorlinks=true,
+    citecolor=darkblue,
+    linkcolor=darkblue,
+    urlcolor=darkblue
+}
+
+% --- Headers ------------------------------------------------------------------
+\usepackage{fancyhdr}
+
+% --- Numeric formatting (Ch2) ------------------------------------------------
+\usepackage{siunitx}
+
+% --- Diagrams -----------------------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+% --- Formatting ---------------------------------------------------------------
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0pt}
+
+% --- Figure paths -------------------------------------------------------------
+\graphicspath{
+    {../Chapter1/figures/}
+    {../Chapter2/figures/}
+    {../Chapter3/figures/}
+    {../Chapter1/}
+    {../Chapter2/}
+    {../Chapter3/}
+    {../figures/}
+}
+
+% --- Title --------------------------------------------------------------------
+\title{Capacity Utilization and Accumulation Regimes: Essays in the Political Economy of Growth, Distribution, and Core-Periphery Dynamics}
+\author{Diego Polanco \\ \textit{Economics Department} \\ \textit{University of Massachusetts, Amherst}}
+\date{\today}
+
+% =============================================================================
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+% -----------------------------------------------------------------------------
+\chapter{Overaccumulation and Capacity Utilization Measurement: A Critical Replication of Anwar Shaikh's Cointegration Method}
+% -----------------------------------------------------------------------------
+\input{_generated/ch1body}
+
+% -----------------------------------------------------------------------------
+\chapter{Accumulation, Profitability, and Structural Crisis in Center and Periphery: The United States and Chile during the Fordist Era}
+% -----------------------------------------------------------------------------
+\input{_generated/ch2body}
+
+% -----------------------------------------------------------------------------
+\chapter{Re-visiting the Political Economy of the Rise and Fall of the Unidad Popular: World Money, Class Conflict, and Mechanisms of Dependency}
+% -----------------------------------------------------------------------------
+\input{_generated/ch3body}
+
+% -----------------------------------------------------------------------------
+% BIBLIOGRAPHY
+% -----------------------------------------------------------------------------
+\bibliographystyle{apalike}
+\bibliography{../references}
+
+% -----------------------------------------------------------------------------
+% APPENDICES
+% -----------------------------------------------------------------------------
+\appendix
+
+\chapter{Appendices to Chapter 1}
+\input{_generated/ch1appendix}
+
+\chapter{Appendices to Chapter 2}
+\input{_generated/ch2appendix}
+
+\chapter{Appendices to Chapter 3}
+\input{_generated/ch3appendix}
+
+\end{document}

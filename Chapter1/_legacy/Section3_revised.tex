@@ -1,0 +1,293 @@
+
+\subsection{Reproduction, Smooth Reproduction, and the Say's Law Benchmark}
+\label{sec:reproduction}
+
+The previous section traced the measurement of capacity utilization from its Fordist-era survey origins through its post-Fordist sedimentation into the econometric and filter-based apparatus that governs fiscal policy in the United States and Chile. That trace ended with a diagnostic: Shaikh's cointegration-based identification recovers unbalanced growth---a genuine advance---but he does not develop a substantive interpretation of the long-run parameter beyond the intuition that capacity utilization is the non-cointegrated component of capital accumulation. The strength of his methodology, on my reading, is precisely the identification of a long-run transformation elasticity of productive capacity to capital stock. Yet the implementation leaves that parameter poorly theorized: capital embeddedness and autonomous technological change are assumed rather than derived, and the stability of the fixed parameter is never tested---leaving open whether constancy is a structural feature of the data or an artifact of the ARDL bounds-testing procedure itself \citep{Pesaran2001}. Several theoretical commitments developed at length throughout \emph{Capitalism}---endogenous technological change, gravitational instability---find no expression in this empirical specification \citep{Shaikh2016}.
+
+What is the structural object the critical replication targets, and from what accounting structure does it emerge? This section builds the framework from which $\theta(\Lambda)$ emerges as a regime-specific property of capital accumulation under unbalanced growth, situates Shaikh's empirical strategy within that framework, and identifies the specific site where critical replication intervenes.
+
+The accounting structure of capital accumulation does not begin with an econometric specification. It begins with a question Marx posed in Volume~II of \textit{Capital}: under what conditions can the capitalist system reproduce itself? The reproduction schemas formalize this question by decomposing the aggregate economy into departments whose output must satisfy both the value requirements of surplus extraction and the use-value requirements of material replacement. The circuit of capital---money capital advanced, productive capital employed, commodity capital realized---imposes temporal and proportional constraints: commodities must be sold, value must be realized through circulation, and the material composition of output must be reproduced in the right proportions across departments for accumulation to proceed \citep{MarxKVII}.\footnote{For a contemporary integrated reconstruction, see \citet[Ch.~4]{Basu2022}.}
+
+What the reproduction schemas establish is that production alone is insufficient for accumulation. Realization requires that the output of each department finds a market in the other departments' demand, and that the aggregate proportionalities hold across the circuit. When they do not---when disproportionality between departments exceeds the absorptive capacity of the market---the circuit breaks and crisis intervenes. The schemas therefore define the \textit{conditions of possibility} for smooth reproduction, not its inevitability.
+
+\citet{Shaikh2016}'s engagement with the reproduction schemas in \emph{Capitalism} is tangential and, for the purposes of the present chapter, consequential in what it forecloses. The schemas appear in his argument at three sites: as a device for demonstrating the endogeneity of business savings at the aggregate level, where the proportionality condition between departments is declared dispensable (Ch.~13, \S III.2); as a price-theoretic benchmark identifying the output proportions under maximum expanded reproduction at which aggregate profit is invariant to changes in relative prices (Ch.~6, \S IV.2); and as the source of the upper bound on accumulation, $g \leq r$, within a crisis theory organized entirely around the profit rate as the sole mediating variable (Ch.~13, \S V). Each of these engagements instrumentalizes the schemas for a purpose other than reproduction analysis: the first dissolves the departmental structure into an aggregate identity, the second subordinates it to the transformation problem, and the third reduces it to a boundary condition on growth. What is foreclosed across all three sites is precisely the distinctive analytical content of the schemas: interdepartmental proportionality as an independent structural constraint on accumulation---one that is not reducible to aggregate demand, relative prices, or the profit rate.
+
+This foreclosure has a direct consequence for the object of the present chapter. If the departmental structure carries no independent analytical weight, the transformation elasticity $\theta$ has no theoretical reason to vary across accumulation regimes---it is just a technical parameter linking two aggregates within socially constructed economies understood as a single totality, traceable only at different analytical moments \citep{Vidal2012}. But if the reproduction schemas are taken seriously as an accounting framework, then $\theta$ not only represents persistent unbalanced growth in the long run but also carries the regime-dependence of the proportional interdepartmental conditions for smooth reproduction: the composition of investment across departments, the material requirements of expanded reproduction, and the institutional conditions under which those requirements are met or violated. The accounting laws derived in the following section identify why the notion of regime-dependence under unbalanced growth is critical for understanding the dynamics of capital accumulation. There, $\theta$ represents the transformation of capital stock into productive capacity, while $\Lambda$ denotes its institutional configuration---hence the notation $\theta(\Lambda)$.
+
+This chapter takes the reproduction schemas as the accounting foundation and works under a classical long-run closure in which all produced commodities are realized, all capacity is utilized, and the economy operates on a ``golden path'' of smooth reproduction \citep{Basu2022}. This assumption can be traced back to Say's law,%
+\footnote{Which here, as argued by \citet{Foley1985}, is used as a mere abstraction.}
+$\mu \equiv Y/Y^p = 1$: supply creates its own demand, markets clear continuously, and the economy works under full capacity utilization---or, in neoclassical jargon, the output gap vanishes. Under this methodological \emph{closure}, the temporal and proportional constraints of the reproduction schemas are satisfied by assumption. The accounting identities of capital accumulation---the rate of accumulation $k = \phi^p B$, the investment share at normal capacity $\phi^p \equiv I/Y^p$, and capital productivity $B \equiv Y^p/K$---hold without the demand side.
+
+Smooth reproduction is not a description of reality but a benchmark of its stringent conditions \citep{Okishio2022}. It is an analytical device that isolates the \textit{supply-side accounting structure} of capital accumulation from the demand conditions governing whether the productive structure can be realized. By abstracting from $\mu \neq 1$, the tendential laws of accumulation can be derived at the level of accounting identities alone---before any investment function, Phillips curve, or demand-formation equation is imposed---providing the theoretical underpinnings for Shaikh's methodology. The cost of the abstraction is that the entire demand side of the accumulation equation is suppressed, with degenerate consequences that can only be understood once effective demand stabilization is recognized as the force that breaks them. The benefit is that the structural parameter governing the transformation of capital into productive capacity---$\theta(\Lambda)$---can be isolated and its consequences traced analytically, while Shaikh's own framework for estimating capacity utilization can be subjected to scrutiny and refinement.
+
+
+% =============================================================================
+% §1.3.2 — Laws of Capital Accumulation under Unbalanced Growth
+% =============================================================================
+
+\subsection{Laws of Capital Accumulation under Unbalanced Growth}
+\label{sec:accounting_laws}
+
+The cost of the smooth reproduction abstraction imposed in the previous section is not merely conceptual. It produces degenerate results at the boundary of the feasible interval. As the rate of capital accumulation approaches unity, productive capacity outruns realized output, the labor supply is exhausted, the consumption share collapses, and $\mu$ falls below~1. The three channels that re-enter simultaneously---labor market tightening, demand shortfall, and falling utilization---are the terrain of the class struggle over distribution, utilization, and the institutional forms that govern whether accumulation can proceed. That terrain is developed in Chapter~2. Here, the smooth reproduction benchmark ($\mu = 1$) is maintained in order to derive the accounting laws that define the object the empirical strategy must recover. The degeneracy is not a defect of the accounting structure but a signal of its scope: it marks the point where pre-behavioral laws exhaust themselves and demand conditions must be imposed.
+
+
+\subsubsection{The Rate of Capital Accumulation and the Three Channels of Distribution}
+\label{sec:rate_of_accumulation}
+
+The gross rate of capital accumulation decomposes as:
+%
+\begin{equation}\label{eq:gross_rate}
+	\hat{k} + \delta = \frac{I}{K} = \phi^p \, B
+\end{equation}
+%
+where $\phi^p \equiv I/Y^p$ is the investment share at normal capacity---the degree to which investment claims the productive capacity of the capital stock, independent of realized demand conditions---and $B \equiv Y^p/K$ is capital productivity at normal capacity.\footnote{The gross investment rate $I/K$ has no dedicated symbol; when needed it is written as $\hat{k} + \delta$ or equivalently as its decomposition $\phi^p B$. This convention prevents the gross/net conflation that can vitiate the derivation of the speed equation.}
+
+Distribution does not appear as an explicit argument, but it is not absent. It enters through three channels of unequal visibility: $\mu$ carries demand conditions shaped by the distributive conflict over utilization; $B$ carries the indirect distributional mapping through $\theta(\Lambda)$, connecting capital productivity to the mechanization choice endogenous to the wage-profit relation; and $\phi^p$ carries the structural power of capital over the surplus---the capacity of capitalists to direct a share of normal-capacity output toward accumulation rather than consumption. The algebraic cancellation of $\mu$---which drops out of $\phi^p B$ under $\mu = 1$---is real; the social cancellation is not.
+
+
+\subsubsection{The Unbalanced Growth Closure}
+\label{sec:unbalanced_growth_closure}
+
+The transformation elasticity of capital stock into productive capacity is defined as:
+%
+\begin{equation}\label{eq:theta_def}
+	\theta(\Lambda) \equiv \frac{\partial \ln Y^p}{\partial \ln K}\bigg|_\Lambda
+\end{equation}
+%
+At a given institutional configuration $\Lambda$, $\theta$ is fixed: the regime determines the structural conditions under which mechanization choices are made, pinning the transformation elasticity as a parameter of the regime rather than of the individual investment decision.
+
+The methodological closure of the system is:
+%
+\begin{equation}\label{eq:closure}
+	\hat{y}^p = \theta(\Lambda) \cdot \hat{k}
+\end{equation}
+%
+This is the unbalanced growth closure at the origin of the mechanization possibilities frontier. Proportional accumulation---$\theta(\Lambda) = 1$, capital and productive capacity expanding in exact proportion---is the knife-edge special case. The general case is $\theta(\Lambda) \neq 1$, and the tendential laws of overaccumulation and underaccumulation follow directly from which side of unity $\theta(\Lambda)$ sits on.
+
+Two immediate consequences follow from the closure and the accounting identities. First, capital productivity growth:
+%
+\begin{equation}\label{eq:bhat}
+	\hat{b} = \hat{y}^p - \hat{k} = (\theta(\Lambda) - 1)\,\hat{k}
+\end{equation}
+%
+Capital productivity grows when $\theta > 1$ (underaccumulation: each unit of capital generates disproportionate capacity), shrinks when $\theta < 1$ (overaccumulation: accumulation demand exceeds its capacity yield), and is constant at the knife-edge. This is a pre-behavioral result. Second, the dynamics of the investment share:
+%
+\begin{equation}\label{eq:phihat}
+	\hat{\phi}^p = \hat{\imath} - \hat{y}^p = \hat{\imath} - \theta\,\hat{k}
+\end{equation}
+%
+The growth rate of the investment share is the gap between investment growth and capacity growth. A critical feature of the accounting structure is that log-differentiating equation~\eqref{eq:gross_rate} yields:
+%
+\begin{equation}\label{eq:khat_accel}
+	\frac{d\hat{k}}{dt} = (\hat{k} + \delta)(\hat{\imath} - \hat{k})
+\end{equation}
+%
+an identity in which $\theta$ nets to zero. The closure enters through $\hat{b}$ and through $\hat{\phi}^p$ with opposite signs and cancels. The three equations---the accounting identity, the closure, and the productivity consequence---are underdetermined for the dynamics of $\hat{k}$: the system has three unknowns ($\hat{k}$, $\hat{y}^p$, $\hat{\imath}$) and two independent relations.
+
+
+% --- §1.3.2.3 — Investment-Savings Closure [ALL FIXES APPLIED] ---
+
+\subsubsection{Investment-Savings Closure}
+\label{sec:IS_closure}
+
+The missing ingredient is a closure on investment. Under smooth reproduction ($\mu = 1$), the goods market clears: investment equals savings. Expressed in capacity shares, this equilibrium condition is:
+%
+\begin{equation}\label{eq:IS_closure}
+	\phi^p = s \qquad \text{(constant)}
+\end{equation}
+%
+The share of productive capacity claimed by investment is structurally fixed. This is the first behavioral assumption in the system. It closes the underdetermined accounting structure of the previous section by pinning the investment share, so that $\hat{\phi}^p = 0$ and investment growth is tied to capacity growth: $\hat{\imath} = \hat{y}^p = \theta\hat{k}$. The system closes and $\theta$-dependent dynamics emerge.
+
+The condition $I = S$ in capacity shares is coherent with the smooth reproduction benchmark already imposed, and its economic content varies across traditions of political economy. In Marx's reproduction schemas, the condition corresponds to the total reinvestment of surplus value: the surplus product is entirely directed toward expanded reproduction, and the proportionality conditions of the two-departmental schema ensure that the material composition of the surplus matches the input requirements of both departments \citep{MarxKVII}. In the classical tradition, savings out of profits determines investment, and the profit rate adjusts through competition to enforce the condition. In the Keynesian tradition, the same equality $I = S$ holds at the goods market equilibrium locus, but the adjustment mechanism is output rather than the profit rate. What these traditions share, and what matters for the accounting laws derived below, is the \emph{constancy} of $\phi^p$: no feedback from accumulation dynamics to the investment share operates within the period. The traditions disagree about the causal mechanism that enforces the condition---what adjusts, and through which institutional channel---but they converge on the equilibrium restriction.
+
+The Cambridge equation makes explicit what $\phi^p = s$ represents. Since $\phi^p \equiv I/Y^p$ and $I = s_\pi \Pi$, the investment share decomposes as:
+%
+\begin{equation}\label{eq:cambridge}
+	\phi^p = s_\pi \cdot \pi^p
+\end{equation}
+%
+where $s_\pi$ is the savings propensity out of profits and $\pi^p \equiv \Pi/Y^p$ is the profit share at capacity. The constant $s$ is therefore the product of a behavioral assumption (the propensity to save out of profits) and a distributional assumption (the share of capacity output appropriated as profit). Both are suppressed---held constant---under the closure imposed here. The constancy of $\phi^p$ severs the investment share from distributive conflict. This is contradictory: $\theta$ governs the choice of technique and its effect on labour productivity, which is itself a site of distributive contestation. The closure holds fixed what the parameter it transmits presupposes as variable within \citet{Shaikh2016}'s own framework.
+
+
+% --- §1.3.2.4 — Accumulation Regimes and Supply-Side Instability ---
+
+\subsubsection{Accumulation Regimes and Supply-Side Instability}
+\label{sec:regimes}
+
+The sign of $(\theta - 1)$ determines the proportionality between accumulation demand and its capacity yield. Every unit of investment simultaneously creates demand---it absorbs output, employs workers, generates income---and installs capital that generates future productive capacity through $\theta$. When $\theta < 1$, accumulation demand exceeds its capacity yield: the capital stock grows faster than the productive capacity it generates, and the economy reproduces with a structural excess of installed capital relative to capacity. When $\theta > 1$, the capacity yield exceeds accumulation demand: each unit of investment generates disproportionately large capacity expansion. The boundary $\theta = 1$ is proportional accumulation---the knife-edge where the two faces of investment are balanced.
+
+Differentiating the accounting identity $\hat{k} + \delta = sB$ under constant $\phi^p$ and substituting the capital productivity growth rate from equation~\eqref{eq:bhat} yields a nonlinear ODE of the Bernoulli type\footnote{The full derivation is presented in Appendix~\ref{app:bernoulli}.}:
+%
+\begin{equation}\label{eq:bernoulli}
+	\boxed{\frac{d\hat{k}}{dt} = (\theta(\Lambda) - 1)\,\hat{k}\,(\hat{k} + \delta)}
+\end{equation}
+%
+The equation is nonlinear but analytically solvable. The $\theta$-dependent dynamics emerge because the constant investment share prevents the investment channel from absorbing the $\theta$ signal---the regime's structural character feeds back directly into the acceleration of accumulation.
+
+The equilibria are $\hat{k}^* = 0$ (net stagnation: gross investment just covers depreciation) and $\hat{k}^* = -\delta$ (zero gross investment: the capital stock is not being replaced). The vector field in the feasible region $\hat{k} > 0$ is governed entirely by the regime, since both $\hat{k}$ and $(\hat{k} + \delta)$ are strictly positive:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lccll}
+		\toprule
+		\textbf{Regime} & \textbf{Condition} & $d\hat{k}/dt$ for $\hat{k} > 0$ & \textbf{Dynamics} & \textbf{Character} \\
+		\midrule
+		Overaccumulation & $\theta < 1$ & negative & $\hat{k}$ decelerates toward 0 & Stagnation \\
+		Underaccumulation & $\theta > 1$ & positive & $\hat{k}$ accelerates toward $\infty$ & Explosion \\
+		Proportional accumulation & $\theta = 1$ & zero & $\hat{k}$ constant & Knife-edge \\
+		\bottomrule
+	\end{tabular}
+	\caption{Regime classification under the pure unbalanced growth closure. Overaccumulation and underaccumulation refer to accumulation demand relative to its capacity yield, not to a normative benchmark.}
+	\label{tab:regime_classification}
+\end{table}
+
+No feasible interior attractor exists under either regime. Overaccumulation drives capital accumulation toward stagnation---each successive unit of investment generates more demand than capacity, progressively eroding capital productivity until gross investment merely replaces depreciated stock. Underaccumulation drives accumulation toward explosion---each unit generates more capacity than demand, feeding back into further accumulation with no internal brake.
+
+Unbalanced growth is inherently destabilizing on the supply side. The sign of $(\theta - 1)$ determines whether the system decelerates or accelerates, but in neither case does it converge to a feasible interior equilibrium. The stabilizing force, when it arrives, must come from the demand side---through induced consumption, which supports effective demand but erodes profitability through the distributive conflict, and through state-mediated expenditure, whose institutional form is regime-specific: countercyclical under Fordism, procyclically constrained under post-Fordist governance. The institutional configuration $\Lambda$ includes this stabilization architecture, which is why $\theta$ cannot be regime-invariant. That terrain is developed in Chapter~2.
+
+The level trajectory of capital productivity confirms the regime classification. From $\hat{b} = (\theta - 1)\hat{k}$ and the solution for $\hat{k}(t)$, integrating gives:
+%
+\begin{equation}\label{eq:B_trajectory}
+	B(t) = B_0 \cdot \exp\left[\int_0^t (\theta - 1)\,\hat{k}(\tau)\,d\tau\right]
+\end{equation}
+%
+The trajectory separates into a transient component---driven by the initial deviation of $\hat{k}$ from equilibrium, decaying under overaccumulation, exploding under underaccumulation---and a trend component determined by the regime's structural character. Log-differentiating $B(t)$ recovers $\hat{b} = (\theta - 1)\hat{k}$: the mapping is internally consistent.
+
+
+% --- §1.3.2.5 — Mechanization, Autonomous Progress, and the Limits of Shaikh's Closure ---
+% [FIXES: transition ¶ cleaned, no Ch2 formula preview]
+
+\subsubsection{Mechanization, Autonomous Progress, and the Limits of Shaikh's Closure}
+\label{sec:extended_closure}
+
+The pure closure $\hat{y}^p = \theta\hat{k}$ locates the capital-to-capacity mapping entirely within the mechanization choice governed by $\theta(\Lambda)$---the mechanization possibilities frontier at its origin, where the transformation elasticity is grounded in the connection between surplus extraction and the direction and intensity of technical change. Shaikh's cointegrating relation introduces a second channel:
+%
+\begin{equation}\label{eq:shaikh_coint}
+	\ln Y = a + bt + d \cdot \ln K
+\end{equation}
+%
+which implies, upon differentiation:
+%
+\begin{equation}\label{eq:extended_closure}
+	\hat{y}^p = \theta\,\hat{k} + \beta
+\end{equation}
+%
+where $\beta$ is the rate of autonomous technical progress---capacity growth that is independent of the accumulation rate. The time trend in Shaikh's specification absorbs this term.
+
+Under the interpretation developed in this chapter---which Shaikh himself does not articulate, since he does not interpret $d$ as a transformation elasticity of capital into productive capacity---the cointegrating parameter $d$ \emph{is} the empirical counterpart of $\theta(\Lambda)$, and the relation $\hat{y}^p = \theta\hat{k} + \beta$ asserts that unbalanced growth ($\theta \neq 1$) takes place \emph{alongside} a linear deterministic trend representing an autonomous component of technical change.
+
+Shaikh's empirical specification embeds a claim he does not theorize as such. The transformation of capital into productive capacity operates through two distinct channels simultaneously---a mechanization channel governed by $\theta$ and an autonomous channel governed by $\beta$. The mechanization channel is regime-dependent by construction; the autonomous channel is, by definition, independent of accumulation, profitability, and the institutional configuration $\Lambda$. The coexistence of these two channels within a single cointegrating relation is the empirical structure that the ARDL bounds-testing procedure estimates. It is also the site of an internal contradiction within Shaikh's theoretical framework.
+
+This coexistence sits in tension with Shaikh's own theoretical commitments throughout \emph{Capitalism}. The entire architecture of the book argues for the full endogeneity of technical change to profitability: the profit rate drives the direction and intensity of mechanization, investment responds to profitability signals, and the classical competitive process selects techniques on the basis of cost-cutting driven by the wage-profit frontier \citep{Shaikh2016}. There is no theoretical location in that architecture for a component of capacity growth that operates independently of the accumulation rate and the profit-driven mechanization channel. Yet the time trend in his cointegrating relation is precisely such a component. The contradiction is invisible to Shaikh because he does not interpret $d$ as unbalanced growth---the parameter remains an unexplained long-run elasticity rather than a structural object whose coexistence with $\beta$ requires theoretical justification.
+
+This chapter does not resolve the contradiction. It inherits it: the critical replication operates within Shaikh's extended closure because the empirical strategy requires the time trend to absorb secular technical progress. Whether the autonomous channel can be grounded theoretically---or whether it is an artifact of a closure that suppresses a distributional channel the theory requires---is a question this chapter's empirical findings will sharpen but cannot settle. Here, the consequences of Shaikh's extended closure are derived in order to locate the quadratic structure that his specification implies.
+
+Under $\phi^p = s$ and $\hat{y}^p = \theta\hat{k} + \beta$, the capital productivity growth rate becomes $\hat{b} = (\theta - 1)\hat{k} + \beta$, and the ODE is:
+%
+\begin{equation}\label{eq:extended_ode}
+	\frac{d\hat{k}}{dt} = (\hat{k} + \delta)\left[(\theta - 1)\hat{k} + \beta\right]
+\end{equation}
+%
+Expanding:
+%
+\begin{equation}\label{eq:quadratic_expanded}
+	\frac{d\hat{k}}{dt} = (\theta - 1)\hat{k}^2 + \left[(\theta - 1)\delta + \beta\right]\hat{k} + \beta\delta
+\end{equation}
+%
+This is a genuine quadratic in $\hat{k}$, with equilibria at the roots of $(\hat{k} + \delta)[(\theta - 1)\hat{k} + \beta] = 0$:
+%
+\begin{equation}\label{eq:extended_equilibria}
+	\hat{k}_1^* = -\delta, \qquad \hat{k}_2^* = \frac{\beta}{1 - \theta}
+\end{equation}
+%
+The second equilibrium is new: it is the net growth rate at which autonomous technical progress exactly offsets the regime's structural drag. Under overaccumulation ($\theta < 1$) and $\beta > 0$: $\hat{k}_2^* = \beta/(1 - \theta) > 0$---a feasible positive equilibrium emerges. Autonomous technical progress provides the interior attractor that the pure closure could not generate.
+
+Writing the quadratic $(\theta - 1)\hat{k}^2 + [(\theta - 1)\delta + \beta]\hat{k} + \beta\delta = 0$, Vieta's formulas give:
+%
+\begin{equation}\label{eq:vieta_product}
+	\hat{k}_1 \cdot \hat{k}_2 = \frac{\beta\delta}{\theta - 1}
+\end{equation}
+%
+\begin{equation}\label{eq:vieta_sum}
+	\hat{k}_1 + \hat{k}_2 = -\delta - \frac{\beta}{\theta - 1}
+\end{equation}
+%
+Under overaccumulation ($\theta < 1$) the product of roots is negative---one positive root, one negative---confirming the existence of a feasible attractor alongside a decumulation equilibrium. Under underaccumulation ($\theta > 1$) the product is positive and both roots share sign. The depreciation rate anchors the sum; the ratio $\beta/(\theta - 1)$ scales autonomous progress by the inverse degree of unbalanced growth.
+
+As $\theta \to 1$, the quadratic coefficient vanishes and the equilibrium $\hat{k}_2^*$ diverges:
+%
+\begin{equation}\label{eq:degeneracy}
+	\mathcal{D} \equiv \left\{\theta(\Lambda) = 1,\;\; \beta = 0\right\}
+\end{equation}
+%
+At $\mathcal{D}$ both the regime classification and the autonomous-progress channel collapse simultaneously---the system has no determinate growth rate. The degeneracy locus is a singularity in the $(\theta, \beta)$ parameter plane.
+
+When $\beta \to 0$, $\hat{k}_2^* \to 0$, the positive equilibrium collapses to the stagnation point, the quadratic degenerates to $(\theta - 1)\hat{k}(\hat{k} + \delta) = 0$, and the Bernoulli ODE of \S\ref{sec:regimes} holds. The pure closure is the limiting case of Shaikh's specification in which the entire capital-to-capacity mapping is exhausted by the mechanization choice. The quadratic structure and Vieta's formulas are properties of Shaikh's extended closure, not of the accounting laws per se.
+
+
+% --- §1.3.2.6 — Summary [CLOSING SENTENCE FIXED] ---
+
+\subsubsection{Summary: What the Accounting Laws Establish}
+\label{sec:accounting_summary}
+
+The regime classification, the instability result, the capital productivity mapping, and the absence of a feasible interior attractor all emerge from three ingredients: the accounting identity $\hat{k} + \delta = \phi^p B$, the unbalanced growth closure $\hat{y}^p = \theta\hat{k}$, and the investment-savings closure $\phi^p = s$. The first two are pre-behavioral; the third is the only behavioral assumption in the system. No investment function, Phillips curve, or demand-formation equation has been imposed.
+
+The \textbf{regime classification} is determined by the sign of $(\theta - 1)$. Overaccumulation ($\theta < 1$) generates decelerating accumulation; underaccumulation ($\theta > 1$) generates accelerating accumulation; proportional accumulation ($\theta = 1$) is the knife-edge singularity.
+
+\textbf{No feasible interior attractor} exists under the pure closure. The supply-side accounting structure is inherently destabilizing. The demand side provides the stabilizing force.
+
+The \textbf{quadratic structure}---Vieta's formulas, the degeneracy locus, and the feasible interior equilibrium under overaccumulation---requires Shaikh's extended closure $\hat{y}^p = \theta\hat{k} + \beta$. The autonomous progress term $\beta$ introduces a channel absent from the mechanization possibilities frontier at its origin. This is a finding, not merely a technicality: it means the quadratic law is a property of Shaikh's empirical specification, not of the pure accounting laws, and locates it within his identification strategy. The coexistence of $\theta \neq 1$ and $\beta > 0$ in a single cointegrating relation embeds a theoretical tension between the regime-dependent mechanization channel and an autonomous component of technical change that has no grounding within Shaikh's own commitment to the full endogeneity of technical change to profitability.
+
+The empirical task is now defined: recover $\theta(\Lambda)$ from observed data and test whether its constancy is a structural feature or an artifact of the estimation strategy. What remains is whether Shaikh's identification can bear that weight.
+
+
+% =============================================================================
+% §1.3.3 — Shaikh's Triple Contribution
+% =============================================================================
+
+\subsection{Shaikh's Triple Contribution: Instability, Correction, Portability}
+\label{sec:shaikh_triple}
+
+The accounting laws derived in the previous section establish that unbalanced growth is inherently destabilizing on the supply side: under overaccumulation, accumulation decelerates toward stagnation; under underaccumulation, it accelerates without bound. No feasible interior attractor exists under the pure closure. This is Shaikh's first contribution to the problem of capacity utilization, although he does not frame it in these terms. Under the empirically relevant case $\theta < 1$, the instability takes the form of overaccumulation of accumulation demand---capital stock grows faster than the productive capacity it generates, reproducing with a persistent structural excess of installed capital whose capacity yield falls short of the demand it created.
+
+This is not a pathology but the accounting signature of the dominant pattern of capitalist technical change. In \citet{Basu2022}'s formalization, capital-using, labour-saving technical change---the type that capitalist competition systematically selects because it reduces costs at current prices---raises the capital input per unit of output while reducing the labour input. The aggregate counterpart is precisely $\theta < 1$: capital productivity falls as the stock grows. The overaccumulation regime is therefore not an anomaly to be corrected but a structural tendency of accumulation under capitalist relations of production, whose arrest requires demand-side stabilization that the accounting laws, by construction, do not provide.\footnote{The formal correspondence between Basu's technique-level typology and the aggregate regime classification is developed in Appendix~\ref{app:basu_correspondence}. The Marx-Okishio threshold (\citealp{Basu2022}, Proposition~3) determines whether the rate of profit rises or falls under CU-LS technical change as a function of class struggle over the real wage---a channel that enters the empirical framework through the trivariate VECM of Stage~S2.}
+
+The institutional forms through which demand-side stabilization operates are regime-specific, which is why the transformation elasticity $\theta$ cannot be regime-invariant if the theory is taken seriously. The parameter matters because it governs the structural character of accumulation dynamics, not merely the statistical fit of an output--capital regression.
+
+Shaikh's second contribution is the construction of an empirical identification strategy that translates the instability result into an estimable cointegrating relation. The identification chain proceeds in four steps. First, the aggregate profit rate is decomposed into a product of the profit share, capacity utilization, and capital productivity: $r = \pi \cdot u \cdot B$. Second, a technical progress function links capital productivity growth to the rate of accumulation through a mechanization channel and an autonomous component, yielding the growth-rate relation $\hat{y}^p = \theta\hat{k} + \beta$ derived in \S\ref{sec:extended_closure}. Third, the classical long-run closure $\mu = 1$ pins the theoretical anchor: the long-run component of the output--capital relation is interpreted as the trajectory of productive capacity, with utilization recovered as the residual deviation from that trajectory. Fourth, the growth-rate relation is integrated to yield the log-level cointegrating relation:
+%
+\begin{equation}\label{eq:shaikh_coint_s33}
+	\ln Y_t = a + bt + d \cdot \ln K_t + \varepsilon_t
+\end{equation}
+%
+where $d$---the empirical counterpart of $\theta(\Lambda)$---is the long-run output--capital elasticity, $b$ absorbs the autonomous progress term $\beta$, and $\varepsilon_t$ captures the non-cointegrated component---capacity utilization under the maintained closure. Shaikh operationalizes this relation using the ARDL bounds-testing framework of \citet{Pesaran2001}, estimating it in error-correction form:
+%
+\begin{equation}\label{eq:shaikh_ecm_s33}
+	\Delta y_t = \alpha + \sum_{i=1}^{p-1}\psi_i \Delta y_{t-i} + \sum_{j=0}^{q-1}\varphi_j \Delta k_{t-j} + \phi_1 y_{t-1} + \phi_2 k_{t-1} + \gamma t + \sum_h \delta_h DM_{h,t} + \varepsilon_t
+\end{equation}
+%
+where $y_t$ and $k_t$ are log output and log capital deflated by a common price index---a requirement Shaikh derives from the profit-rate-consistent identification constraint---and $DM_{h,t}$ is a structure of historical dummies. Conditional on the bounds $F$-test rejecting the null of no long-run relation, the long-run multipliers are recovered from the OLS estimates, and the capacity benchmark is constructed as $\widehat{y_t^p} = \hat{a} + \hat{d} \cdot k_t + \sum_h \hat{c}_h DM_{h,t}$. Shaikh's reported benchmark values are $\hat{d} = 0.6609$ and a sample length of $T = 61$ annual observations for the US corporate sector (1947--2007).
+
+Shaikh's third contribution is portability. The identification strategy requires only national accounts data---gross value added, fixed capital stock, and a price deflator---all of which are available in any economy with a minimally functioning statistical office. It does not require industrial surveys of the kind administered by the Federal Reserve Board, which are confined to the US manufacturing sector and have no international counterpart of comparable scope. It does not require output-gap filters, which impose stationarity assumptions that erase the structural signal the cointegrating relation is designed to recover. The portability of the method is what makes the Chilean application possible as a structurally distinct test of the same identification strategy under peripheral conditions: commodity dependence, financial subordination, and structural-balance fiscal governance. It is also what gives the filter comparison developed later structural content rather than reducing it to a horse race between alternative smoothing devices.
+
+The limitation of the identification strategy is equally specific. The ARDL framework recovers $d$ as a fixed parameter---a single scalar summarizing the long-run output--capital relation across the entire sample. The estimation cannot register the regime-dependence of $\theta(\Lambda)$ that the accounting laws predict. The theory developed in \S\ref{sec:accounting_laws} says that the transformation elasticity is a property of the institutional configuration: it should shift when the accumulation regime shifts. The empirical strategy treats it as constant. This is not a deficiency of the ARDL procedure as such---bounds testing is agnostic about parameter stability---but of the specific implementation, which imposes constancy without testing it. The gap between what the theory predicts (regime-dependence) and what the estimation assumes (constancy) is the specific site where critical replication intervenes. The question is not whether Shaikh's cointegrating relation holds, but whether the fixed parameter it recovers is a structural feature of the data or a consequence of imposing constancy on a parameter that varies across the accumulation regimes the method was designed to characterize.
+
+
+% =============================================================================
+% §1.3.4 — Closure, Identification, and the Case for Critical Replication
+% =============================================================================
+
+\subsection{Closure, Identification, and the Case for Critical Replication}
+\label{sec:case_for_cr}
+
+\citet{Patomaki2017} diagnoses Shaikh's \emph{Capitalism} as resting on closed-system abstraction that suppresses historical contingency. The ontological critique is partially correct, but its conclusion does not follow: historical contingency is precisely what demands strong formal and empirical methodology, not what exempts inquiry from it. The problem is not modelling but \emph{closure}---which variables are held fixed by assumption, and whether what is suppressed is essential to the object under investigation. \citet{Nikiforos2021closure} provides the sharper instrument: closure is a special form of abstraction, evaluable by two criteria---it must posit mechanisms that are \emph{real} (subject to empirical scrutiny) and isolate what is \emph{essential} (the primary determinants, not merely the general). A closure that holds constant what the theory itself identifies as a primary determinant does not fail because it is formal, but because it formalizes in the wrong place. Nor is the problem mathematics: it is \emph{identification}---whether the econometric procedure recovers the structural object the theory names or a weaker reduced-form relation that absorbs the structural variation into a fixed parameter.
+
+These distinctions become operative through empirical replication as a researcher practice. \citet{HAP2014} demonstrated that Reinhart and Rogoff's canonical finding---a debt-to-GDP threshold above which growth collapses---depended on a fixed summary statistic that masked compositional heterogeneity across countries and time periods. The stakes were not merely academic: the finding had been escalated to supranational institutions of macroeconomic governance and directly informed the austerity prescriptions imposed on debtor economies throughout the post-crisis period, lending scientific authority to a causal claim between public debt and growth that the underlying data did not support. What Herndon, Ash, and Pollin showed was that the object itself---the threshold, the causal direction, the universality of the result---dissolved under reconstruction. The scalar $\theta = 0.66$ in Shaikh's identification faces a structurally analogous risk. If the transformation elasticity varies across accumulation regimes---Fordist versus post-Fordist, core versus periphery---then a fixed-parameter estimate averages over that variation, producing a single number whose economic interpretation is ambiguous: it could represent the structural character of one regime, or none. Empirical replication that merely verifies the computation leaves this risk untouched. Critical replication reconstructs the empirical object itself---subjecting its closure, its identification, and its measurement to the standard that critical realism articulates but cannot, by ontological diagnosis alone, enforce. It is replication as a weapon of contestation and plurality in economic thinking: critical realism operationalized through econometrics, not beyond mathematics but through better identification.
+
+Shaikh's empirical strategy imposes two closures. The first---the classical long-run closure $\mu = 1$, in which demand meets supply and all output is realized---is an appropriate abstraction: it suppresses the demand side in order to isolate the supply-side accounting structure, and the accounting laws of \S\ref{sec:accounting_laws} demonstrate that the suppressed material can be recovered when the abstraction is lifted. Combined with unbalanced growth ($\theta \neq 1$), this closure produces smooth reproduction---the benchmark from which the accounting laws are derived and from which $\mu$ can be reintroduced. This framing of Shaikh's methodology is not explicit in his own account; the interpretation here presented reads his empirical object as consistent with this closure. The second closure is the treatment of $\theta$ as a fixed parameter across the full sample. This is the closure that fails the essentiality criterion. Shaikh's own theoretical architecture in \emph{Capitalism}---endogenous technical change driven by profitability, the ``wandering around the Harrodian path'' interpretation of instability---identifies the transformation elasticity as a property of the institutional configuration, not a timeless constant. The accounting laws derived in this chapter formalize that dependence as $\theta(\Lambda)$. An estimation strategy that holds $\theta$ fixed suppresses what the theory itself designates as essential: the variation of the capital-to-capacity mapping across accumulation regimes. The problem is not that Shaikh formalizes---the entire conceptual framework of this chapter is formalization---but that his specific closure choice absorbs the regime signal into a constant, making it empirically invisible.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% SECTION 4: CRITICAL REPLICATION %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

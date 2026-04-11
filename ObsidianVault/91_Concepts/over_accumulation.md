@@ -56,7 +56,7 @@ The US can manage the tendency through demand activation (military-Keynesian, fi
 
 ## Related Concepts
 
-[[transformation_elasticity]] · [[mechanization_possibility_frontier]] · [[accumulation_regime]] · [[crisis_theory]] · [[capacity_utilization]] · [[distributive_conflict]] · [[harrodian_knife_edge]] · [[BoP_constraint]] · [[leverage_ratio]] · [[Chile_Peripheral]]
+[[transformation_elasticity]] · [[mechanization_possibility_frontier]] · [[ObsidianVault/91_Concepts/accumulation_regime]] · [[crisis_theory]] · [[ObsidianVault/91_Concepts/capacity_utilization]] · [[distributive_conflict]] · [[harrodian_knife_edge]] · [[BoP_constraint]] · [[leverage_ratio]] · [[Chile_Peripheral]]
 
 ## Key References
 

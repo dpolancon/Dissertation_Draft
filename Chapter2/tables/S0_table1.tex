@@ -1,0 +1,101 @@
+% =============================================================================
+% TABLE: S0 Main — Shaikh vs. C3 Replication (cbind layout, v3)
+% LR multipliers include delta-method significance stars
+% Denominator note rewritten in terms of AR persistence
+% =============================================================================
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\caption{ARDL(2,4) Faithful Replication:
+		Shaikh (2016) and Closest Replication}
+	\label{tab:S0_table1}
+	\begin{threeparttable}
+		\begin{tabular}{l r r @{\hspace{2.2em}} l r r}
+			\toprule
+			& \multicolumn{2}{c}{\textit{Short-run coef.}}
+			& & \multicolumn{2}{c}{\textit{Long-run \& fit}} \\
+			\cmidrule(lr){2-3} \cmidrule(lr){5-6}
+			& Shaikh & Repl.\
+			& & Shaikh & Repl.\ \\
+			& (2016) & C3
+			& & (2016) & C3 \\
+			\hline\hline
+			%
+			$L_1 y_t$
+			& $ 1.298^{***}$ & $ 1.242^{***}$
+			& $1 - \Sigma\gamma$
+			& $0.095$ & $0.096$ \\
+			%
+			$L_2 y_t$
+			& $-0.393^{***}$ & $-0.338^{**\phantom{*}}$
+			& $\hat{\theta}$
+			& $0.661$ & $0.720^{***}$ \\
+			%
+			&  &
+			& $\hat{a}$
+			& $2.178$ & $0.570\phantom{^{***}}$ \\[3pt]
+			%
+			$k_t\;(L_0)$
+			& $ 5.086^{***}$ & $ 4.378^{***}$
+			& $d_{1956}$ (LR)
+			& $-0.743$ & $-0.649^{**\phantom{*}}$ \\
+			%
+			$L_1 k_t$
+			& $-14.285^{***}$ & $-11.754^{***}$
+			& $d_{1974}$ (LR)
+			& $-0.855$ & $-0.841^{**\phantom{*}}$ \\
+			%
+			$L_2 k_t$
+			& $15.705^{***}$ & $12.386^{***\phantom{}}$
+			& $d_{1980}$ (LR)
+			& $-0.478$ & $-0.456^{**\phantom{*}}$ \\[3pt]
+			%
+			$L_3 k_t$
+			& $-8.296^{***}$ & $-6.350^{***}$
+			& $R^2$
+			& $0.9992$ & $0.9993$ \\
+			%
+			$L_4 k_t$
+			& $ 1.853^{**\phantom{*}}$ & $ 1.409^{*\phantom{**}}$
+			& Adj.\ $R^2$
+			& $0.9990$ & $0.9991$ \\[3pt]
+			%
+			$d_{1956}$
+			& $-0.071^{***}$ & $-0.062^{***}$
+			& RMSE
+			& $0.016$ & $0.017$ \\
+			%
+			$d_{1974}$
+			& $-0.081^{***}$ & $-0.081^{***}$
+			& $N$
+			& $61$ & $61$ \\
+			%
+			$d_{1980}$
+			& $-0.045^{**\phantom{*}}$ & $-0.044^{*\phantom{**}}$
+			&  &  &  \\
+			%
+			Constant
+			& $ 0.207^{**\phantom{*}}$ & $ 0.055^{.\phantom{***}}$
+			&  &  &  \\
+			%
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\footnotesize
+			\item $^{***}p{<}0.01$, $^{**}p{<}0.05$, $^{*}p{<}0.10$.
+			\item \textit{Notes:}
+			$y_t \equiv \ln(\text{GVAcorp}_t / p^{KN}_t)$;
+			$k_t \equiv \ln(K^G_t / p^{KN}_t)$,
+			where $K^G$ is the GPIM-adjusted gross corporate capital stock
+			(Appendix~\ref{app:data_measurement}),
+			$p^{KN}_t \equiv \text{KNCcorp}_t/\text{KNRcorp}_t \times 100$
+			(Appendix Table~6.8.II.1, \citealt{Shaikh2016}). 
+			\item \textit{Dummies:} impulse (value 1 in break year only).
+			\item \textit{Long-run multipliers:} $\hat{\theta} = \Sigma\hat{\varphi}_j/(1-\Sigma\hat{\gamma}_i)$
+			and $\hat{d}_\text{year} \, \hat{\delta}_h/(1-\Sigma\hat{\gamma}_i)$;
+			standard errors via the delta method \citep{Pesaran2001}. 
+			\item Full candidates matrix available in the Appendix \S \ref{app:critical_replication_results_extended}, Tables~\ref{tab:S0_candidates_notrend}--\ref{tab:S0_candidates_trend}.
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}

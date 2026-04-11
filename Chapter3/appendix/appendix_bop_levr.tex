@@ -1,0 +1,287 @@
+% ============================================================
+% APPENDIX: Balance-of-Payments Decomposition and Leverage
+%           Ratio Algebra
+% Cross-referenced from Section C (eq. levr_lom, eq. binding_condition)
+% Contains: Steps 1–6 of the formalization
+% ============================================================
+
+
+\section{The Leverage Ratio Embedded in the Balance-of-Payments Constraint}
+\label{app:bop_levr}
+
+This appendix develops the full accounting decomposition underlying the
+leverage ratio's law of motion (equation~\ref{eq:levr_lom}) and the
+constraint-binding condition (equation~\ref{eq:binding_condition})
+presented in Section~\ref{sec:C2_bop_dynamics}. The derivation proceeds
+in six steps: definition of the leverage ratio, decomposition of the
+current and capital accounts, the general balance-of-payments identity,
+substitution into the leverage ratio, and a reading of the constraint
+under alternative scenarios.
+
+\subsection{The leverage ratio in nominal terms}
+\label{app:levr_nominal}
+
+Let all variables be denominated in current domestic currency (CLP) at
+time $t$. The exchange rate convention is $e_t$ = CLP per USD, so that
+depreciation implies $e_t \uparrow$.
+
+Define:
+\begin{itemize}
+\item $IR_t$: stock of international reserves, denominated in USD
+\item $e_t$: nominal exchange rate (CLP/USD)
+\item $M_t$: currency in circulation---the central bank's active domestic
+  monetary liability (CLP)
+\end{itemize}
+
+The central bank leverage ratio in nominal terms:
+%
+\begin{equation}
+\label{app:eq:levr_def}
+\widetilde{\text{LevR}}_t \;\equiv\; \frac{e_t \cdot IR_t}{M_t}
+\end{equation}
+%
+This is a dimensionless ratio: the peso value of the central bank's
+world-money holdings relative to its domestic monetary liability issuance.
+In growth rates:
+%
+\begin{equation}
+\label{app:eq:levr_growth}
+g_{\widetilde{\text{LevR}},t} \;=\; g_{e,t} \;+\; g_{IR,t} \;-\; g_{M,t}
+\end{equation}
+
+
+\subsection{Current account decomposition}
+\label{app:current_account}
+
+The current account in domestic currency:
+%
+\begin{equation}
+\label{app:eq:CA}
+CA_t = e_t \cdot P_{M,t}^{USD}\!\left(\text{ToT}_t \cdot X_t
+       - M_t^{goods}\right)
+       - e_t \cdot r_t \cdot D_t^{ext} + T_t
+\end{equation}
+%
+where $\text{ToT}_t \equiv P_{X,t}^{USD} / P_{M,t}^{USD}$ is the net
+barter terms of trade. The three components are:
+
+\begin{table}[h]
+\centering
+\small
+\caption{Components of the Current Account}
+\begin{tabular}{lll}
+\toprule
+Term & Content & Character \\
+\midrule
+$e_t P_{M,t}^{USD}(\text{ToT}_t \cdot X_t - M_t^{goods})$
+  & Trade balance at import prices
+  & ToT exogenous for small open economy \\
+$e_t \cdot r_t \cdot D_t^{ext}$
+  & External debt service
+  & Largely predetermined \\
+$T_t$
+  & Net current transfers
+  & Exogenous \\
+\bottomrule
+\end{tabular}
+\label{app:tab:CA}
+\end{table}
+
+The trade balance is expressed at import prices so that the terms-of-trade
+effect enters multiplicatively through $\text{ToT}_t$. A terms-of-trade
+improvement ($\text{ToT}_t \uparrow$) raises the trade balance for given
+export and import volumes. Debt service is largely predetermined by the
+existing stock of external obligations $D_t^{ext}$ and the interest rate
+$r_t$ on external debt. Net transfers $T_t$ are exogenous.
+
+
+\subsection{Capital account decomposition}
+\label{app:capital_account}
+
+The capital account in domestic currency:
+%
+\begin{equation}
+\label{app:eq:KA}
+KA_t = e_t \cdot \Delta D_t^{ext} + e_t \cdot FDI_t + e_t \cdot \Pi_t
+\end{equation}
+%
+where $\Delta D_t^{ext}$ is net external borrowing, $FDI_t$ is net foreign
+direct investment, and $\Pi_t$ denotes net portfolio and short-term capital
+flows, with $\Pi_t < 0$ representing capital flight. The capital account
+is the channel through which the profit squeeze translates into reserve
+drainage: when the domestic profit rate falls and the external constraint
+is simultaneously tightening, domestic capital has both the motive (low
+profitability) and the means (still-available foreign exchange) to move
+resources abroad, compounding the leverage deterioration from the current
+account side.
+
+
+\subsection{The general balance-of-payments identity}
+\label{app:bop_identity}
+
+The change in the peso value of international reserves equals the sum of
+the current and capital account balances:
+%
+\begin{equation}
+\label{app:eq:bop}
+\Delta(e_t \cdot IR_t) = CA_t + KA_t \equiv \text{BoP}_t
+\end{equation}
+%
+Three structural channels operate through this identity:
+
+\begin{enumerate}
+\item \textbf{Trade channel:} Terms-of-trade deterioration compresses
+  export revenue relative to imports, draining reserves through the
+  current account.
+\item \textbf{Financial channel:} Debt service outflows or capital flight
+  drain reserves independently of trade performance.
+\item \textbf{Valuation channel:} Exchange rate depreciation raises the
+  CLP value of existing USD reserves---a pure balance sheet effect that
+  changes $\widetilde{\text{LevR}}_t$ without altering the underlying
+  real position.
+\end{enumerate}
+
+
+\subsection{Substitution into the leverage ratio}
+\label{app:levr_substitution}
+
+From the definition $e_t \cdot IR_t = \widetilde{\text{LevR}}_t \cdot
+M_t$, substituting into equation~\eqref{app:eq:bop}:
+%
+\begin{equation}
+\label{app:eq:levr_sub}
+\Delta\!\left(\widetilde{\text{LevR}}_t \cdot M_t\right) = CA_t + KA_t
+\end{equation}
+%
+Expanding the left-hand side using the product rule and rearranging:
+%
+\begin{equation}
+\label{app:eq:levr_lom}
+\boxed{\;
+\Delta\widetilde{\text{LevR}}_t \;=\;
+\frac{CA_t + KA_t}{M_t}
+\;-\; \widetilde{\text{LevR}}_t \cdot g_{M,t}
+\;}
+\end{equation}
+%
+This is equation~\eqref{eq:levr_lom} in the main text. The first term is
+the net balance-of-payments flow per unit of domestic monetary liability.
+The second term---$\widetilde{\text{LevR}}_t \cdot g_{M,t}$---is the
+monetary expansion multiplier: the existing leverage ratio scaled by the
+growth rate of domestic money. The product structure implies that the same
+rate of monetary expansion ($g_{M,t}$) produces a larger absolute drain on
+the leverage position when $\widetilde{\text{LevR}}_t$ is high, and a
+smaller absolute drain when it is low---but in the latter case the margin
+of safety is also smaller, so that even modest monetary expansion can
+push the ratio below the binding threshold.
+
+
+\subsection{Reading the constraint: cases and scenarios}
+\label{app:constraint_cases}
+
+The leverage position is deteriorating whenever:
+%
+\begin{equation}
+\label{app:eq:binding}
+\Delta\widetilde{\text{LevR}}_t < 0 \;\iff\;
+\frac{CA_t + KA_t}{M_t} < \widetilde{\text{LevR}}_t \cdot g_{M,t}
+\end{equation}
+%
+This is equation~\eqref{eq:binding_condition} in the main text. A falling
+leverage ratio does not mean the constraint is binding---it means the
+constraint is tightening, the distance to the binding threshold is
+shrinking. Whether the constraint actually binds depends on the
+\textit{level} of $\widetilde{\text{LevR}}_t$.
+
+\paragraph{Case 1: Balance-of-payments deficit}
+($CA_t + KA_t < 0$). The constraint tightens trivially. Two forces
+compound: reserves are depleted by the BoP deficit (numerator drains),
+and monetary expansion erodes the coverage ratio independently
+(denominator dilutes).
+
+\paragraph{Case 2: Balance-of-payments surplus}
+($CA_t + KA_t > 0$). The constraint tightens whenever the surplus is
+insufficient to cover the monetary expansion multiplier:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+Condition & $\Delta\widetilde{\text{LevR}}_t$ \\
+\midrule
+Surplus $<$ multiplier threshold & $< 0$ --- tightening despite surplus \\
+Surplus $=$ multiplier threshold & $= 0$ --- stable \\
+Surplus $>$ multiplier threshold & $> 0$ --- loosening \\
+\bottomrule
+\end{tabular}
+\caption{Leverage dynamics under balance-of-payments surplus.}
+\label{app:tab:surplus}
+\end{table}
+
+\paragraph{Historical scenarios.}
+Three configurations illustrate the constraint's operation across the
+regimes that the local projections specification in
+Section~\ref{sec:C2_bop_dynamics} conditions on:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccll}
+\toprule
+Scenario & $e_t \cdot IR_t$ & $M_t$ &
+  $\Delta\widetilde{\text{LevR}}_t$ & Mechanism \\
+\midrule
+A --- Fiscal monetisation
+  & Stable & Rising & Falling & Inside pressure \\
+B --- UP 1970--73
+  & Falling & Rising fast & Falling fast & Double compression \\
+C --- Shock therapy post-1973
+  & Slowly rising & Falling & Rising & Denominator destruction \\
+\bottomrule
+\end{tabular}
+\caption{Leverage ratio dynamics under three historical configurations.
+Scenario~A: the constraint tightens from the liability side alone.
+Scenario~B: reserve drain and monetary expansion compound.
+Scenario~C: leverage recovers through denominator compression, not
+reserve accumulation.}
+\label{app:tab:scenarios}
+\end{table}
+
+Scenario~A demonstrates the inside-pressure channel in isolation: even
+with a stable or positive external position, fiscal monetisation expands
+$M_t$ and the leverage ratio falls. Scenario~B is the double compression
+that characterises the Unidad Popular period: high $g_{M,t}$ from
+wage-fiscal expansion compounds with reserve drainage through the current
+account, so that the constraint became acute through the multiplier before
+the full reserve crisis materialised. Scenario~C shows the reverse: the
+post-1973 austerity programme restored the leverage ratio not through
+reserve accumulation but through denominator compression---the contraction
+of domestic monetary liabilities.
+
+The multiplier's asymmetric structure across leverage states is summarised
+in Table~\ref{app:tab:multiplier}.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+LevR level & Multiplier
+  $\widetilde{\text{LevR}}_t \cdot g_{M,t}$ & Consequence \\
+\midrule
+High   & Large    & Large absolute drain---from safe position \\
+Medium & Moderate & Moving toward constraint \\
+Low    & Small    & Small absolute drain---potentially decisive
+                    near threshold \\
+\bottomrule
+\end{tabular}
+\caption{Multiplier structure across leverage states.}
+\label{app:tab:multiplier}
+\end{table}
+
+The state-dependent local projections specification in
+Section~\ref{sec:C2_bop_dynamics} exploits precisely this asymmetry:
+identical terms-of-trade shocks are expected to produce different domestic
+impulse responses depending on the leverage state at the moment the shock
+arrives.

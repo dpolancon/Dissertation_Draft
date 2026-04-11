@@ -1,0 +1,55 @@
+% =============================================================
+% Table: S3_results
+% S3 Temporal Composition Audit — parameter constancy battery
+% Numbers sourced from s3_regime_theta_table.csv,
+%   s3_recursive_hj.csv, s3_JMN_bootstrap.csv
+% =============================================================
+
+\begin{table}[H]
+\centering
+\caption{S3 Temporal Composition Audit: Parameter Constancy Results}
+\label{tab:S3_results}
+\begin{tabular}{@{}llccc@{}}
+\toprule
+\textbf{Test} & \textbf{Parameter} & \textbf{Statistic} & \textbf{Threshold} & \textbf{Decision} \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Panel A: Full-sample baseline (internal estimation, no S2 imports)}} \\[3pt]
+VECM(2), bivariate & $\hat\theta_{\mathrm{full}}$     & $0.959$  & ---         & H0 anchor \\
+                   & $\hat\alpha_y$                    & $0.043$  & ---         &            \\
+                   & $\hat\alpha_k$                    & $0.014$  & ---         &            \\[6pt]
+\multicolumn{5}{@{}l}{\textit{Panel B: Hansen \& Johansen (1999) recursive constancy%
+    \textsuperscript{a}}} \\[3pt]
+H\&J $\beta$-constancy & $\hat\theta(t^*)$, $t^*\in[1958,2007]$
+                   & $L_{c,\beta}  = 0.055$ & 5\% CV $= 0.470$ & \textit{Fail to reject} \\
+H\&J $\alpha$-constancy & $\hat\alpha_y(t^*)$, $t^*\in[1958,2007]$
+                   & $L_{c,\alpha} = 1.732$ & 5\% CV $= 0.353$ & \textbf{Reject}         \\[6pt]
+\multicolumn{5}{@{}l}{\textit{Panel C: Johansen, Mosconi \& Nielsen (2000) augmented VECM%
+    \textsuperscript{b}}} \\[3pt]
+JMN, break $= 1974$ & $\hat\theta_{\mathrm{Ford}}$   & $0.969$  & ---         &            \\
+                    & $\hat\theta_{\mathrm{PF}}$     & $0.941$  & ---         &            \\
+                    & $\hat\delta = \hat\theta_{\mathrm{Ford}} - \hat\theta_{\mathrm{PF}}$
+                                                     & $0.028$  & ---         &            \\
+                    & $LR_{\mathrm{obs}}$            & $6.826$  & $p_{\mathrm{boot}}=0.434$ & \textit{Fail to reject} \\
+\bottomrule
+\end{tabular}
+\par\medskip
+\begin{minipage}{\textwidth}
+\footnotesize
+\textit{Notes:}
+$^a$ H\&J $L_c$ computed from equation~\eqref{eq:Lc}.
+Minimum recursive window $t_{\min} = 12$ observations (1958);
+all specifications use VECM(2) with constant.
+Critical values from \citet{HansenJohansen1999}, Table~1,
+bivariate rank-1 case (5\% level: $L_{c,\beta}=0.470$;
+$L_{c,\alpha}=0.353$). The H\&J $\alpha$ rejection cannot be separated
+from the initialization bias of recursive Johansen estimation at short
+sub-sample lengths; see \S\ref{subsubsec:S3_results}.
+$^b$ Break date 1974 imposed as a theoretical prior (regulationist
+periodization). $\chi^2_1$ critical values are invalid for $LR_{\mathrm{obs}}$
+because $k_t^* = D_{74,t}\cdot k_t$ is a step-function-multiplied
+$I(1)$ process \citep[Remark~3.1]{JMN2000}. Bootstrap p-value from
+$B = 999$ recursive-design replications in VECM error-correction form
+\citep{CRT2012}; 0 failures. Trimmed bootstrap (draws $\leq 50$):
+$p_{\mathrm{boot,trim}} = 0.430$.
+\end{minipage}
+\end{table}

@@ -1,0 +1,65 @@
+% =============================================================================
+
+\begin{table}[htbp]
+	\centering
+	\caption{PSS Bounds Test: Shaikh's ARDL(2,4) and IC-Preferred Specifications}
+	\label{tab:S0_table2}
+	\begin{threeparttable}
+		\small
+		\begin{tabular}{l l r r r r r l}
+			\toprule
+			Specification & Case & Stat & $I(0)$ & $I(1)$ & $p$(exact) & $p$(asymp) & Verdict \\
+			\hline\hline \\			%
+			% Panel A: F-bounds test
+			%
+			\multicolumn{8}{l}{\textit{Panel A: F-bounds test} $\bigl(H_0:\, \lambda_y = \lambda_k = 0\bigr)$} \\[5pt]
+			%
+			\textbf{Shaikh ARDL(2,4)}
+			%
+			& 1~(no const.)    & $3.35$ & $2.47$ & $3.33$ & $0.099$ & $0.092$ & \textbf{CI}$^{\dagger}$ \\
+			& 2~(restr.\ int.) & $3.27$ & $3.14$ & $3.64$ & $0.142$ & $0.128$ & ? \\
+			& 3~(unres.\ int.) & $4.90$ & $4.16$ & $4.93$ & $0.102$ & $0.093$ & ? \\[4pt]
+			%
+			BIC winner ARDL(2,3)
+			& 1~(no const.)    & $2.89$ & $2.47$ & $3.35$ & $0.145$ & $0.136$ & ? \\
+			& 2~(restr.\ int.) & $2.15$ & $3.16$ & $3.64$ & $0.381$ & $0.373$ & no \\
+			& 3~(unres.\ int.) & $3.19$ & $4.12$ & $4.91$ & $0.287$ & $0.289$ & no \\[4pt]
+			%
+			AIC winner ARDL(3,3)
+			& 1~(no const.)    & $3.87$ & $2.49$ & $3.34$ & $0.066$ & $0.060$ & \textbf{CI} \\
+			& 2~(restr.\ int.) & $2.83$ & $3.15$ & $3.63$ & $0.210$ & $0.199$ & no \\
+			& 3~(unres.\ int.) & $4.24$ & $4.14$ & $4.90$ & $0.155$ & $0.146$ & ? \\[4pt]
+			%
+			% Panel B: t-bounds test
+			%
+			\midrule
+			\multicolumn{8}{l}{\textit{Panel B: $t$-bounds test
+					$\bigl(H_0:\, \lambda_y = 0\bigr)$}} \\[3pt]
+			Shaikh ARDL(2,4)
+			& 1~(no const.)    & $-2.51$ & $-1.62$ & $-2.27$ & $0.062$ & $0.060$ & \textbf{CI} \\
+			& 3~(unres.\ int.) & $-2.48$ & $-2.58$ & $-2.93$ & $0.218$ & $0.220$ & no \\[4pt]
+			%
+			BIC winner ARDL(2,3)
+			& 1~(no const.)    & $-2.32$ & $-1.60$ & $-2.26$ & $0.088$ & $0.089$ & \textbf{CI} \\
+			& 3~(unres.\ int.) & $-2.25$ & $-2.57$ & $-2.92$ & $0.299$ & $0.307$ & no \\[4pt]
+			%
+			AIC winner ARDL(3,3)
+			& 1~(no const.)    & $-2.74$ & $-1.62$ & $-2.28$ & $0.040$ & $0.036$ & \textbf{CI} \\
+			& 3~(unres.\ int.) & $-2.67$ & $-2.60$ & $-2.95$ & $0.164$ & $0.160$ & ? \\
+			%
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\footnotesize
+			\item \textit{Notes:}
+			$I(0)$ and $I(1)$ are exact finite-sample critical values at 10\%,
+			simulated at $T=65$, $k=1$, with $R=40,000$ bootstrap replications.
+			\item \textit{H testing:} \textbf{CI} = statistic exceeds $I(1)$, null rejected;
+			\textbf{?} = inconclusive region $[I(0), I(1)]$;
+			\textbf{no} = below $I(0)$, null not rejected.
+			Case~1 uses a no-constant model. 
+			\item \textit{\citet{Pesaran2001} cases:} Cases~2--3 use the constant model. The $t$-bounds test is not defined for Case~2. Exact and asymptotic $p$-values differ by less than $0.01$.
+			\item \textit{ARDL specification:} BIC and AIC winners are chosen from grid search of a set of ARDL models under standard search algorithms \citep{Natsiopoulos2024}, variables included in the model are the same than in \ref{tab:S0_table1}).
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}

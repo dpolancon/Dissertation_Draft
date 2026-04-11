@@ -1,0 +1,37 @@
+% =============================================================================
+% Table: S2 Admissibility Outcomes
+% File: tables/S2_admissibility.tex
+% =============================================================================
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{S2 admissibility outcomes across the VECM specification grid}
+\label{tab:S2_admissibility}
+\begin{threeparttable}
+\begin{tabular}{llrrrr}
+\toprule
+System & Rank & Estimated & \multicolumn{2}{c}{Failed gate} & Admissible \\
+\cmidrule(lr){4-5}
+       &      &           & Rank & Stability &            \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A: Bivariate} ($X_t = (\ln Y,\, \ln K)'$)} \\[4pt]
+$m = 2$ & $r = 1$ & 36 & 36 & 4 & \textbf{0} \\[6pt]
+\multicolumn{6}{l}{\textit{Panel B: Trivariate} ($X_t = (\ln Y,\, \ln K,\, \ln e)'$)} \\[4pt]
+$m = 3$ & $r = 1$ & 36 & 26 & 4 & \textbf{6} \\
+$m = 3$ & $r = 2$ & 36 & 29 & 7 & \textbf{0} \\[4pt]
+\midrule
+\multicolumn{2}{l}{Total} & 108 & 91 & 15 & \textbf{6} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes:} $\mathcal{G}_{S2}$ contains
+    144 candidates. All $d_1$ branch failed feasible estimation leaving 108 estimated. 
+    Gate failures are not mutually exclusive: a specification may fail both rank and stability.
+    The rank gate requires the Johansen trace test to reject
+    $H_0\!: r < r^*$ at 5\%.
+    Sample: 1947--2011 ($T = 65$, $T_{\text{eff}} = 63$--$64$).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

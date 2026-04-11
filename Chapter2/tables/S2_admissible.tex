@@ -1,0 +1,37 @@
+
+\begin{table}[htbp]
+	\centering
+	\small
+	\caption{Admissible VECM specifications ($m=3$, $r=1$, $h_2$)}
+	\label{tab:S2_admissible}
+	\begin{threeparttable}
+		\begin{tabular}{lcccrrrrl}
+			\toprule
+			& $p$ & $d$ & $k$ & $-2\log L$ & $\hat{\theta}$ & $\alpha_y$ & $\alpha_k$ & $\alpha_e$ \\
+			\midrule
+			\multicolumn{9}{l}{\textit{Panel A: $p = 1$ (no lagged differences)}} \\[4pt]
+			(p1,d0,h2) & 1 & $d_0$ & 12 & $-916.1$  &  0.913 &  0.057 &  0.089 &  0.007 \\
+			(p1,d2,h2) & 1 & $d_2$ & 15 & $-926.1$  &  0.971 & $-0.032$ &  0.094 & $-0.488$ \\
+			(p1,d3,h2) & 1 & $d_3$ & 18 & $-950.4$  & $-0.814$ & $-0.024$ &  0.050 & $-0.426$ \\[6pt]
+			\multicolumn{9}{l}{\textit{Panel B: $p = 2$ (one lag of differences)}} \\[4pt]
+			(p2,d0.h2)$^{\dagger}$ & 2 & $d_0$ & 21 & $-1014.7$ &  1.189 &  0.022 &  0.000 &  0.078 \\
+			(p2,d2,h2) & 2 & $d_2$ & 24 & $-1018.6$ &  0.727 & $-0.005$ &  0.000 & $-0.019$ \\
+			(p2,d3,h2)$^{\ddagger}$ & 2 & $d_3$ & 27 & $-1038.1$ & 11.314 & $-0.008$ & $-0.005$ &  0.072 \\
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}
+			\scriptsize
+			\item \textit{Notes:} All specifications are trivariate
+			($X_t = (\ln Y,\, \ln K,\, \ln e)'$), rank $r=1$, with the full
+			step-dummy structure $h_2$ (1956, 1974, 1980). $k$: total estimated
+			parameters. $\hat{\theta}$: long-run output--capital elasticity from
+			the normalized cointegrating vector $\beta = (1, -\hat{\theta},
+			\beta_e)'$. $\alpha_y$, $\alpha_k$, $\alpha_e$: equation-level
+			loadings on the error-correction term.
+			\item[$\dagger$] BIC and ICOMP winner (all normalization variants).
+			\item[$\ddagger$] AIC and HQ winner (all normalization variants).
+			The $d_3$ trend term absorbs part of the long-run relation,
+			producing an economically implausible $\hat{\theta}$.
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}

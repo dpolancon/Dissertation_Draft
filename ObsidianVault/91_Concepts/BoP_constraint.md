@@ -27,13 +27,13 @@ This is not a distributional ceiling (which policy could adjust by redistributin
 
 ## Empirical Anchors (Chile Stage A, Ch2)
 
-| Parameter | Value | Interpretation |
-|-----------|-------|----------------|
-| ζ̂₁ | 0.930 | Structural import propensity per unit ME accumulation (Tavares channel) |
-| ζ̂₂ | 0.445 | Non-reinvested surplus import propensity (Kaldor/Palma-Marcel channel) |
-| ζ̂₃ | −3.919 | Wage share semi-elasticity on imports (log-level spec; ~3.9% import reduction per 1pp ω increase) |
-| γ̂ | −0.1394 | TVECM threshold: BoP binding when ECT_m,t > γ̂ |
-| α_y^R2 / α_y^R1 | 5.5× deceleration | Regime 2 (binding) vs Regime 1 (slack): output adjustment speed |
+| Parameter       | Value             | Interpretation                                                                                    |
+| --------------- | ----------------- | ------------------------------------------------------------------------------------------------- |
+| ζ̂₁             | 0.930             | Structural import propensity per unit ME accumulation                                             |
+| ζ̂₂             | 0.445             | Non-reinvested surplus import propensity                                                          |
+| ζ̂₃             | −3.919            | Wage share semi-elasticity on imports (log-level spec; ~3.9% import reduction per 1pp ω increase) |
+| γ̂              | −0.1394           | TVECM threshold: BoP binding when ECT_m,t > γ̂                                                    |
+| α_y^R2 / α_y^R1 | 5.5× deceleration | Regime 2 (binding) vs Regime 1 (slack): output adjustment speed                                   |
 
 **ζ̂₃ dimensionality note:** semi-elasticity confirmed (m in logs, ω as proportion 0–1). Carries two dimensions: (1) profit squeeze (standard), (2) financial fragility via wage-goods import dependency when domestic productive structure cannot supply wage-goods basket at scale.
 

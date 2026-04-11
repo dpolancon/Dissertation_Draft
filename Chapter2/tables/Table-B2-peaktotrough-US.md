@@ -1,0 +1,29 @@
+---
+source: tab_B2_peaktotrough_US.tex
+source_type: latex
+status: partial_reconstruction
+latex_label: tab:B2_peaktotrough
+bib: references.bib
+---
+---
+  
+  
+# Table B2 — Four-channel decomposition of profit-rate swings, US Non-Financial Corporate Sector, 1951–1974  
+  
+label: tab:B2_peaktotrough  
+  
+<!-- FLAG: table_note_link | label=tab:B2_peaktotrough | target=[[Table-B2-peaktotrough-US]] -->  
+  
+| Period    | Type        | $\Delta\ln r$ | $s_{\mu}$ |                 $s_{Py/PK}$ |                 $s_{B_{r}}$ | $s_{\pi}$ | $\Sigma$ | Dominant              |     |
+| --------- | ----------- | ------------: | --------: | --------------------------: | --------------------------: | --------: | -------: | --------------------- | --- |
+| 1951–1954 | Contraction |        -0.133 |     0.417 |                       0.041 |                       0.057 |     0.485 |    1.000 | $\pi$                 |     |
+| 1954–1955 | Expansion   |        +0.100 |     0.172 | $\mathit{-0.472}^{\dagger}$ |                       0.777 |     0.523 |    1.000 | $B_{r}$               |     |
+| 1955–1958 | Contraction |        -0.191 |     0.602 |                       0.054 |                       0.091 |     0.253 |    1.000 | $\mu$                 |     |
+| 1958–1966 | Expansion   |        +0.336 |     0.477 |                       0.132 |                       0.224 |     0.167 |    1.000 | $\mu$                 |     |
+| 1966–1970 | Contraction |        -0.269 |     0.298 |                       0.065 |                       0.292 |     0.345 |    1.000 | $\pi$, $\mu$, $B_{r}$ |     |
+| 1970–1972 | Expansion   |        +0.066 |     0.341 | $\mathit{-0.104}^{\dagger}$ |                       0.235 |     0.527 |    1.000 | $\pi$                 |     |
+| 1972–1974 | Contraction |        -0.164 |     0.331 |                       0.578 | $\mathit{-0.130}^{\dagger}$ |     0.221 |    1.000 | $Py/PK$               |     |
+  
+*Notes:* $\Delta\ln r = \phi^{\mu} + \phi^{Py/PK} + \phi^{B_{r}} + \phi^{\pi}$ (exact); $s_{j}$ sum to unity. $r = \text{GOS}/\text{KNC}$; $B_{r} = \text{GVA}_{r}/(\text{KNR}\cdot\hat{\mu})$; $Py/PK$ = GDP deflator / capital deflator; $\hat{\mu}$ from Stage A MPF.  
+  
+$\dagger$ Offsetting channel: contribution moves against the swing direction.

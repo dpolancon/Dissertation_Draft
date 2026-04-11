@@ -1,0 +1,155 @@
+
+\subsubsection{Results}
+\label{subsec:S2_results}
+
+Table~\ref{tab:S2_ic_winners} reports the IC-selected VECM specifications.
+In the bivariate system, all four criteria select lag depth $p = 1$ with
+$\hat{\theta}_{S2} \in [0.870,\, 0.900]$; the $\Omega_{20}$ mean is
+$\hat{\theta} = 0.803$. Table~\ref{tab:S2_lattice_stats} summarizes the
+funnel: of 48 candidates, 21 pass the triple gate (43.8\%).
+
+The trivariate system produces a sign split: AIC and HQ recover
+$\hat{\theta} = -1.20$ under the unrestricted-constant specification
+($d_3$), while BIC and ICOMP recover $\hat{\theta} \approx 0.93$ under
+$d_0$. The sign degeneracy does not disqualify the trivariate system --- it
+signals that the reduced-form canonical correlations have not been rotated
+into economically identified vectors. Whether the rotation
+(eq.~\ref{eq:S2_rotation}) resolves the degeneracy is tested alongside the
+regime-break analysis, where the trivariate system re-enters under
+structural identification constraints.
+
+\begin{table}[!ht]
+	\centering
+	\small
+	\caption{S2 IC winners: bivariate and trivariate VECM}
+	\label{tab:S2_ic_winners}
+	\begin{tabular}{clccccc}
+		\hline\hline
+		$m$ & IC & $p$ & Det.\ & Dummies & $\hat{\theta}$ & $-2\log L$ \\
+		\hline
+		2 & AIC   & 1 & $d_2$ & $h_1$ & 0.885 & $-$572.5 \\
+		2 & BIC   & 1 & $d_0$ & $h_0$ & 0.870 & $-$560.4 \\
+		2 & HQ    & 1 & $d_2$ & $h_1$ & 0.885 & $-$572.5 \\
+		2 & ICOMP & 1 & $d_0$ & $h_1$ & 0.900 & $-$566.5 \\
+		\hline
+		3 & AIC   & 3 & $d_3$ & $h_0$ & $-$1.195 & $-$802.3 \\
+		3 & BIC   & 3 & $d_0$ & $h_0$ & 0.930     & $-$783.9 \\
+		3 & HQ    & 3 & $d_3$ & $h_0$ & $-$1.195 & $-$802.3 \\
+		3 & ICOMP & 3 & $d_0$ & $h_0$ & 0.930     & $-$783.9 \\
+		\hline
+	\end{tabular}
+	\par\vspace{0.3em}
+	\footnotesize
+	Bivariate $\Omega_{20}$ mean: $\hat{\theta} = 0.803$.
+	Trivariate sign split: reduced-form degeneracy, rotation pending.
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\small
+	\caption{S2 VECM lattice summary}
+	\label{tab:S2_lattice_stats}
+	\begin{tabular}{clrl}
+		\hline\hline
+		$m$ & Stage & $N$ & Description \\
+		\hline
+		2 & Full lattice & 48 & $(p,d,h)$ grid \\
+		2 & Admissible & 21 & Johansen rank $\geq 1$ (43.8\%) \\
+		2 & $\Omega_{20}$ & 5 & Lowest 20\% of $-2\log L$ \\
+		2 & IC band & $[0.87,\, 0.90]$ & All 4 ICs \\
+		\hline
+		3 & Admissible & low & $\sim$2\% admissibility \\
+		3 & Sign split & 2/4 &
+		AIC/HQ: $\hat{\theta} < 0$;
+		BIC/ICOMP: $\hat{\theta} > 0$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Both estimators indicate $\hat{\theta} < 1$: over-mechanization is robust
+across the single-equation and system frameworks. The point estimates do not
+coincide: $\hat{\theta}_{S1} \approx 0.57$ versus
+$\hat{\theta}_{S2} \approx 0.88$. Interpreted through the measurement
+framework, this gap is the empirical counterpart of the denominator
+fragility diagnosed in the four-pairing exercise
+(Table~\ref{tab:S0_four_pairings}): the ARDL recovers $\hat{\theta}$ through
+$\sum\hat{\varphi}_j / (1 - \sum\hat{\psi}_i)$, where the divisor is
+approximately 0.12; the VECM eigenvector estimator bypasses that divisor.
+The level discrepancy is consistent with method-induced depression of the
+ARDL point estimate, not with a structural difference in the cointegrating
+relationship.
+
+The trivariate sign split indicates that rank~1 is the identification
+boundary of the unrestricted bivariate system. This conclusion is
+conditional on treating the unrestricted VECM as the identification
+environment; it is possible that the degeneracy reflects entanglement of
+the capacity and reserve-army relations that the sign restriction
+$\lambda < 0$ can resolve. Two questions pass forward: whether
+$\hat{\theta}$ is stable across the Fordist/Post-Fordist periodization,
+and whether the trivariate degeneracy resolves under structural rotation.
+
+
+% ============================================================
+% CROSS-STAGE SUMMARY
+% ============================================================
+
+\subsection{Cross-Stage Summary}
+\label{subsec:cross_stage}
+
+Table~\ref{tab:cross_theta} collects the $\hat{\theta}$ trajectory. The
+qualitative invariant --- $\hat{\theta} < 1$, consistent with
+over-mechanization --- holds across every admissible specification in every
+stage. The quantitative variation is governed by two identified sources: the
+denominator regime (gross vs.\ net capital stock, diagnosed in S0) and the
+estimator class (ARDL near-singular divisor vs.\ VECM eigenvector, diagnosed
+in S2). Neither source indicates a different economic relationship; both are
+properties of the parametric recovery of the long-run multiplier at this
+empirical site.
+
+\begin{table}[!ht]
+	\centering
+	\small
+	\caption{Cross-stage $\hat{\theta}$ trajectory}
+	\label{tab:cross_theta}
+	\begin{tabular}{llcl}
+		\hline\hline
+		Stage & Estimator & $\hat{\theta}$ & Note \\
+		\hline
+		S0 & ARDL(2,4), Case~II & 0.745 &
+		Sole passing case \\
+		S0 & ARDL(2,4), Cases~IV--V & 0.541 &
+		Trend collapse ($-$27\%) \\
+		S0 & Four pairings, gross $K$ & $[0.54,\, 0.75]$ &
+		GVA/NVA $<$ 1 pp \\
+		S0 & Four pairings, net $K$ & $[0.11,\, 0.81]$ &
+		Denominator-amplified \\
+		\hline
+		S1 & ARDL(1,3), Case~II & 0.565 &
+		4/5 ICs; no dummies \\
+		S1 & RICOMP dissenter & 0.397 &
+		Sandwich penalty \\
+		S1 & $\mathcal{F}^{(0.20)}$ frontier & $[0.40,\, 0.71]$ &
+		15 specs \\
+		\hline
+		S2 & VECM $m\!=\!2$, IC band & $[0.87,\, 0.90]$ &
+		Eigenvector \\
+		S2 & VECM $m\!=\!2$, $\Omega_{20}$ & 0.803 &
+		Domain mean \\
+		S2 & VECM $m\!=\!3$ & sign split &
+		Rotation pending \\
+		\hline
+	\end{tabular}
+	\par\vspace{0.3em}
+	\footnotesize
+	All stages: $\hat{\theta} < 1$ (over-mechanization). \\
+	S1$\to$S2 gap: denominator fragility (ARDL divisor vs.\ VECM eigenvector). \\
+	$m=3$ sign degeneracy: structural rotation deferred.
+\end{table}
+
+\noindent
+The confined bivariate specification ($m = 2$, $p = 1$, Case~II) and the
+unresolved trivariate degeneracy pass forward to the regime-break analysis,
+which tests whether $\hat{\theta}$ is stable across the
+Fordist/Post-Fordist periodization and whether the sign restriction
+$\lambda < 0$ resolves the trivariate entanglement under structural
+identification constraints.

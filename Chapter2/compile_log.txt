@@ -1,0 +1,500 @@
+pdflatex: security risk: running with elevated privileges
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(Chapter2_ProfitRate_Investment.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-29>
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-
+english.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ld
+f)) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def)
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cf
+g))) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinek
+eys.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.st
+y (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.
+sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.st
+y))) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitl
+estring.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty)
+)) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.st
+y) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.
+sty)))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfile
+check.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqueco
+unter.sty)))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nome
+tadata.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty)))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/xfrac\xfrac.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/threeparttable\threepart
+table.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex))
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty)
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.st
+y)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def)
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty)
+ (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty)
+==> First Aid for varwidth.sty applied!
+) (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/translations\translation
+s.sty))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.s
+ty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
+common.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
+latex.def)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.c
+ode.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex))
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.s
+ty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.s
+ty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+.code.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.
+code.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysl
+ibraryfiltered.code.tex))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cf
+g)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+-pdftex.def
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+-common-pdf.def)))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+softpath.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
+protocol.code.tex))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+.code.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.
+tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.c
+ode.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser
+.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.basic.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.trigonometric.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.random.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.comparison.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.base.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.round.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.misc.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
+ons.integerarithmetics.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.c
+ode.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.
+code.tex))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.t
+ex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+points.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+pathconstruct.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+pathusage.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+scopes.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+graphicstate.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+transformations.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+quick.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+objects.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+pathprocessing.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+arrows.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+shade.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+image.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+external.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+layers.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+transparency.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+patterns.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
+rdf.code.tex)))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodules
+hapes.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulep
+lot.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcom
+p-version-0-65.sty)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcom
+p-version-1-18.sty))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.st
+y
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.
+code.tex))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.
+tex))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.c
+ode.tex))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+\tikz.code.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
+ryplothandlers.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulem
+atrix.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibrarytopaths.code.tex)))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
+ryarrows.meta.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibrarypositioning.code.tex)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
+/libraries\tikzlibraryshapes.geometric.code.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\p
+gflibraryshapes.geometric.code.tex))
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
+ex.def) (Chapter2_ProfitRate_Investment.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
+i
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
+se.sty
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cf
+g)) (Chapter2_ProfitRate_Investment.out) (Chapter2_ProfitRate_Investment.out)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\trans
+lations-basic-dictionary-english.trsl)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+[1{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Use
+r/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/User/App
+Data/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/User/AppD
+ata/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] [2] [3] [4] [5{C:/User
+s/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
+[]|[][]\T1/lmr/m/n/10.95 Shaikh[][] ([][]1978[][]); [][]Itoh[][]
+
+Underfull \hbox (badness 1783) in paragraph at lines 399--400
+[]|\T1/lmr/m/n/10.95 Spatio-temporal fixes dis-place cri-sis
+[7] [8] (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd)
+[9{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+[10] [11] [12] [13{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/
+lm/lm-mathex.enc}] [14] [15] [16] [17]
+
+pdfTeX warning: pdflatex.exe (file ./figures/r1_theta_omega_scatter_full.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+Package caption Warning: \setcaptionsubtype
+(caption)                outside box or environment on input line 1286.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: \subcaption
+(caption)                outside box or environment on input line 1286.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (67.38013pt too wide) in paragraph at lines 1285--1288
+ [][] 
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/r1_mu_capacity_utilization.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+[18] [19 <./figures/r1_theta_omega_scatter_full.pdf>] [20 <./figures/r1_mu_capa
+city_utilization.pdf>] (tables/tab_B3_subperiod_US.tex) [21]
+(tables/tab_B2_peaktotrough_US.tex)
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_B1b_mu_levels.pdf): PDF inclus
+ion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_B1c_Breal_levels.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+Underfull \hbox (badness 4479) in paragraph at lines 1476--1476
+[]\T1/lmr/m/n/10 (b) |Real cap-i-tal pro-duc-tiv-ity $\OML/lmm/m/it/10 B[]$\T1/
+lmr/m/n/10 , in-dexed
+[22 <./figures/fig_B1b_mu_levels.pdf> <./figures/fig_B1c_Breal_levels.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_B1c_Breal_levels.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>]
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_B4_profit_rate_turning_points.
+pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+[23 <./figures/fig_B4_profit_rate_turning_points.pdf>] [24]
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_B3_swing_composition.pdf): PDF
+ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+Overfull \hbox (6.653pt too wide) in paragraph at lines 1680--1680
+|[]\T1/lmr/bx/n/10.95 Stage A: The Mech-a-niza-tion Pos-si-bil-ity Fron-tier un
+-der a Balance-of-Payments
+[25] [26 <./figures/fig_B3_swing_composition.pdf>] [27]
+(tables/tab_B4_subperiod_CL.tex) [28 <./figures/fig4_mu_CL.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1a_r_levels.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1b_mu_levels.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1c_B_levels.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1d_pi_levels.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1e_PyPK_levels.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1f_Breal_levels.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+(tables/tab_B5_peaktotrough_CL.tex)
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B4_profit_rate_turning_poin
+ts.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allo
+wed
+[29] [30 <./figures/fig_CL_B1a_r_levels.pdf> <./figures/fig_CL_B1b_mu_levels.pd
+f
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1b_mu_levels.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+> <./figures/fig_CL_B1c_B_levels.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1c_B_levels.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+> <./figures/fig_CL_B1d_pi_levels.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1d_pi_levels.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+> <./figures/fig_CL_B1e_PyPK_levels.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1e_PyPK_levels.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+> <./figures/fig_CL_B1f_Breal_levels.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B1f_Breal_levels.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] [31 <./figures/fig_CL_B4_profit_rate_turning_points.pdf>]
+Overfull \hbox (10.20958pt too wide) in paragraph at lines 2064--2076
+[] []\T1/lmr/bx/n/10.95 1947--1953 ex-pan-sion.[] \T1/lmr/m/n/10.95 The largest
+ ex-pan-sion in the se-ries by com-pounded log-change ($\OT1/lmr/m/n/10.95 ^^A 
+[] \OML/lmm/m/it/10.95 r \OT1/lmr/m/n/10.95 =
+[32]
+Overfull \hbox (11.19861pt too wide) in paragraph at lines 2113--2127
+[] []\T1/lmr/bx/n/10.95 1969--1972 con-trac-tion.[] \T1/lmr/m/n/10.95 The pre-c
+oup profit-rate com-pres-sion ($\OT1/lmr/m/n/10.95 ^^A [] \OML/lmm/m/it/10.95 r
+ \OT1/lmr/m/n/10.95 = \OMS/lmsy/m/n/10.95 ^^@\OT1/lmr/m/n/10.95 0\OML/lmm/m/it/
+10.95 :\OT1/lmr/m/n/10.95 666$\T1/lmr/m/n/10.95 ) is $\OML/lmm/m/it/10.95 ^^Y$\
+T1/lmr/m/n/10.95 -dominant
+[33]
+Overfull \hbox (13.87267pt too wide) in paragraph at lines 2191--2205
+[] []\T1/lmr/bx/n/10.95 1975--1978 ex-pan-sion (ne-olib-eral ca-pac-ity re-ac-t
+i-va-tion).[] \T1/lmr/m/n/10.95 The ter-mi-nal ex-pan-sion ($\OT1/lmr/m/n/10.95
+ ^^A [] \OML/lmm/m/it/10.95 r \OT1/lmr/m/n/10.95 =
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B2a_cumulative.pdf): PDF in
+clusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B2b_annual_bars.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+[34] [35 <./figures/fig_CL_B2a_cumulative.pdf> <./figures/fig_CL_B2b_annual_bar
+s.pdf
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B2b_annual_bars.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+>]
+
+pdfTeX warning: pdflatex.exe (file ./figures/fig_CL_B3_swing_composition.pdf): 
+PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+[36 <./figures/fig_CL_B3_swing_composition.pdf>] [37] [38]
+(Chapter2_ProfitRate_Investment.bbl [39] [40] [41]) [42]
+(appendix/appendix_theta_identification.tex [43]) [44]
+(appendix/appendix_us_stage_a.tex
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd)
+Underfull \hbox (badness 5862) in paragraph at lines 51--55
+\T1/lmr/m/n/10 lags, \T1/lmtt/m/n/10 spec="longrun"\T1/lmr/m/n/10 , \T1/lmtt/m/
+n/10 ecdet="const"\T1/lmr/m/n/10 .
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
+\T1/lmr/m/n/10 Crit-i-cal val-ues from [][]Osterwald-Lenum[][]
+[45]
+Underfull \hbox (badness 1694) in paragraph at lines 172--176
+[]\T1/lmr/m/it/10 Notes: \T1/lmr/m/n/10 Regime clas-si-fi-ca-tion based on an-n
+ual $[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ![]\OT1/lmr/m/n/10 )$
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 182.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 182.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 217.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 217.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 217.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 217.
+
+[46] [47]) [48] (appendix/appendix_K_ret_distribution.tex [49]
+Overfull \hbox (12.38245pt too wide) in paragraph at lines 134--152
+ [] 
+[50] [51] [52] [53]
+Overfull \hbox (53.94765pt too wide) in paragraph at lines 459--473
+ [] 
+[54]
+Overfull \hbox (33.72147pt too wide) in paragraph at lines 521--536
+ [] 
+
+Overfull \hbox (3.01805pt too wide) in paragraph at lines 560--565
+[] []\T1/lmr/bx/n/10.95 Time--vary-ing ser-vice lives.[] \T1/lmr/m/n/10.95 Em-p
+ir-i-cal ev-i-dence sug-gests equip-ment ser-vice lives may shorten
+[55]) [56] (Chapter2_ProfitRate_Investment.aux) )
+(see the transcript file for additional information)<C:/Users/User/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/User/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/User/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/User/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/User/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/User/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/User/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/User/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/User/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/User/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/User/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/lm/lmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/lm/lmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/lm/lmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/font
+s/type1/public/lm/lmr7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/lm/lmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/lm/lmr9.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/lm/lmri10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmsy6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmsy7.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmsy8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmsy9.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mtt10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/symbols/msam10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/symbols/msbm10.pfb>
+Output written on Chapter2_ProfitRate_Investment.pdf (56 pages, 4405394 bytes).
+Transcript written on Chapter2_ProfitRate_Investment.log.

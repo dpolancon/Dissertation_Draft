@@ -1,0 +1,401 @@
+\subsection{Peripheral Extension: Capital Composition and BoP-Constrained Identification}
+\label{subsec:theta_identification_chile}
+
+The center identification recovers $\hat{\theta}(\omega_t)$ from a
+single cost-minimization problem on a homogeneous capital stock. In
+peripheral capitalism, this architecture is insufficient. The
+heterogeneity of capital stock imposes an external restriction due to
+the import requirements of machinery and equipment ($K^{ME}$), while
+assuming that non-residential infrastructure ($K^{NR}$) is domestically
+producible but tied to accumulation of machinery and equipment at a
+given choice of technique under cost-minimizing principles. Because the
+domestic capital-goods sector cannot substitute for imported machinery
+at scale, the mechanization decision is constrained by the availability
+of foreign exchange. The balance-of-payments constraint enters the
+cost-minimization problem through the import content of machinery
+investment.
+
+\subsubsection{Capital Decomposition and the Peripheral MPF}
+\label{subsec:chile_mpf}
+
+Define the capital stock decomposition:
+%
+\begin{equation}
+	K^{CL} = K^{NR} + K^{ME},
+	\qquad
+	\phi_t \equiv \frac{K_t^{ME}}{K_t^{CL}} \in (0,1),
+	\label{eq:cl:capital_decomp}
+\end{equation}
+%
+where $\phi_t$ is the machinery share of the total non-residential
+capital stock. The import content of machinery investment in the early period of interest was registered by 
+\citet{Kaldor1959} at $\xi \approx 0.92$--$0.94$. 
+
+Infrastructure and machinery carry differential productivity effects.
+Define the composition-weighted MPF slope:
+%
+\begin{equation}
+	\bar{\psi}(\phi)
+	=
+	\psi^{NR}(1-\phi)+\psi^{ME}\phi,
+	\label{eq:cl:psi_bar}
+\end{equation}
+%
+The inequality $\psi^{ME} > \psi^{NR}$ is the structural
+content of the \citet{Kaldor1959} hypothesis: embodied technical change is
+higher in imported machinery than in domestic infrastructure. Higher
+$\phi$ raises productivity potential but deepens import dependence.
+The peripheral MPF is:
+%
+\begin{equation}
+	\hat{a}
+	=
+	\bar{\psi}(\phi)\,\hat{q}
+	+
+	\lambda_2\,\hat{q}^{\,2},
+	\qquad
+	\lambda_2 < 0,
+	\label{eq:cl:mpf}
+\end{equation}
+%
+Same functional form as the center~\eqref{eq:cost_min} but with a
+composition-dependent slope.
+
+\subsubsection{The BoP Penalty and the Effective Profit Share}
+\label{subsec:chile_bop_penalty}
+
+Mechanization at rate $\hat{q}$ generates an import bill
+$\xi\,\phi\,\hat{q}\,K^{CL}$. Let $\lambda \geq 0$ denote the
+shadow cost of foreign exchange --- the scarcity rent under the
+BoP constraint. The peripheral cost-minimization problem is:
+%
+\begin{align}
+	\min_{\hat{q}}\; c^{CL}
+	&=
+	(1-\omega)\hat{q}
+	-
+	\hat{a}
+	+
+	\lambda\,\xi\,\phi\,\hat{q}
+	\label{eq:cl:cost_min}
+	\\[4pt]
+	\text{s.t.}\qquad
+	\hat{a}
+	&=
+	\bar{\psi}(\phi)\,\hat{q}
+	+
+	\lambda_2\,\hat{q}^{\,2},
+	\qquad
+	\lambda_2<0
+	\label{eq:cl:mpf_constraint}
+\end{align}
+
+%
+
+
+The first-order condition yields:
+%
+\begin{equation}
+	\hat{q}^{CL*}(\omega,\phi,\lambda)
+	=
+	\frac{(1-\omega)-\lambda\,\xi\,\phi-\bar{\psi}(\phi)}
+	{2\lambda_2},
+	\label{eq:cl:foc_qstar}
+\end{equation}
+%
+and the peripheral transformation elasticity:
+%
+\begin{equation}
+	\boxed{
+		\theta^{CL}(\omega,\phi,\lambda)
+		=
+		\frac{\bar{\psi}(\phi)+\pi^{eff}}{2},
+		\qquad
+		\pi^{eff}
+		\equiv
+		(1-\omega)-\lambda\,\xi\,\phi
+	}
+	\label{eq:cl:theta}
+\end{equation}
+%
+The BoP constraint compresses the effective profit share available for
+mechanization. For given $\omega$, the periphery achieves a lower
+$\theta$ than the center by exactly $\lambda\xi\phi/2$. The
+center solution is recovered as the special case $\lambda = 0$,
+$\phi = 0$.
+
+Comparing with the center~\eqref{eq:foc_qstar}:
+%
+\begin{equation}
+	\hat{q}^{US*} - \hat{q}^{CL*}
+	=
+	\frac{
+		\lambda\,\xi\,\phi
+		+
+		\left[\bar{\psi}(\phi)-\psi_1\right]
+	}{
+		2|\lambda_2|
+	}
+	>
+	0,
+	\label{eq:cl:q_gap}
+\end{equation}
+%
+The gap has two sources: the BoP penalty $\lambda\xi\phi$ and the
+structural MPF slope differential
+$\bar{\psi}(\phi)-\psi_1$.
+
+\subsubsection{Regime Switch from Complementary Slackness}
+\label{subsec:chile_regimes}
+
+The BoP ceiling $\bar{\phi}$ limits the machinery share in new
+investment. By complementary slackness, two regimes emerge:
+%
+\begin{center}
+	\begin{tabular}{llll}
+		\toprule
+		& $\lambda$ & $\phi_{new}$ & $\theta$ \\
+		\midrule
+		Regime~1 (BoP slack) & $= 0$ & $= \phi^*$ & $\theta^{(1)}$ \\
+		Regime~2 (BoP binding) & $> 0$ & $= \bar{\phi} < \phi^*$
+		& $\theta^{(2)} < \theta^{(1)}$ \\
+		\bottomrule
+	\end{tabular}
+\end{center}
+%
+The gap between regimes decomposes as:
+%
+\begin{equation}
+	\theta^{(1)}-\theta^{(2)}
+	=
+	\underbrace{
+		(\psi^{ME}-\psi^{NR})(\phi^*-\bar{\phi})
+	}_{\text{composition compression}}
+	+
+	\underbrace{
+		\frac{\lambda\,\xi\,\bar{\phi}}{2}
+	}_{\text{forex shadow cost}},
+	\label{eq:cl:theta_gap}
+\end{equation}
+%
+The ceiling $\bar{\phi}$ responds to the non-reinvested surplus --- 
+profits not converted into machinery investment. \citet{Kaldor1959} 
+identifies two competing forces through which this surplus conditions 
+the foreign-exchange constraint: lower machinery investment reduces 
+current demand for imported capital goods, relaxing the ceiling; yet 
+surplus flowing into capitalist consumption tightens it, since luxury 
+consumption carries substantially higher import content than average 
+consumption once invisible imports are accounted for. Whether the 
+accumulation-relief or the consumption-drain mechanism dominates is 
+historically contingent and empirically recovered from the long-run 
+import propensity relation
+
+\begin{equation}
+	m_t
+	=
+	\zeta_0
+	+
+	\zeta_1\, k_t^{ME}
+	+
+	\zeta_2\, nrs_t
+	+
+	\zeta_3\, \omega_t
+	+
+	ECT_{m,t},
+	\label{eq:cl:imports_coint}
+\end{equation}
+
+Where \(m_t\) and  \(nrs_t\) are imports and non-reinvested surplus in log levels, 
+such that  $\zeta_1 > 0$ captures the structural import demand generated 
+by machinery accumulation and $\zeta_2 \gtrless 0$ recovers the net 
+distributional effect without sign restriction, while the $ECT_t$ as repersenting 
+structural imbalances would be introuced below as a regime switching variable for 
+the identification of sudden shifts in the dynamics of unbalanced growth. 
+
+\subsubsection{First Stage: Cointegration System for Propensity to Import}
+\label{subsec:chile_imports}
+
+The first stage identifies the long-run external relation through a
+cointegration system to measure import $M$, propensities from $NRS$ non-reinvested surplus, $\omega$ wage share, and ${K_t}^ME$ represented by the following state vector in log levels and the wage share:
+
+\begin{equation}
+	Y_t
+	=
+	\left(
+	m_t,\;
+	k_t^{ME},\;
+	nrs_t,\;
+	\omega_t,
+	\right)',
+	\label{eq:cl:state_vector_theta}
+\end{equation}
+
+
+Theoretically, $\zeta_1 > 0$ captures the extent to which
+non-reinvested surplus pressures the foreign-exchange constraint, while
+$\zeta_2 > 0$ captures the structural import demand generated by
+machinery accumulation. The estimated parameters and their relative magnitude, 
+would be suggestive of the effects of distribution $\zeta_3$ \citep{Kaldor1959}. 
+The estimated disequilibrium terms of the co-integrated system, would 
+summarize the externally driven systemic imbalances driven the scarcity 
+of foreign exchange and their use to import machinery and equipment 
+relative to imported luxury consumption driven by the non-reinvested surplus.  
+
+\subsubsection{Second Stage: Threshold VECM for the Productive Frontier}
+\label{subsec:chile_frontier_threshold}
+
+The state vector for the productive frontier is:
+%
+\begin{equation}
+	X_t^{CL,\theta}
+	=
+	\left(
+	y_t,\;
+	k_t^{NR},\;
+	k_t^{ME},\;
+	\omega_t k_t^{ME}
+	\right)',
+	\label{eq:cl:state_vector_theta}
+\end{equation}
+%
+The interaction term is $\omega_t k_t^{ME}$ because the
+cost-minimization problem shows that distribution conditions technique
+choice through the machinery component specifically. Infrastructure is
+distribution-insensitive at business-cycle frequency.
+
+The first cointegrating vector identifies the capacity frontier:
+%
+\begin{equation}
+	y_t
+	=
+	\kappa_1
+	+
+	\theta_0\, k_t^{NR}
+	+
+	\psi\, k_t^{ME}
+	+
+	\theta_2\,(\omega_t k_t^{ME})
+	+
+	ECT_{\theta,t},
+	\label{eq:cl:cv1}
+\end{equation}
+%
+where $\psi = \psi^{ME}-\psi^{NR}$ is the machinery
+productivity premium and $\theta_2 < 0$ is the
+distribution-composition interaction.
+
+This frontier relation does not directly identify the level of capacity
+utilization. The term $ECT_{\theta,t}$ is a long-run disequilibrium term
+of the frontier system. It identifies deviations between realized
+output and the productive-capacity frontier implied by capital
+composition and distributional conditions, but it does not, by itself,
+identify the level of $\mu_t^{CL}$.
+
+The empirical transformation elasticity is instead recovered from the
+frontier coefficients as a composition-sensitive object:
+%
+\begin{equation}
+	\hat{\theta}^{CL}(\omega_t,\phi_t)
+	=
+	\theta_0
+	+
+	\psi\,\phi_t
+	+
+	\theta_2\,\omega_t\,\phi_t,
+	\label{eq:cl:theta_hat}
+\end{equation}
+%
+which is the empirical counterpart of
+\eqref{eq:cl:theta}.
+
+To identify nonlinear external activation, the productive frontier is
+estimated as a threshold VECM in the sense of \citet{Seo2006}, using
+the first-stage external disequilibrium as the transition object. Let
+the regime indicator be
+%
+\begin{equation}
+	R_t
+	=
+	\mathbf{1}\!\left[\widehat{ECT}_{m,t-1} > \lambda\right],
+	\label{eq:cl:regime_indicator}
+\end{equation}
+%
+where $\lambda$ is interpreted as the threshold that activates the
+external constraint as a shadow price.
+
+The threshold VECM is then
+%
+\begin{equation}
+	\Delta X_t^{CL,\theta}
+	=
+	\mu
+	+
+	\alpha^{(1)} ECT_{\theta,t-1}(1-R_t)
+	+
+	\alpha^{(2)} ECT_{\theta,t-1}R_t
+	+
+	\sum_{j=1}^{p}\Gamma_j \Delta X_{t-j}^{CL,\theta}
+	+
+	\varepsilon_t,
+	\label{eq:cl:tvecm_theta}
+\end{equation}
+%
+where the threshold effect is driven by the estimated external
+disequilibrium recovered from the first-stage import system. In this
+architecture, the threshold is not imposed on the import-propensity
+equation itself. Rather, the import system identifies the external
+imbalance, and the threshold VECM identifies how that imbalance
+activates the shadow-price effect on the machinery-sensitive productive
+frontier.
+
+Productive-capacity growth is then constructed through the closure
+%
+\begin{equation}
+	g_{Y_t^{p,CL}}
+	=
+	\hat{\theta}^{CL}(\omega_t,\phi_t)\,g_{K_t^{CL}},
+	\label{eq:cl:frontier_growth}
+\end{equation}
+%
+so that the method identifies the evolution of utilization only in
+growth rates:
+%
+\begin{equation}
+	g_{\hat{\mu}_t^{CL}}
+	=
+	g_{Y_t^{CL}}
+	-
+	g_{Y_t^{p,CL}},
+	\label{eq:cl:mu_growth}
+\end{equation}
+%
+The level of $\hat{\mu}_t^{CL}$ is recovered only after imposing a
+pin-year normalization:
+%
+\begin{equation}
+	\hat{\mu}_{t_0}^{CL}
+	=
+	\mu_0,
+	\label{eq:cl:mu_pin}
+\end{equation}
+%
+and accumulating the productive-capacity series forward and backward
+from $t_0$.
+
+\subsubsection{Recursive Identification}
+\label{subsec:chile_recursive}
+
+The recursive architecture is therefore clear. In a first stage, a
+cointegration system for propensity to import is estimated, and its
+estimated parameters and estimated disequilibrium term summarize the
+externally driven systemic imbalances. In a second stage, a threshold
+VECM for the productive frontier is estimated, using those first-stage
+estimations to interpret $\lambda$ as the threshold that activates the
+external constraint as a shadow price on the machinery-sensitive
+transformation of accumulation into productive capacity. The frontier
+system therefore identifies the evolution of capacity utilization only
+up to a normalization, while the threshold activation identifies the
+foreign-exchange penalty that compresses the feasible mechanization
+path. The two systems are brought together in interpretation through the
+theoretical object $\theta^{CL}(\omega_t,\phi_t,\lambda)$.
+

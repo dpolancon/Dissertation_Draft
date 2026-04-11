@@ -1,0 +1,265 @@
+% =============================================================================
+% Appendix — Derivation of the Accumulation Dynamics under Unbalanced Growth
+% Companion to §1.3.2
+% 2026-03-16
+% =============================================================================
+
+This appendix provides the full derivation of the dynamical equations summarized in \S\ref{sec:regimes} and \S\ref{sec:extended_closure}. All results follow from three ingredients: the accounting identity $\hat{k} + \delta = \phi^p B$ (equation~\ref{eq:gross_rate}), the unbalanced growth closure $\hat{y}^p = \theta(\Lambda)\hat{k}$ (equation~\ref{eq:closure}), and the investment-savings closure $\phi^p = s$ (equation~\ref{eq:IS_closure}).
+
+% =========================================================================
+% A.1 — From accounting identity to the Bernoulli ODE
+% =========================================================================
+
+\subsection{The Pure Closure: Derivation of the Bernoulli ODE}
+\label{app:bernoulli_derivation}
+
+Begin from the accounting identity under the investment-savings closure:
+%
+\begin{equation}\label{eq:app_identity}
+	\hat{k} + \delta = s \, B
+\end{equation}
+%
+Since $s$ is constant, differentiate both sides with respect to time:
+%
+\begin{equation}\label{eq:app_diff}
+	\frac{d\hat{k}}{dt} = s \, \dot{B}
+\end{equation}
+%
+Rewrite $\dot{B}$ in terms of the growth rate of capital productivity:
+%
+\begin{equation}\label{eq:app_Bdot}
+	\dot{B} = B \, \hat{b}
+\end{equation}
+%
+Substituting into equation~\eqref{eq:app_diff} and using $sB = \hat{k} + \delta$ from the accounting identity:
+%
+\begin{equation}\label{eq:app_chain}
+	\frac{d\hat{k}}{dt} = s \, B \, \hat{b} = (\hat{k} + \delta) \, \hat{b}
+\end{equation}
+%
+This is the acceleration identity: the rate of change of the net accumulation rate equals the gross accumulation rate times the growth rate of capital productivity. It holds for any closure on $\hat{b}$.
+
+Now substitute the unbalanced growth closure. From equation~\eqref{eq:bhat}:
+%
+\begin{equation}\label{eq:app_bhat}
+	\hat{b} = (\theta(\Lambda) - 1) \, \hat{k}
+\end{equation}
+%
+Inserting into equation~\eqref{eq:app_chain}:
+%
+\begin{equation}\label{eq:app_bernoulli}
+	\boxed{\frac{d\hat{k}}{dt} = (\theta(\Lambda) - 1) \, \hat{k} \, (\hat{k} + \delta)}
+\end{equation}
+%
+This is a Bernoulli equation of order 2 in $\hat{k}$. The nonlinearity arises from the product $\hat{k}(\hat{k} + \delta)$: the acceleration of accumulation depends on both the current net rate and the gross rate, coupled through the regime parameter.
+
+% =========================================================================
+% A.2 — Analytical solution
+% =========================================================================
+
+\subsection{Analytical Solution via the Bernoulli Substitution}
+\label{app:bernoulli_solution}
+
+Expand the right-hand side of equation~\eqref{eq:app_bernoulli}:
+%
+\begin{equation}\label{eq:app_expanded}
+	\frac{d\hat{k}}{dt} = (\theta - 1)\,\hat{k}^2 + (\theta - 1)\,\delta\,\hat{k}
+\end{equation}
+%
+This is a Bernoulli equation of the form $\dot{x} = Q(t)\,x^n + P(t)\,x$ with $n = 2$, with $Q = (\theta - 1)$ and $P = (\theta - 1)\delta$, constant. Applying a substitution $v \equiv \hat{k}^{1-n} = \hat{k}^{-1}$:
+%
+\begin{equation}\label{eq:app_sub}
+	\dot{v} = -\hat{k}^{-2}\,\dot{\hat{k}}
+\end{equation}
+%
+Dividing equation~\eqref{eq:app_expanded} by $\hat{k}^2$:
+%
+\begin{equation}\label{eq:app_divided}
+	\hat{k}^{-2}\,\frac{d\hat{k}}{dt} = (\theta - 1) + (\theta - 1)\,\delta\,\hat{k}^{-1}
+\end{equation}
+%
+Substituting $v = \hat{k}^{-1}$ and $\dot{v} = -\hat{k}^{-2}\dot{\hat{k}}$:
+%
+\begin{equation}\label{eq:app_linear}
+	\frac{dv}{dt} = -(\theta - 1)\,\delta\,v - (\theta - 1)
+\end{equation}
+%
+This is a first-order linear ODE in $v$ with constant coefficients. Let $\alpha \equiv (\theta - 1)\delta$. The equation is:
+%
+\begin{equation}\label{eq:app_linear_standard}
+	\dot{v} + \alpha\,v = -(\theta - 1)
+\end{equation}
+%
+The integrating factor is $e^{\alpha t}$. The general solution is:
+%
+\begin{equation}\label{eq:app_v_solution}
+	v(t) = \left(v_0 + \frac{\theta - 1}{\alpha}\right) e^{-\alpha t} - \frac{\theta - 1}{\alpha}
+\end{equation}
+%
+Since $\alpha = (\theta - 1)\delta$, the ratio simplifies: $(\theta - 1)/\alpha = 1/\delta$. Therefore:
+%
+\begin{equation}\label{eq:app_v_simplified}
+	v(t) = \left(v_0 + \frac{1}{\delta}\right) e^{-(\theta-1)\delta\,t} - \frac{1}{\delta}
+\end{equation}
+%
+Substituting back $v = 1/\hat{k}$:
+%
+\begin{equation}\label{eq:app_khat_solution}
+	\boxed{\hat{k}(t) = \frac{1}{\left(\frac{1}{\hat{k}_0} + \frac{1}{\delta}\right) e^{-(\theta-1)\delta\,t} - \frac{1}{\delta}}}
+\end{equation}
+%
+where $\hat{k}_0 = \hat{k}(0)$ is the initial net accumulation rate.
+
+% =========================================================================
+% A.3 — Equilibria and stability
+% =========================================================================
+
+\subsection{Equilibria and Stability Analysis}
+\label{app:stability}
+
+The equilibria of equation~\eqref{eq:app_bernoulli} are the values $\hat{k}^*$ such that $d\hat{k}/dt = 0$. Factoring:
+%
+\begin{equation}\label{eq:app_equilibria}
+	(\theta - 1)\,\hat{k}\,(\hat{k} + \delta) = 0
+\end{equation}
+%
+For $\theta \neq 1$, the roots are:
+%
+\begin{equation}\label{eq:app_roots}
+	\hat{k}_1^* = 0, \qquad \hat{k}_2^* = -\delta
+\end{equation}
+%
+\textbf{Interpretation.} $\hat{k}^* = 0$ means the net capital stock is stationary: gross investment exactly covers depreciation ($I/K = \delta$). $\hat{k}^* = -\delta$ means gross investment is zero: the capital stock depreciates without replacement.
+
+\textbf{Stability.} Linearize around each equilibrium. The Jacobian of $f(\hat{k}) = (\theta-1)\hat{k}(\hat{k}+\delta)$ is:
+%
+\begin{equation}\label{eq:app_jacobian}
+	f'(\hat{k}) = (\theta - 1)(2\hat{k} + \delta)
+\end{equation}
+%
+At $\hat{k}_1^* = 0$:
+%
+\begin{equation}
+	f'(0) = (\theta - 1)\,\delta
+\end{equation}
+%
+\begin{itemize}
+	\item Over-accumulation ($\theta < 1$): $f'(0) < 0$ — the stagnation equilibrium is \textbf{locally stable}.
+	\item Under-accumulation ($\theta > 1$): $f'(0) > 0$ — the stagnation equilibrium is \textbf{unstable}.
+\end{itemize}
+
+The regime classification is interpreted in terms of over- or under-accumulation of \textit{accumulation demand}. When $\theta < 1$, capital accumulation outpaces the expansion of productive capacities: each unit of capital generates less than one unit of capacity, producing a downward tendency in the profit rate and imposing a stagnation tendency if there is no source of demand beyond accumulation demand under the classical closure at $u = 1$.
+
+When $\theta > 1$, productive capacity expansion outpaces capital accumulation: each unit of capital generates more than one unit of capacity, and accumulation demand must expand to meet the growing capacity---without any other source of demand in the system, the accumulation rate spirals upward in an explosive pattern.
+
+
+
+At $\hat{k}_2^* = -\delta$:
+%
+\begin{equation}
+	f'(-\delta) = -(\theta - 1)\,\delta
+\end{equation}
+%
+\begin{itemize}
+	\item Over-accumulation ($\theta < 1$): $f'(-\delta) > 0$ — the zero-investment equilibrium is \textbf{unstable}.
+	\item Under-accumulation ($\theta > 1$): $f'(-\delta) < 0$ — the zero-investment equilibrium is \textbf{locally stable}.
+\end{itemize}
+
+\textbf{Summary of the phase portrait:}
+
+\begin{table}[H]
+	\centering
+	\caption{Stability of equilibria under the pure unbalanced growth closure.}
+	\begin{tabular}{lccc}
+		\toprule
+		Regime & $\hat{k}^* = 0$ & $\hat{k}^* = -\delta$ & \textbf{In the feasible region $\hat{k} > 0$} \\
+		\midrule
+		Over-accumulation ($\theta < 1$) & Stable & Unstable & $\hat{k} \to 0$: accumulation stagnates \\
+		Under-accumulation ($\theta > 1$) & Unstable & Stable & $\hat{k} \to \infty$: accumulation explodes \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:app_stability}
+\end{table}
+
+Under over-accumulation, any positive $\hat{k}_0 > 0$ decays to zero: the economy converges to a state where net accumulation vanishes. Under under-accumulation, any positive $\hat{k}_0 > 0$ diverges: the economy accelerates without bound. In neither case does a feasible interior attractor exist. This confirms the regime classification in Table~\ref{tab:regime_classification} and the instability result stated in \S\ref{sec:regimes}.
+
+\textbf{Verification from the explicit solution.} In equation~\eqref{eq:app_khat_solution}, the denominator contains the term $e^{-(\theta-1)\delta\,t}$. Under over-accumulation ($\theta < 1$), the exponent is positive and the exponential grows, driving the denominator toward $+\infty$ and $\hat{k}(t) \to 0$. Under under-accumulation ($\theta > 1$), the exponent is negative and the exponential decays, driving the denominator toward $-1/\delta < 0$ and $\hat{k}(t) \to -\delta$ — but since $\hat{k}$ passes through zero or diverges before reaching $-\delta$, the solution blows up in finite time. Both regimes are consistent with the linearized stability analysis.
+
+% =========================================================================
+% A.4 — Extended closure derivation
+% =========================================================================
+
+\subsection{The Extended Closure: Derivation of the Quadratic ODE}
+\label{app:extended_derivation}
+
+Under Shaikh's extended closure $\hat{y}^p = \theta\hat{k} + \beta$, the growth rate of capital productivity becomes:
+%
+\begin{equation}\label{eq:app_bhat_extended}
+	\hat{b} = \hat{y}^p - \hat{k} = (\theta - 1)\hat{k} + \beta
+\end{equation}
+%
+Substituting into the acceleration identity (equation~\ref{eq:app_chain}):
+%
+\begin{equation}\label{eq:app_extended_ode}
+	\frac{d\hat{k}}{dt} = (\hat{k} + \delta)\left[(\theta - 1)\hat{k} + \beta\right]
+\end{equation}
+%
+Expanding:
+%
+\begin{equation}\label{eq:app_quadratic}
+	\frac{d\hat{k}}{dt} = (\theta - 1)\hat{k}^2 + \left[(\theta - 1)\delta + \beta\right]\hat{k} + \beta\delta
+\end{equation}
+%
+The equilibria are the roots of $(\hat{k} + \delta)[(\theta - 1)\hat{k} + \beta] = 0$:
+%
+\begin{equation}\label{eq:app_extended_roots}
+	\hat{k}_1^* = -\delta, \qquad \hat{k}_2^* = \frac{-\beta}{\theta - 1} = \frac{\beta}{1 - \theta}
+\end{equation}
+
+\textbf{Stability of the new equilibrium.} The Jacobian of $g(\hat{k}) = (\hat{k}+\delta)[(\theta-1)\hat{k}+\beta]$ is:
+%
+\begin{equation}\label{eq:app_ext_jacobian}
+	g'(\hat{k}) = 2(\theta - 1)\hat{k} + (\theta-1)\delta + \beta
+\end{equation}
+%
+At $\hat{k}_2^* = \beta/(1 - \theta)$:
+%
+\begin{equation}
+	g'\!\left(\frac{\beta}{1-\theta}\right) = \frac{-2\beta(\theta-1)}{1-\theta} + (\theta-1)\delta + \beta = 2\beta + (\theta-1)\delta + \beta = 3\beta + (\theta-1)\delta
+\end{equation}
+%
+Under over-accumulation ($\theta < 1$) with $\beta > 0$: the sign depends on the balance between $3\beta$ and $(1-\theta)\delta$. For the empirically relevant case where $\beta$ is small relative to $\delta$ (secular technical progress is slower than the depreciation rate), $g'(\hat{k}_2^*) < 0$ and the equilibrium is \textbf{locally stable}. This confirms that autonomous technical progress provides the interior attractor that the pure closure lacks.
+
+\textbf{Limiting behavior.} As $\beta \to 0$: $\hat{k}_2^* \to 0$, the new equilibrium collapses onto the stagnation point $\hat{k}_1^* = 0$ of the pure closure, the quadratic degenerates to $(\theta-1)\hat{k}(\hat{k}+\delta) = 0$, and the Bernoulli ODE is recovered. The pure closure is the $\beta = 0$ limit of Shaikh's extended specification.
+
+% =========================================================================
+% A.5 — Vieta's formulas
+% =========================================================================
+
+\subsection{Vieta's Formulas for the Quadratic Equilibrium Structure}
+\label{app:vieta}
+
+Writing the equilibrium condition $(\theta-1)\hat{k}^2 + [(\theta-1)\delta + \beta]\hat{k} + \beta\delta = 0$ in standard form $a\hat{k}^2 + b\hat{k} + c = 0$ with:
+%
+\begin{equation}
+	a = \theta - 1, \qquad b = (\theta-1)\delta + \beta, \qquad c = \beta\delta
+\end{equation}
+%
+Vieta's formulas give:
+%
+\begin{align}
+	\hat{k}_1^* + \hat{k}_2^* &= -\frac{b}{a} = -\delta - \frac{\beta}{\theta - 1} \label{eq:app_vieta_sum} \\[6pt]
+	\hat{k}_1^* \cdot \hat{k}_2^* &= \frac{c}{a} = \frac{\beta\delta}{\theta - 1} \label{eq:app_vieta_product}
+\end{align}
+
+\textbf{Product of roots.} The sign of the product depends on $(\theta - 1)$:
+\begin{itemize}
+	\item Over-accumulation ($\theta < 1$): $\hat{k}_1^* \cdot \hat{k}_2^* < 0$ — one positive root ($\hat{k}_2^* > 0$) and one negative ($\hat{k}_1^* = -\delta$). A feasible attractor exists.
+	\item Under-accumulation ($\theta > 1$): $\hat{k}_1^* \cdot \hat{k}_2^* > 0$ — both roots negative. No feasible positive equilibrium.
+\end{itemize}
+
+\textbf{Sum of roots.} The depreciation rate $\delta$ anchors the sum. The term $\beta/(\theta-1)$ scales autonomous progress by the inverse degree of unbalanced growth: as $\theta \to 1$ from either side, this term diverges, reflecting the amplification of the structural accumulation imbalance near the knife-edge.
+
+\textbf{Degeneracy.} As $\theta \to 1$, $a \to 0$ and the quadratic degenerates. Simultaneously, $\hat{k}_2^* = \beta/(1-\theta) \to \pm\infty$. The joint condition $\theta = 1$ and $\beta = 0$ defines the degeneracy locus $\mathcal{D}$ at which the system has no determinate growth rate.
+
+\textbf{Remark: the missing channel.} Both the pure and extended closures treat $\theta$ as a fixed structural parameter. Neither endogenizes the mechanism through which $\theta$ might vary: the path-dependency of distributive conflict. If technological change is shaped by the trajectory of the wage share---$\theta_t = f(\omega_t)$, where $\omega_t$ evolves through historically specific class struggle---then the transformation elasticity is not a structural constant but a regime-dependent object. The formal analysis above shows \textit{why} a fixed $\theta$ produces either stagnation or explosion with no interior attractor (pure closure) or an attractor sustained only by autonomous technical progress (extended closure). The \textit{source} of stabilization or regime transition---distributive conflict operating through the choice of technique---is absent from both closures and constitutes the identification gap the critical replication is designed to expose.

@@ -1,0 +1,190 @@
+
+% ---------------------------------------------------------------
+% A.1 — Series glossary
+% ---------------------------------------------------------------
+
+\subsection{Series Glossary}
+
+\begin{table}[!ht]
+	\centering
+	\small
+	\setlength{\tabcolsep}{3pt}
+	\renewcommand{\arraystretch}{1.15}
+	\caption{Replication series: symbols, sources, and transformations}
+	\label{tab:app_glossary}
+	\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}
+			>{\raggedright\arraybackslash}p{0.26\textwidth}
+			>{\raggedright\arraybackslash}p{0.28\textwidth}
+			>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+		\hline
+		Symbol / Code & Variable & Source (table, line) & Transformation \\
+		\hline
+		$\text{GVAcorp}_t$ 
+		& Corporate gross value added (corrected)
+		& NIPA 1.14 (L1) + imputed-interest adj.\ (Table~7.11)
+		& nominal \\[3pt]
+		$\text{KGCcorp}_t$ 
+		& Corporate gross capital stock (GPIM-adjusted)
+		& Fixed Asset 6.1 (L9); IRS Statistics of Income; GPIM recursion
+		& nominal \\[3pt]
+		$\text{KNCcorp}_t$ 
+		& Corporate net capital stock (GPIM-adjusted)
+		& same as above
+		& nominal \\[3pt]
+		$\text{KNCcorpbea}_t$
+		& Corporate net capital stock (BEA 2011 official)
+		& Fixed Asset 6.1 (L9)
+		& nominal \\[3pt]
+		$p_t$ 
+		& Common deflator
+		& $pKN$ index, 2005=100 
+		& (KNCcorp/KNRcorp)*100 \\[3pt]
+		$y_t$
+		& Real log output
+		& constructed
+		& $\ln(\text{VAcorp}_t/p_t)$ \\[3pt]
+		$k_t$
+		& Real log capital
+		& constructed
+		& $\ln(\text{KGCcorp}_t/p_t)$ \\[3pt]
+		$\text{Profshcorp}_t$ 
+		& Corporate profit share (corrected)
+		& NIPA 1.14 (L8, L1$-$L2) + imputed-interest adj.
+		& ratio \\
+		\hline
+	\end{tabular}
+	\par\vspace{0.4em}
+	\footnotesize\textit{Note:} All BEA and NIPA data downloaded in the
+	replication vintage. Shaikh's original series used data downloaded in
+	2011 \citep[Appendix~6.7, fn.~1]{Shaikh2016}; discrepancies attributable
+	to subsequent BEA revisions are possible and noted where material.
+	\par\vspace{0.2em}
+	\footnotesize\textit{Source:}
+	\href{https://www.realecon.org/data}{Real Economic Analysis Data Tables}
+\end{table}
+
+% ---------------------------------------------------------------
+% A.2 — Imputed-interest correction
+% ---------------------------------------------------------------
+
+\subsection{Imputed-Interest Correction}
+
+The NIPA corporate value added figure includes imputed financial
+intermediation services as a cost to non-financial corporations. The
+corporate imputed-interest adjustment removes this component:
+%
+\begin{equation}
+	\label{eq:app_impint}
+	\text{CorpImpIntAdj}_t
+	\;\equiv\;
+	-\,\text{BankMonIntPaid}_t
+	\;-\; \text{CorpNFNetImpIntPaid}_t,
+\end{equation}
+%
+where $\text{BankMonIntPaid}_t$ is NIPA Table~7.11
+(lines 4+44+73 minus lines 28+52+91) and
+$\, \, \text{CorpNFNetImpIntPaid}_t$ is NIPA Table~7.11 (line~74 minus line~53).
+In 2009 the adjustment raises corporate net operating surplus by
+approximately 10\,\%.
+
+% ---------------------------------------------------------------
+% A.3 — Corporate output: GVAcorp
+% ---------------------------------------------------------------
+
+\subsection{Corrected Corporate Output: \texorpdfstring{$\text{GVAcorp}_t$}{GVAcorp}}
+
+\begin{equation}
+	\label{eq:app_gva}
+	\text{GVAcorp}_t
+	\;\equiv\;
+	\text{GVAcorpnipa}_t \;+\; \text{CorpImpIntAdj}_t,
+\end{equation}
+%
+where $\text{GVAcorpnipa}_t$ is NIPA Table~1.14 (line~1) and
+$\text{CorpImpIntAdj}_t$ is defined in equation~\eqref{eq:app_impint}.
+
+% ---------------------------------------------------------------
+% A.4 — Corporate capital stock: KGCcorp (GPIM)
+% ---------------------------------------------------------------
+
+\subsection{Reconstructed Corporate Capital Stock: \texorpdfstring{$\text{KGCcorp}_t$}{KGCcorp}}
+
+\paragraph{GPIM accumulation rule.}
+The current-cost capital stock is accumulated as:
+%
+\begin{equation}
+	\label{eq:app_gpim}
+	K_t \;=\; IG_t \;+\; z_t^* \cdot K_{t-1},
+	\qquad
+	z_t^* \;\equiv\; (1 - z_t)\,\frac{p^K_t}{p^K_{t-1}},
+\end{equation}
+%
+where $IG_t$ is nominal gross investment, $z_t$ is the period depreciation
+rate, and $z_t^*$ is the survival-and-revaluation factor that reflates the
+surviving stock to current replacement cost.
+
+\paragraph{Three adjustments (applied before the recursion).}
+
+\begin{enumerate}
+	\item \textbf{Depletion rates.} BEA 1993 finite service lives replace
+	the BEA 2011 infinite-lives assumption, implying higher depreciation
+	and lower retirement rates consistent with physical exhaustion.
+	
+	\item \textbf{Initial values.} BEA 1993 initial values anchored to
+	1925 replace the BEA 2011 starting values. The 1993 values are lower,
+	producing faster accumulation growth and convergence to the official
+	path by approximately 1977.
+	
+	\item \textbf{Great Depression correction.} The IRS corporate book
+	value index \citep[Series~V~115, pp.~924--926]{UScensus1975} is applied
+	over 1925--1947, rescaling the BEA historical stock by the IRS/BEA
+	ratio each year. The GPIM recursion resumes from 1947. Net effect:
+	$\text{KNCcorp}_t$ is approximately 28\,\% lower in 1947 than the BEA
+	2011 official measure.
+\end{enumerate}
+
+\paragraph{Inventories.}
+IRS corporate balance sheet inventory ratios are extrapolated over
+1947--1989 via a linear fit to the 1990--2011 IRS/BEA ratio, rescaled to
+the adjusted GPIM stocks, and added to $\text{KGCcorp}_t$. Source:
+IRS Statistics of Income 1926--2011; FRB Flow of Funds FL105015205.A for
+non-financial corporate inventories in current cost.
+
+\paragraph{Accuracy.}
+The average ratio of the GPIM approximation to the BEA current-cost stock
+over 1947--2005 is 99.60\,\%.
+
+\noindent Full recursion inputs and depletion-rate construction are in
+\citet[Appendix~6.7, Section~V; Appendix Table~6.8.II.3]{Shaikh2016}.
+
+% ---------------------------------------------------------------
+% A.5 — Common deflator
+% ---------------------------------------------------------------
+
+\subsection{Common Deflator: \texorpdfstring{$p_t$}{p\_t}}
+
+The replication uses the $pKN$ implicit price deflator based at $100 = 2005$ from current prices net capital stocks as $p_t$. Esimtated by Shaikh under GPIM rules in detriment of quality adjusted chain weights published in current (and 2011 also) BEA releases of Fixed Assets tables in order to sustain stock-flow consistency. 
+
+% ---------------------------------------------------------------
+% A.6 — Corrected corporate profit share: Profshcorp
+% ---------------------------------------------------------------
+
+\subsection{Corrected Corporate Profit Share: \texorpdfstring{$\text{Profshcorp}_t$}{Profshcorp}}
+
+The same imputed-interest adjustment applied to $\text{GVAcorp}_t$ is
+applied to both the numerator and denominator of the profit share:
+%
+\begin{align}
+	\text{NOScorp}_t
+	&\;\equiv\; \text{NOScorpnipa}_t \;+\; \text{CorpImpIntAdj}_t,
+	\label{eq:app_nos} \\
+	\text{VAcorp}_t
+	&\;\equiv\; \text{VAcorpnipa}_t \;+\; \text{CorpImpIntAdj}_t,
+	\label{eq:app_va} \\
+	\text{Profshcorp}_t
+	&\;\equiv\; \frac{\text{NOScorp}_t}{\text{VAcorp}_t},
+	\label{eq:app_profshcorp}
+\end{align}
+%
+where $\text{NOScorpnipa}_t$ is NIPA Table~1.14 (line~8) and
+$\text{VAcorpnipa}_t$ is NIPA Table~1.14 (line~1 minus line~2).
